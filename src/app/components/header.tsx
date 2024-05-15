@@ -10,13 +10,4 @@ export default function Header() {
     </header>
   );
 
-import React from 'react'
-
-export default function Header() {
-  return (
-    <div>
-      
-    </div>
-  )
-
 }
