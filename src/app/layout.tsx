@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Lato, Open_Sans } from "next/font/google";
 import "../styles/styles.sass";
+import Header from "./components/header";
 // import "./globals.css";
 
 const lato = Lato({ subsets: ["latin"], weight: ["400", "700", "900"], variable: '--font-lato' });
@@ -19,7 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={` ${openSans.className} ${openSans.variable} ${lato.variable}`}>{children}</body>
+      <body className={` ${openSans.className} ${openSans.variable} ${lato.variable}`}>
+        
+        <Header />
+        {children}
+        </body>
     </html>
   );
 }

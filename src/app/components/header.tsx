@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 export default function Header() {
   return (
-    <div>
-      
-    </div>
-  )
+    <header className="pt-80 pb-80">
+      <div className="container">
+        <div className="h1">Headless Blog</div>
+      </div>
+    </header>
+  );
 }
