@@ -1,3 +1,4 @@
+
 import React from "react";
 
 export default function Header() {
@@ -8,4 +9,14 @@ export default function Header() {
       </div>
     </header>
   );
+
+import React from 'react'
+
+export default function Header() {
+  return (
+    <div>
+      
+    </div>
+  )
+
 }
