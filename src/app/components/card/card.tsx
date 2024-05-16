@@ -11,9 +11,9 @@ export default function Card() {
         </div>
       </div>
       <div className={styles.card_content}>
-        <div className={styles.card_label}>Product Reviews</div>
-        <div className={`${styles.card_title} h3`}>Class aptent tacicti socisqui ad litora tornequent per conubia nostra</div>
-        <div className={styles.card_summary}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est similique aliquid suscipit facilis magnam deserunt quibusdam quidem nulla! Quia, ipsum.</div>
+        <div className={`${styles.card_label} h6 mb-10 c-orange`}>Product Reviews</div>
+        <div className={`${styles.card_title} h3 mb-20`}>Class aptent tacicti socisqui ad litora tornequent per conubia nostra</div>
+        <p className={`${styles.card_summary} fw-600`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est similique aliquid suscipit facilis magnam deserunt quibusdam quidem nulla! Quia, ipsum.</p>
       </div>
     </div>
   );
