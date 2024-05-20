@@ -1,7 +1,24 @@
 import Card from "./components/card/card";
 import { iconType } from "./components/button/button";
+import config from "@/config";
 
-const Home = () => {
+const fetchBlogs = async () => {
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${process.env.API_TOKEN}`,
+    },
+  };
+  const request = await fetch(`${config.api}/api/blogs?populate=*`, reqOptions);
+  const response = await request.json();
+
+  return response
+};
+
+const Home = async () => {
+  const blogs = await fetchBlogs()
+
+  console.log('blogs', blogs.data)
+
   return (
     <div className="container pb-80">
       <Card
