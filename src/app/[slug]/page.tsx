@@ -1,57 +1,51 @@
 import getCategoryColor from "@/helpers/get-category-color";
 import Image from "next/image";
 import styles from "./style.module.sass";
+import fetchBlogs from "@/helpers/fetch-blogs";
+import config from "@/config";
 
-const BlogDetails = (props: any) => {
+const BlogDetails = async (props: any) => {
+  const blogs = await fetchBlogs(`filters[slug][$eq]=${props.params.slug}`);
+  if (blogs.data.length === 0) return null;
+  const blog = blogs.data[0];
+
   return (
     <div className="container pb-80">
       <div className="row mb-50">
         <div className="col col_9">
-          <div className={`h6 mb-20 c-${getCategoryColor("Product Review")}`}>
-            {"Product Review"}
+          <div
+            className={`h6 mb-20 c-${getCategoryColor(
+              blog.attributes.Category
+            )}`}
+          >
+            {blog.attributes.Category}
           </div>
-          <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+          <h2>{blog.attributes.Title}</h2>
         </div>
       </div>
       <Image
         className={`${styles.featuredImage} mb-50`}
-        src="/thumb.jpg"
-        alt="Thumbnail"
+        src={`${config.api}${blog.attributes.FeaturedImage.data.attributes.url}`}
+        alt="Featured Image"
         width={1280}
         height={387}
       />
       <div className="row mb-50">
-        <div className="col col_9">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-            maxime eligendi corporis dolorem ipsum dolore fuga facere similique
-            repellendus, odit reiciendis. Rem suscipit eveniet doloribus nam
-            voluptates earum molestiae labore modi illum ad, deserunt pariatur
-            animi fugiat? Suscipit omnis iste, nulla eos recusandae temporibus
-            sit voluptatum ea laudantium dolor at rerum similique harum,
-            doloribus distinctio saepe esse, dolores quae quia! Nulla, ab
-            temporibus accusamus quaerat iste vero iusto quibusdam possimus
-            blanditiis est quo reiciendis ad numquam necessitatibus amet. Fuga,
-            vitae.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-            expedita harum rem neque deserunt rerum! Dolorem accusantium sequi
-            dolore quisquam, sint blanditiis dolor. Quas et at illum! Assumenda
-            placeat neque architecto laboriosam optio, sequi cumque doloremque
-            officia? Ut maiores ducimus ipsam, fugiat beatae suscipit temporibus
-            quisquam! Animi neque nostrum velit?
-          </p>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis eius
-            enim voluptate culpa blanditiis sapiente consequuntur ea
-            perspiciatis omnis sed aspernatur, minima commodi iste molestias eos
-            veniam aut quasi nostrum.
-          </p>
-        </div>
+        <div
+          className="col col_9"
+          dangerouslySetInnerHTML={{ __html: blog.attributes.Content }}
+        ></div>
       </div>
     </div>
   );
+};
+
+export const generateStaticParams = async () => {
+  const blogs = await fetchBlogs('');
+
+  return blogs.data.map((blog: any) => ({
+    slug: blog.attributes.slug,
+  }));
 };
 
 export default BlogDetails;

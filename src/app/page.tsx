@@ -1,27 +1,7 @@
 import Card from "./components/card/card";
 import { iconType } from "./components/button/button";
+import fetchBlogs from "@/helpers/fetch-blogs";
 import config from "@/config";
-
-const fetchBlogs = async (params: any) => {
-  const reqOptions = {
-    headers: {
-      Authorization: `Bearer ${process.env.API_TOKEN}`,
-      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
-      "Pragma": "no-cache",
-      "Expires": "0",
-      "Surrogate-Control": "no-store"
-    },
-  };
-  const request = await fetch(
-    `${config.api}/api/blogs?populate=*&${params}`,
-    reqOptions
-  );
-  const response = await request.json();
-
-  console.log(`Response for params: ${params}`, response);
-
-  return response;
-};
 
 const Home = async () => {
   const [featuredBlogs, blogs] = await Promise.all([
@@ -29,8 +9,8 @@ const Home = async () => {
     fetchBlogs("filters[IsFeatured][$eq]=false"),
   ]);
 
-  console.log("Featured Blogs Data:", featuredBlogs.data);
-  console.log("Blogs Data:", blogs.data);
+  // console.log("Featured Blogs Data:", featuredBlogs.data);
+  // console.log("Blogs Data:", blogs.data);
 
   return (
     <div className="container pb-80">
@@ -45,7 +25,7 @@ const Home = async () => {
             FeaturedImage: any;
           };
         }) => {
-          console.log("Featured Blog ID:", featuredBlog.id); // Adicione este log
+          // console.log("Featured Blog ID:", featuredBlog.id);
 
           return (
             <Card
@@ -73,7 +53,7 @@ const Home = async () => {
               Thumbnail: any;
             };
           }) => {
-            console.log("Blog ID:", blog.id); // Adicione este log
+            // console.log("Blog ID:", blog.id); 
 
             return (
               <div className="col col_4 m-mw-100" key={blog.id}>
