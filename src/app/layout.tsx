@@ -34,7 +34,6 @@ export default function RootLayout({
         className={` ${openSans.className} ${openSans.variable} ${lato.variable}`}
       >
         <Header />
-        <Headless />
         {children}
         <Footer />
       </body>
