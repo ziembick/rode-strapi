@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Lato, Open_Sans } from "next/font/google";
 import "../styles/styles.sass";
-import Header from "./components/header";
+
 import Footer from "./components/footer";
+import Headless from "./components/headless";
+import { Header } from "./components/header";
 // import "./globals.css";
 
 const lato = Lato({
@@ -32,6 +34,7 @@ export default function RootLayout({
         className={` ${openSans.className} ${openSans.variable} ${lato.variable}`}
       >
         <Header />
+        <Headless />
         {children}
         <Footer />
       </body>
