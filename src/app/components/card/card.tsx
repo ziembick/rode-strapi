@@ -11,7 +11,7 @@ export default function Card(props: any) {
       <div className={styles.card}>
         <div className={styles.card_imageWrapper}>
           <div className={styles.card_image}>
-            <Image alt="thumbnail" src="/thumb.jpg" fill={true} />
+            <Image alt={props.imgAlt} src={props.imgSrc} fill={true}/>
           </div>
         </div>
         <div className={styles.card_content}>
