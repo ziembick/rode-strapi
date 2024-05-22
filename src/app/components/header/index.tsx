@@ -9,29 +9,26 @@ const NAV_ITEMS = [
     href: "/",
   },
   {
-    label: "Contato",
-    href: "/contato",
+    label: "Sobre mim",
+    href: "/about",
+  },
+  {
+    label: "Áreas de atuação",
+    href: "/areas",
+  },
+  {
+    label: "Depoimentos",
+    href: "/depoimentos",
   },
   {
     label: "Blog",
     href: "/blog",
   },
+
   {
-    label: "Sobre mim",
-    href: '/about'
+    label: "Contato",
+    href: "/contato",
   },
-  {
-    label: "Atendimento",
-    href: '/atendimento'
-  },
-  {
-    label: "Depoimentos",
-    href: '/depoimentos'
-  },
-  {
-    label: "Como Funciona",
-    href: '/funciona'
-  }
 ];
 
 export const Header = () => {
@@ -42,8 +39,8 @@ export const Header = () => {
           <Image
             src="/logo.png"
             alt="Logo"
-            width={120}
-            height={100}
+            width={90}
+            height={90}
             className={`${styles.logo} pt-10`}
           />
         </Link>

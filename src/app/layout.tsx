@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Lato, Open_Sans } from "next/font/google";
+import { Baloo_2, Inter, Lato, Open_Sans } from "next/font/google";
 import "../styles/styles.sass";
 
 import Footer from "./components/footer";
@@ -12,6 +12,12 @@ const lato = Lato({
   weight: ["400", "700", "900"],
   variable: "--font-lato",
 });
+
+const baloo = Baloo_2({
+  subsets: ['latin'],
+  weight:['400', '500', '600', '700', '800'],
+  variable: "--font-baloo2"
+})
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={` ${openSans.className} ${openSans.variable} ${lato.variable}`}
+        className={` ${openSans.className} ${openSans.variable} ${lato.variable} ${baloo.variable} ${baloo.className}`}
       >
         <Header />
         {children}
