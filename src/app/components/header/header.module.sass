@@ -1,0 +1,33 @@
+.nav
+  display: flex
+  gap: 0.555rem
+  align-items: center
+  opacity: 1
+  transition: opacity 100ms linear
+  visibility: visible
+  text-decoration: none
+  font-family: var(--font-baloo2)
+  color: #000
+  font-size: 1.05rem
+
+.hide
+  opacity: 0
+  visibility: hidden
+
+.imageContainer
+  flex-shrink: 0  
+
+.desktopNav
+  display: flex
+  gap: 0.555rem
+  margin: 0 auto  
+
+.navItems
+  display: flex
+  align-items: center
+  gap: 0.555rem
+  padding: 10px 0
+
+  @media screen and (max-width: 1200px)
+    .desktopNav
+      display: none
