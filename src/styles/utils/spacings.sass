@@ -5,6 +5,18 @@ $marginBottom: (10, 20, 30, 50)
   .mb-#{$mb}
     margin-bottom: #{$mb}px
 
+$marginTop: (10, 20, 30, 40, 50, 60)
+
+@each $mt in $marginTop
+  .mt-#{$mt}
+    margin-top: #{$mt}px
+
+$marginLeft: (5, 8, 10, 20, 30, 40, 50)
+
+@each $ml in $marginLeft
+  .ml-#{$ml}
+    margin-left: #{$ml}px
+
 //paddings
 $paddingTop: (10,20,30,40,50,60,70, 80)
 
@@ -17,3 +29,15 @@ $paddingBottom: (80)
 @each $pb in $paddingBottom
   .pb-#{$pb}
     padding-bottom: #{$pb}px
+
+$paddingLeft: (10,20,30,40,50,60,70,80)
+
+@each $pl in $paddingLeft
+  .pl-#{$pl}
+    padding-left: #{$pl}px
+
+$paddingRight: (10,20,30,40,50,60,70,80)
+
+@each $pr in $paddingRight
+  .pr-#{$pr}
+    padding-right: #{$pr}px
