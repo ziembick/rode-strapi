@@ -37,10 +37,10 @@ export const Header = () => {
       <div className={styles.imageContainer}>
         <Link href="/">
           <Image
-            src="/logo.png"
+            src="/rlogo3.png"
             alt="Logo"
-            width={90}
-            height={90}
+            width={50}
+            height={70}
             className={`${styles.logo} pt-10`}
           />
         </Link>

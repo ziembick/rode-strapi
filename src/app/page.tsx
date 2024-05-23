@@ -6,9 +6,8 @@ const Home = () => {
   return (
     <>
       <div className={`${styles.homePage}`}>
-        <Image src="/hero2.png" alt="Rode Ziembick" width={750} height={600} />
+        <Image src="/hero2.png" alt="Rode Ziembick" width={700} height={600} />
         <div>
-          <Image src="/logo.png" alt="Logo" width={200} height={150} />
           <h1 className={styles.h1}>Psicanalista</h1>
           <h4 className={`${styles.h1} pr-10`}>
             Meu propósito é <strong>Ajudar Você</strong> a ter mais qualidade de
