@@ -1,0 +1,154 @@
+.contentMain
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  padding: 6rem
+  background-color: #fff
+
+.elementSection
+  width: 100%
+  padding-top: 3rem
+
+.mainDiv
+  margin-left: auto
+  margin-right: auto
+  max-width: 100%
+  padding-left: 1rem
+  padding-right: 1rem
+
+  > * + *
+    margin-top: 3rem
+
+  @media screen and (min-width: 768px)
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+
+.headerDiv
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  text-align: center
+
+  > * + *
+    margin-top: 1rem
+
+.textDiv
+  > * + *
+    margin-top: 0.5rem
+
+.textH1
+  font-size: 1.875rem
+  font-weight: bold
+  letter-spacing: -0.05rem
+
+  @media (min-width: 640px)
+    font-size: 3rem
+
+.ptag
+  max-width: 900px
+  color: #71717a
+
+  @media screen and (min-width: 768px)
+    font-size: 1.25rem
+    line-height: 1.75rem
+
+  @media screen and (min-width: 1024px)
+    font-size: 1rem
+    line-height: 1.75rem
+
+  @media screen and (min-width: 1280px)
+    font-size: 1.25rem
+    line-height: 1.75rem
+
+  @media (prefers-color-scheme: dark)
+    color: #a1a1aa
+
+.cardContainer
+  > * + *
+    margin-top: 3rem
+
+.card
+  display: grid
+  gap: 2rem
+
+  @media (min-width: 768px)
+    grid-template-columns: repeat(2, 1rf)
+
+  @media (min-width: 1024px)
+    grid-template-columns: repeat(3, 1fr)
+
+.articleCard
+  height: 100%
+  display: flex
+  flex-direction: column
+  border-radius: 0.5rem
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
+  overflow: hidden
+
+.image
+  aspect-ratio: 4 / 3
+  object-fit: cover
+  width: 100%
+
+.linksDiv
+  flex: 1
+  padding: 1.5rem
+
+.articleTitle
+  font-size: 1.5rem
+  font-weight: bold
+  line-height: 1.25
+  color: #333
+  padding-top: 1rem
+  padding-bottom: 1rem
+  text-decoration: none
+
+  @media (prefers-color-scheme: dark)
+    color: #130000
+
+.category
+  display: inline-block
+  border-radius: 10px
+  background-color: #ced4da
+  padding-left: 0.75rem
+  padding-right: 0.75rem
+  padding-top: 0.25rem
+  padding-bottom: 0.25rem
+  font-weight: bold
+  color: #2d3748
+
+.articleSummary
+  max-width: none
+  color: #71717a
+  margin-top: 1rem
+  margin-bottom: 0.5rem
+  font-size: 0.875rem
+
+  @media (prefers-color-scheme: dark)
+    color: #a1a1aa
+
+.articleAuthor
+  max-width: none
+  color: #4a5568
+  margin-top: 0.5rem
+  margin-bottom: 0.5rem
+  font-size: 0.875rem
+  font-weight: bold
+
+  @media (prefers-color-scheme: dark)
+    color: #a1a1aa
+
+.readMore
+  display: flex
+  justify-content: flex-end
+
+.linkReadMore
+  display: inline-flex
+  height: 2.5rem
+  align-items: center
+  justify-content: center
+  font-size: 0.875rem
+  font-weight: 500
