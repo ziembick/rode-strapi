@@ -24,6 +24,10 @@ const NAV_ITEMS = [
     label: "Blog",
     href: "/blog",
   },
+  {
+    label: "Posts",
+    href: "/posts",
+  },
 
   {
     label: "Contato",
@@ -38,6 +42,7 @@ export const Header = () => {
         <Link href="/">
           <Image
             src="/rlogo3.png"
+
             alt="Logo"
             width={50}
             height={70}
