@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.20.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.1",
+    "contentful": "^10.11.2",
     "next": "14.2.3",
     "normalize.css": "^8.0.1",
     "react": "^18",

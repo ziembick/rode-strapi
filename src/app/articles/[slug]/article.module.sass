@@ -1,0 +1,109 @@
+.mainContainer
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  padding: 6rem
+  background-color: #ffffff
+
+.secao
+  width: 100%
+
+.mainDiv
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding-left: 1rem
+  padding-right: 1rem
+
+  > * + *
+    margin-top: 3rem
+
+  @media (min-width: 768px)
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+
+.article
+  > * + *
+    margin-top: 1rem
+
+.articleTitle
+  font-size: 2.25rem
+  font-weight: bold
+  letter-spacing: -0.05em
+
+  @media (min-width: 640px)
+    font-size: 3rem
+
+.articleSummary
+  max-width: 900px
+  color: #71717a
+  font-size: 1rem
+  line-height: 1.75rem
+
+  @media (min-width: 768px)
+    font-size: 1.25rem
+    line-height: 1.75rem
+
+  @media (min-width: 1024px)
+    font-size: 1rem
+    line-height: 1.75rem
+
+  @media (min-width: 1280px)
+    font-size: 1.25rem
+    line-height: 1.75rem
+
+  @media (prefers-color-scheme: dark)
+    color: #a1a1aa
+
+.imageDiv
+  > * + *
+    margin-top: 2rem
+
+  @media (min-width: 1024px)
+    > * + *
+      margin-top: 2.5rem
+
+.imageClass
+  width: 100%
+  overflow: hidden
+  border-radius: 0.75rem
+  object-fit: cover
+  aspect-ratio: 16/9
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+
+.detailsDiv
+  > * + *
+    margin-top: 1rem
+
+  @media (min-width: 768px)
+    > * + *
+      margin-top: 1.5rem
+
+.details
+  > * + *
+    margin-top: 0.5rem
+
+.detailsMain
+  max-width: 900px
+  color: #71717a
+  font-size: 0.875rem
+  line-height: 1.75rem
+
+  @media (min-width: 768px)
+    font-size: 1.25rem
+    line-height: 1.75rem
+
+  @media (min-width: 1024px)
+    font-size: 1rem
+    line-height: 1.75rem
+
+  @media (min-width: 1280px)
+    font-size: 1.25rem
+    line-height: 1.75rem
+
+  @media (prefers-color-scheme: dark)
+    color: #a1a1aa
