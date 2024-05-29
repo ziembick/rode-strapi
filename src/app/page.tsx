@@ -1,10 +1,12 @@
 import React from "react";
 import Hero from "./components/hero";
+import Contato from "./contato/page";
 
 const Home = () => {
   return (
     <>
       <Hero />
+      <Contato />
     </>
   );
 };

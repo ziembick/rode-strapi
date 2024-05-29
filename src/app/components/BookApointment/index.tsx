@@ -85,29 +85,61 @@ export default function BookAppointment() {
   console.log(eventDescription)
 
   return (
-    <div className="container">
-      <div style={{ width: "400px", margin: "30px auto" }}>
+    <div className="conteiner">
+      <div className="appointment-form">
         {session ? (
           <>
-            <h2>Hey there {session.user.email}</h2>
-            <p>Start of your event</p>
-            <DatePicker onChange={(date:Date) => setStart(date)} selected={start} showTimeSelect dateFormat="Pp" locale="pt-BR" timeIntervals={15}/>
-            {/* <DateTimePicker onChange={(date) => setStart(date as Date)} value={start} />  */}
-            <p>End of your event</p>
-            {/* <DateTimePicker onChange={(date) => setEnd(date as Date)} value={end} />  */}
-            <DatePicker onChange={(date:Date) => setEnd(date)} selected={end} showTimeSelect dateFormat="Pp" locale="pt-BR" timeIntervals={15}/> 
-            <p>Event name</p>
-            <input type="text" onChange={(e) => setEventName(e.target.value)}></input>
-            <p>Event Description</p>
-            <input type="text" onChange={(e) => setEventDescription(e.target.value)}></input>
+            <h2 className="greeting">Bem vindx, {session.user.email}</h2>
+            <div className="form-group">
+              <label>Início da Consulta</label>
+              <DatePicker
+                onChange={(date: Date) => setStart(date)}
+                selected={start}
+                showTimeSelect
+                dateFormat="Pp"
+                locale="pt-BR"
+                timeIntervals={15}
+              />
+            </div>
+            <div className="form-group">
+              <label>Final da Consulta</label>
+              <DatePicker
+                onChange={(date: Date) => setEnd(date)}
+                selected={end}
+                showTimeSelect
+                dateFormat="Pp"
+                locale="pt-BR"
+                timeIntervals={15}
+              />
+            </div>
+            <div className="form-group">
+              <label>Seu nome</label>
+              <input
+                type="text"
+                onChange={(e) => setEventName(e.target.value)}
+              ></input>
+            </div>
+            <div className="form-group">
+              <label>Seu Telefone Whatasapp</label>
+              <input
+                type="text"
+                onChange={(e) => setEventDescription(e.target.value)}
+              ></input>
+            </div>
             <hr />
-            <button onClick={() => createCalendarEvent()}>Create Calendar Event</button>
+            <button className="btn btn-primary" onClick={() => createCalendarEvent()}>
+              Agendar Consulta
+            </button>
             <p></p>
-            <button onClick={() => signOut()}>Sign Out</button>
+            <button className="btn btn-secondary" onClick={() => signOut()}>
+              Sign Out
+            </button>
           </>
         ) : (
           <>
-            <button onClick={() => googleSignIn()}>Sign in with google</button>
+            <button className="btn btn-google" onClick={() => googleSignIn()}>
+              Sign in with google
+            </button>
           </>
         )}
       </div>
