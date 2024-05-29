@@ -1,26 +1,26 @@
-@import '@radix-ui/colors/black-alpha.css';
-@import '@radix-ui/colors/green.css';
-@import '@radix-ui/colors/mauve.css';
-@import '@radix-ui/colors/violet.css';
 
 
 
+/* @import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/violet.css"; */
 
 /* reset */
-button,
+/* button,
 fieldset,
 input {
   all: unset;
 }
 
 .calendarEtime {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .calendario {
-    display: flex;
-    column-gap: 1rem;
+  display: flex;
+  column-gap: 1rem;
 }
 .DialogOverlay {
   background-color: var(--black-a9);
@@ -32,7 +32,8 @@ input {
 .DialogContent {
   background-color: white;
   border-radius: 6px;
-  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -144,18 +145,18 @@ input {
 }
 .Input:focus {
   box-shadow: 0 0 0 2px var(--violet-8);
-}
+} */
 
-@keyframes overlayShow {
+/* @keyframes overlayShow {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
-}
+} */
 
-@keyframes contentShow {
+/* @keyframes contentShow {
   from {
     opacity: 0;
     transform: translate(-50%, -48%) scale(0.96);
@@ -164,4 +165,4 @@ input {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-}
+} */

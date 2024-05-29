@@ -10,7 +10,9 @@ import {
 } from "@supabase/auth-helpers-react";
 import DateTimePicker from "react-datetime-picker";
 import { useState } from "react";
-// import '../BookApointment/book.css'
+import '../BookApointment/book.css'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function BookAppointment() {
   const [start, setStart] = useState(new Date())
@@ -77,15 +79,17 @@ export default function BookAppointment() {
   console.log(eventDescription)
 
   return (
-    <div>
+    <div className="container">
       <div style={{ width: "400px", margin: "30px auto" }}>
         {session ? (
           <>
             <h2>Hey there {session.user.email}</h2>
             <p>Start of your event</p>
-            <DateTimePicker onChange={(date) => setStart(date as Date)} value={start} />
+            <DatePicker onChange={(date:Date) => setStart(date)} selected={start} showTimeSelect dateFormat="Pp"/>
+            {/* <DateTimePicker onChange={(date) => setStart(date as Date)} value={start} />  */}
             <p>End of your event</p>
-            <DateTimePicker onChange={(date) => setEnd(date as Date)} value={end} />
+            {/* <DateTimePicker onChange={(date) => setEnd(date as Date)} value={end} />  */}
+            <DatePicker onChange={(date:Date) => setEnd(date)} selected={end} showTimeSelect dateFormat="Pp"/> 
             <p>Event name</p>
             <input type="text" onChange={(e) => setEventName(e.target.value)}></input>
             <p>Event Description</p>
