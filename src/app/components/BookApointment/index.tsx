@@ -13,8 +13,14 @@ import { useState } from "react";
 import '../BookApointment/book.css'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { registerLocale, setDefaultLocale } from "react-datepicker";
+import ptBR from 'date-fns/locale/pt-BR'
+
+
+registerLocale('pt-BR', ptBR) //funcionou mas tá com esse erro aqui
 
 export default function BookAppointment() {
+  
   const [start, setStart] = useState(new Date())
   const [end, setEnd] = useState(new Date())
   const [eventName, setEventName] = useState("")
@@ -85,11 +91,11 @@ export default function BookAppointment() {
           <>
             <h2>Hey there {session.user.email}</h2>
             <p>Start of your event</p>
-            <DatePicker onChange={(date:Date) => setStart(date)} selected={start} showTimeSelect dateFormat="Pp"/>
+            <DatePicker onChange={(date:Date) => setStart(date)} selected={start} showTimeSelect dateFormat="Pp" locale="pt-BR" timeIntervals={15}/>
             {/* <DateTimePicker onChange={(date) => setStart(date as Date)} value={start} />  */}
             <p>End of your event</p>
             {/* <DateTimePicker onChange={(date) => setEnd(date as Date)} value={end} />  */}
-            <DatePicker onChange={(date:Date) => setEnd(date)} selected={end} showTimeSelect dateFormat="Pp"/> 
+            <DatePicker onChange={(date:Date) => setEnd(date)} selected={end} showTimeSelect dateFormat="Pp" locale="pt-BR" timeIntervals={15}/> 
             <p>Event name</p>
             <input type="text" onChange={(e) => setEventName(e.target.value)}></input>
             <p>Event Description</p>
