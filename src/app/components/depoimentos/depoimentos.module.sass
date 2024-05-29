@@ -1,67 +1,77 @@
 .depoimentos
+  display: flex
+  align-items: center
+  justify-content: space-between
   padding: 20px
-  background: #f5f5f5
+  margin-top: 20px
+  background-color: #f9f9f9
+  border-radius: 10px
 
-  .textContainer
-    text-align: left
-    margin-bottom: 20px
-
-    .dizem
-      font-size: 1rem
-      color: #555
-
-    .title
-      font-size: 2rem
-      margin: 0
-      color: #333
-
-    .description
-      font-size: 1rem
-      color: #777
-
-  .swiper-container
-    width: 100%
-    padding: 20px 0
-
-  .swiper-slide
-    display: flex
+  @media (max-width: 768px)
     flex-direction: column
-    align-items: flex-start
 
-    .commentContainer
-      display: flex
-      flex-direction: column
-      align-items: flex-start
-      padding: 20px
-      background: #fff
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
-      border-radius: 8px
-      width: 100%
-      box-sizing: border-box
+.textContainer
+  flex: 0 0 35%
+  padding-right: 20px
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
 
-      .comentários
-        font-size: 1rem
-        color: #333
-        margin-bottom: 10px
+  @media (max-width: 768px)
+    padding-right: 0
+    margin-bottom: 20px
+    align-items: center
 
-      .userInfo
-        display: flex
-        align-items: center
+.commentContainer
+  flex: 1
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  padding: 20px
+  background: #fff
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+  border-radius: 8px
+  width: 100%
+  box-sizing: border-box
 
-        img
-          border-radius: 50%
-          margin-right: 10px
+.dizem
+  font-size: 1rem
+  color: #b35e45
+  margin-bottom: 10px
 
-        .nome
-          font-size: 1rem
-          color: #333
+.title
+  font-size: 2rem
+  color: #2e3a59
+  margin-bottom: 20px
 
-  .swiper-pagination-bullet
-    background: #333
+.description
+  font-size: 1rem
+  color: #333
+  margin-bottom: 15px
 
-  .swiper-pagination-bullet-active
-    background: #555
+.comentarios
+  font-size: 1rem
+  color: #333
+  margin-bottom: 15px
+  line-height: 1.6
 
-  .swiper-button-next,
-  .swiper-button-prev
-    color: #333
+.userInfo
+  display: flex
+  align-items: center
+  margin-top: 10px
+
+.nome
+  font-size: 1rem
+  color: #333
+  margin-left: 10px
+
+.swiper-pagination-bullet
+  background: #333
+
+.swiper-pagination-bullet-active
+  background: #555
+
+.swiper-button-next,
+.swiper-button-prev
+  color: #333

@@ -5,16 +5,22 @@ import Atuacao from "./components/atuacao";
 import Ajudar from "./components/ajudar";
 import Depoimentos from "./components/depoimentos";
 import Sobre from "./components/sobre";
+import Psicanalise from "./components/psicanalise";
+import Atencao from "./components/atencao";
+import SemiFooter from "./components/semifooter";
 
 const Home = () => {
   return (
     <>
       <Hero />
       <Atuacao />
+      <Psicanalise />
       <Ajudar />
       <Sobre />
       <Depoimentos />
+      <Atencao />
       <Contato />
+      <SemiFooter />
     </>
   );
 };
