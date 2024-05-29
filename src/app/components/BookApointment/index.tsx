@@ -10,9 +10,17 @@ import {
 } from "@supabase/auth-helpers-react";
 import DateTimePicker from "react-datetime-picker";
 import { useState } from "react";
-// import '../BookApointment/book.css'
+import '../BookApointment/book.css'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { registerLocale, setDefaultLocale } from "react-datepicker";
+import ptBR from 'date-fns/locale/pt-BR'
+
+
+registerLocale('pt-BR', ptBR) //funcionou mas tá com esse erro aqui
 
 export default function BookAppointment() {
+  
   const [start, setStart] = useState(new Date())
   const [end, setEnd] = useState(new Date())
   const [eventName, setEventName] = useState("")
@@ -77,27 +85,61 @@ export default function BookAppointment() {
   console.log(eventDescription)
 
   return (
-    <div>
-      <div style={{ width: "400px", margin: "30px auto" }}>
+    <div className="conteiner">
+      <div className="appointment-form">
         {session ? (
           <>
-            <h2>Hey there {session.user.email}</h2>
-            <p>Start of your event</p>
-            <DateTimePicker onChange={(date) => setStart(date as Date)} value={start} />
-            <p>End of your event</p>
-            <DateTimePicker onChange={(date) => setEnd(date as Date)} value={end} />
-            <p>Event name</p>
-            <input type="text" onChange={(e) => setEventName(e.target.value)}></input>
-            <p>Event Description</p>
-            <input type="text" onChange={(e) => setEventDescription(e.target.value)}></input>
+            <h2 className="greeting">Bem vindx, {session.user.email}</h2>
+            <div className="form-group">
+              <label>Início da Consulta</label>
+              <DatePicker
+                onChange={(date: Date) => setStart(date)}
+                selected={start}
+                showTimeSelect
+                dateFormat="Pp"
+                locale="pt-BR"
+                timeIntervals={15}
+              />
+            </div>
+            <div className="form-group">
+              <label>Final da Consulta</label>
+              <DatePicker
+                onChange={(date: Date) => setEnd(date)}
+                selected={end}
+                showTimeSelect
+                dateFormat="Pp"
+                locale="pt-BR"
+                timeIntervals={15}
+              />
+            </div>
+            <div className="form-group">
+              <label>Seu nome</label>
+              <input
+                type="text"
+                onChange={(e) => setEventName(e.target.value)}
+              ></input>
+            </div>
+            <div className="form-group">
+              <label>Seu Telefone Whatasapp</label>
+              <input
+                type="text"
+                onChange={(e) => setEventDescription(e.target.value)}
+              ></input>
+            </div>
             <hr />
-            <button onClick={() => createCalendarEvent()}>Create Calendar Event</button>
+            <button className="btn btn-primary" onClick={() => createCalendarEvent()}>
+              Agendar Consulta
+            </button>
             <p></p>
-            <button onClick={() => signOut()}>Sign Out</button>
+            <button className="btn btn-secondary" onClick={() => signOut()}>
+              Sign Out
+            </button>
           </>
         ) : (
           <>
-            <button onClick={() => googleSignIn()}>Sign in with google</button>
+            <button className="btn btn-google" onClick={() => googleSignIn()}>
+              Sign in with google
+            </button>
           </>
         )}
       </div>
