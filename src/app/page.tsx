@@ -1,11 +1,19 @@
 import React from "react";
 import Hero from "./components/hero";
 import Contato from "./contato/page";
+import Atuacao from "./components/atuacao";
+import Ajudar from "./components/ajudar";
+import Depoimentos from "./components/depoimentos";
+import Sobre from "./components/sobre";
 
 const Home = () => {
   return (
     <>
       <Hero />
+      <Atuacao />
+      <Ajudar />
+      <Sobre />
+      <Depoimentos />
       <Contato />
     </>
   );

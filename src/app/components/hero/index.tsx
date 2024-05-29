@@ -1,9 +1,10 @@
-'use client'
+"use client";
 
 import React from "react";
 import styles from "./hero.module.sass";
 import Image from "next/image";
 import Link from "next/link";
+import BtnAgende from "../btnAgende";
 
 const Hero = () => {
   return (
@@ -11,7 +12,8 @@ const Hero = () => {
       <div className={`${styles.homePage}`}>
         <Image src="/hero2.png" alt="Rode Ziembick" width={700} height={600} />
         <div>
-          <h1 className={styles.h1}>Psicanalista</h1>
+          <h3 className={styles.h1}>Psicanalista</h3>
+          <h1 className={styles.h1}>Rode Ziembick</h1>
           <h4 className={`${styles.h1} pr-10`}>
             Meu propósito é <strong>Ajudar Você</strong> a ter mais qualidade de
             vida com saúde mental e emocional
@@ -19,22 +21,6 @@ const Hero = () => {
           <h5 className={styles.h1}>
             <strong>Cuide de você</strong>
           </h5>
-          <button
-            className={styles.btn}
-            onClick={() => {
-              const whatsappUrl = `https://wa.me/5511970997779?text=Olá, gostaria de agendar uma consulta!`;
-              window.open(whatsappUrl, "_blank");
-            }}
-          >
-            Agende sua consulta
-            <Image
-              src="/whatsapp.svg"
-              alt="Whatsapp"
-              width={20}
-              height={20}
-              className={`${styles.btnWp}`}
-            />
-          </button>
           <p className={`${styles.ptag} pt-10`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -88,10 +74,11 @@ const Hero = () => {
             </svg>
             Atendimento online para adultos e idosos
           </p>
+          <BtnAgende />
         </div>
       </div>
     </>
   );
 };
 
-export default Hero
+export default Hero;
