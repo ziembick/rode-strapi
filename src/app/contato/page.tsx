@@ -1,12 +1,14 @@
 import React from "react";
 import BookAppointment from "../components/BookApointment";
+import styles from "./contato.module.sass";
 
 const Contato = () => {
   return (
     <div className="container">
-      <div className="h1">Contato</div>
-      {/* <button className="mt-10">Agendar via calendario</button> */}
-      <BookAppointment />
+      <h1 className={styles.contato}>Contato</h1>
+      <div>
+        <BookAppointment />
+      </div>
     </div>
   );
 };

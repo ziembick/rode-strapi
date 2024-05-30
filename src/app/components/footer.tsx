@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
         <div className='container'>
             <hr className='mb-30'/>
-            <p>&copy; Rode Ziembick</p>
+            <p>&copy;  2024 – Todos os direitos reservados. Psicanalista Rode Ziembick.</p>
         </div>
     </footer>
   )
