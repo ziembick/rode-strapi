@@ -10,6 +10,7 @@ import {
   useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 import AppProviders from "./AppProviders";
+import Header from "./components/header";
 
 // import "./globals.css";
 
