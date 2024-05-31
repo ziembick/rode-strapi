@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Baloo_2, Inter, Lato, Open_Sans } from "next/font/google";
 import "../styles/styles.sass";
 import Footer from "./components/footer";
-import { Header } from "./components/header";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { createClient } from "@supabase/supabase-js";
 import {
@@ -51,10 +50,8 @@ export default function RootLayout({
       <html lang="pt-BR">
         <body
           className={` ${openSans.className} ${openSans.variable} ${lato.variable} ${baloo.variable} ${baloo.className}`}
-        >
-          <Header />
+        > 
           {children}
-
           <Footer />
         </body>
       </html>

@@ -1,4 +1,6 @@
-import React from "react";
+'use client'
+
+import React, { useRef } from "react";
 import Hero from "./components/hero";
 import Contato from "./contato/page";
 import Atuacao from "./components/atuacao";
@@ -8,78 +10,48 @@ import Sobre from "./components/sobre";
 import Psicanalise from "./components/psicanalise";
 import Atencao from "./components/atencao";
 import SemiFooter from "./components/semifooter";
+import Header from "./components/header";
 
 const Home = () => {
+  const heroRef = useRef(null);
+  const atuacaoRef = useRef(null);
+  const psicanaliseRef = useRef(null);
+  const ajudarRef = useRef(null);
+  const sobreRef = useRef(null);
+  const depoimentosRef = useRef(null);
+  const atencaoRef = useRef(null);
+  const contatoRef = useRef(null);
+
+  const scrollToSection = (sectionRef: any) => {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <Hero />
-      <Atuacao />
-      <Psicanalise />
-      <Ajudar />
-      <Sobre />
-      <Depoimentos />
-      <Atencao />
-      <Contato />
+      <Header
+        scrollToSection={scrollToSection}
+        refs={{
+          heroRef,
+          atuacaoRef,
+          psicanaliseRef,
+          ajudarRef,
+          sobreRef,
+          depoimentosRef,
+          atencaoRef,
+          contatoRef,
+        }}
+      />
+      <div ref={heroRef}><Hero /></div>
+      <div ref={atuacaoRef}><Atuacao /></div>
+      <div ref={psicanaliseRef}><Psicanalise /></div>
+      <div ref={ajudarRef}><Ajudar /></div>
+      <div ref={sobreRef}><Sobre /></div>
+      <div ref={depoimentosRef}><Depoimentos /></div>
+      <div ref={atencaoRef}><Atencao /></div>
+      <div ref={contatoRef}><Contato /></div>
       <SemiFooter />
     </>
   );
 };
 
 export default Home;
-
-// import Card from "./components/card/card";
-// import { iconType } from "./components/button/button";
-
-// const Home = () => {
-//   return (
-//     <div className="container pb-80">
-//       <Card
-//         className="mb-30"
-//         label="Product Review"
-//         title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quod!"
-//         summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-//             similique aliquid suscipit facilis magnam deserunt quibusdam quidem
-//             nulla! Quia, ipsum."
-//         href="#"
-//         btnIcon={iconType.ARROW_RIGHT}
-//       />
-//       <div className="row">
-//         <div className="col col_4 m-mw-100">
-//           <Card
-//             label="Opinions"
-//             title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quod!"
-//             summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-//             similique aliquid suscipit facilis magnam deserunt quibusdam quidem
-//             nulla! Quia, ipsum."
-//             href="#"
-//             btnIcon={iconType.ARROW_RIGHT}
-//           />
-//         </div>
-//         <div className="col col_4 m-mw-100">
-//           <Card
-//             label="Travel Guides"
-//             title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quod!"
-//             summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-//             similique aliquid suscipit facilis magnam deserunt quibusdam quidem
-//             nulla! Quia, ipsum."
-//             href="#"
-//             btnIcon={iconType.ARROW_RIGHT}
-//           />
-//         </div>
-//         <div className="col col_4 m-mw-100">
-//           <Card
-//             label="Product Review"
-//             title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quod!"
-//             summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-//             similique aliquid suscipit facilis magnam deserunt quibusdam quidem
-//             nulla! Quia, ipsum."
-//             href="#"
-//             btnIcon={iconType.ARROW_RIGHT}
-//           />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
