@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./header.module.sass";
 import { NavItem } from "./nav-item";
@@ -17,7 +17,7 @@ const NAV_ITEMS: NavItemType[] = [
   { label: "Sobre mim", refKey: "sobreRef" },
   { label: "Depoimentos", refKey: "depoimentosRef" },
   { label: "Contato", refKey: "contatoRef" },
-  { label: "Posts", href: "/posts" }
+  { label: "Posts", href: "/posts" },
 ];
 
 interface SectionRefs {
@@ -37,15 +37,32 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className={`${styles.navItems} container`}>
+    <nav className={`${styles.navItems} ${isScrolled ? styles.scrolled : ""}`}>
       <div className={styles.imageContainer}>
         <Link href="/">
           <Image
-            src="/rlogo3.png"
+            src="/rwhite.png"
             alt="Logo"
-            width={50}
-            height={70}
+            width={56}
+            height={73}
             className={`${styles.logo} pt-10`}
           />
         </Link>
@@ -60,11 +77,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
               onClick={() => scrollToSection(refs[item.refKey!])}
             />
           ) : (
-            <NavItem
-              key={item.label}
-              label={item.label}
-              href={item.href}
-            />
+            <NavItem key={item.label} label={item.label} href={item.href} />
           )
         )}
       </div>
