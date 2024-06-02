@@ -43,10 +43,10 @@ const Home = () => {
       />
       <div ref={heroRef}><Hero /></div>
       <div ref={atuacaoRef}><Atuacao /></div>
+      <div ref={depoimentosRef}><Depoimentos /></div>
       <div ref={psicanaliseRef}><Psicanalise /></div>
       <div ref={ajudarRef}><Ajudar /></div>
       <div ref={sobreRef}><Sobre /></div>
-      <div ref={depoimentosRef}><Depoimentos /></div>
       <div ref={atencaoRef}><Atencao /></div>
       <div ref={contatoRef}><Contato /></div>
       <SemiFooter />
