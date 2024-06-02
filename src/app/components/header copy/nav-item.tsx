@@ -5,21 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from './header.module.sass';
 
-type NavItemProps = {
-  label: string;
-  href?: string;
-  onClick?: () => void; // onClick é opcional
-};
-
-export const NavItem: React.FC<NavItemProps> = ({ label, href, onClick }) => {
+export const NavItem2 = ({label, href}: any) => {
   const pathname = usePathname();
   const isActive = href && pathname === href;
 
-  return onClick ? (
-    <div className={`${styles.nav} ${isActive ? styles.active : ''}`} onClick={onClick}>
-      {label}
-    </div>
-  ) : (
+  return (
+
     <Link href={href || "#"} className={`${styles.nav} ${isActive ? styles.active : ''}`}>
       {label}
     </Link>

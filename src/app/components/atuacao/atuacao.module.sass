@@ -12,8 +12,9 @@
   margin-bottom: 20px
 
 .grid
-  display: grid
-  grid-template-columns: repeat(3, 1fr)
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
   gap: 20px
 
 .card
@@ -26,6 +27,12 @@
   display: flex
   flex-direction: column
   align-items: center
+  width: 373px
+  height: 570px
+  margin: 10px
+  margin-bottom: 40px
+  &:hover
+    cursor: pointer
 
 .card_image
   margin-bottom: 15px
@@ -38,3 +45,20 @@
   font-size: 1rem
   line-height: 1.5
   color: #555
+  text-align: justify
+  overflow: auto
+
+
+.swiper-pagination
+  position: relative
+  bottom: -20px !important // Forçando a posição
+
+.swiper-pagination-bullet
+  background: #333 !important
+
+.swiper-pagination-bullet-active
+  background: #555 !important
+
+.swiper-button-next,
+.swiper-button-prev
+  color: #333 !important
