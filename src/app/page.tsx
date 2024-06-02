@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Hero from "./components/hero";
 import Contato from "./contato/page";
 import Atuacao from "./components/atuacao";
@@ -26,6 +26,14 @@ const Home = () => {
     sectionRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = '/bgfull.png'
+    img.onload = () => setBackgroundImage(img.src)
+  }, [])
+
   return (
     <>
       <Header
@@ -41,14 +49,35 @@ const Home = () => {
           contatoRef,
         }}
       />
-      <div ref={heroRef}><Hero /></div>
-      <div ref={atuacaoRef}><Atuacao /></div>
-      <div ref={depoimentosRef}><Depoimentos /></div>
-      <div ref={psicanaliseRef}><Psicanalise /></div>
-      <div ref={ajudarRef}><Ajudar /></div>
-      <div ref={sobreRef}><Sobre /></div>
-      <div ref={atencaoRef}><Atencao /></div>
-      <div ref={contatoRef}><Contato /></div>
+      <div ref={heroRef}>
+        <Hero />
+      </div>
+      <div ref={atuacaoRef}>
+        <Atuacao />
+      </div>
+      <div
+        className="backgroundContainer"
+        style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none' }}
+      >
+        <div ref={depoimentosRef}>
+          <Depoimentos />
+        </div>
+        <div ref={psicanaliseRef}>
+          <Psicanalise />
+        </div>
+      </div>
+      <div ref={ajudarRef}>
+        <Ajudar />
+      </div>
+      <div ref={sobreRef}>
+        <Sobre />
+      </div>
+      <div ref={atencaoRef}>
+        <Atencao />
+      </div>
+      <div ref={contatoRef}>
+        <Contato />
+      </div>
       <SemiFooter />
     </>
   );

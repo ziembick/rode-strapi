@@ -5,11 +5,8 @@ import Image from "next/image";
 export default function Psicanalise() {
   return (
     <div className={`${styles.psicanalise} container`}>
+      <h1 className={styles.title}>O que é Psicanalise</h1>
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>O que é Psicanalise</h1>
-        <h6 className={`${styles.description} mt-10 mb-10`}>
-          Um pouco sobre o tema
-        </h6>
         <p className={styles.texto}>
           A psicanálise, criada por Sigmund Freud no final do século XIX, é uma
           teoria e prática terapêutica que revolucionou a compreensão da mente
@@ -40,9 +37,9 @@ export default function Psicanalise() {
           o tratamento de distúrbios psicológicos. 
         </p>
       </div>
-      <div className={styles.imageContainer}>
-        <Image src="/ilustra.svg" alt="Psicanálise" width={500} height={600} />
-      </div>
+      {/* <div className={styles.imageContainer}>
+        <Image src="/mulher.png" alt="Psicanálise" width={330} height={635} className={styles.imageMulher}/>
+      </div> */}
     </div>
   );
 }

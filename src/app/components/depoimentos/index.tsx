@@ -38,11 +38,7 @@ export default function Depoimentos() {
   return (
     <div className={`${styles.depoimentosContainer} container`}>
       <div className={styles.textContainer}>
-        <h6 className={styles.dizem}>O que dizem os pacientes</h6>
         <h1 className={styles.title}>Depoimentos</h1>
-        <p className={styles.description}>
-          Comentários retirados do Google Meu Negócio
-        </p>
       </div>
       <Swiper
         spaceBetween={30}
