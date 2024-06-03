@@ -26,12 +26,7 @@ const DEPOIMENTOS = [
     nome: "Mariana Oliveira",
     image: "/anon.webp",
   },
-  {
-    comentario:
-      "Depois de anos sofrendo com estresse crônico no trabalho, finalmente encontrei alívio na psiquiatra. A Dra. Rode Zembrick me guiou com empatia e profissionalismo, e agora me sinto mais segura e confiante para enfrentar os desafios do dia a dia. Recomendo a todos que buscam uma vida melhor.",
-    nome: "Mariana Oliveira",
-    image: "/anon.webp",
-  },
+
 ];
 
 export default function Depoimentos() {
