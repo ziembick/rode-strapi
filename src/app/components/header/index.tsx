@@ -38,14 +38,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -53,6 +50,17 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleNavItemClick = (refKey?: keyof SectionRefs) => {
+    if (refKey) {
+      scrollToSection(refs[refKey]);
+    }
+    setMenuOpen(false);
+  };
 
   return (
     <nav className={`${styles.navItems} ${isScrolled ? styles.scrolled : ""}`}>
@@ -73,14 +81,36 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
             <NavItem
               key={item.label}
               label={item.label}
-              href="#"
-              onClick={() => scrollToSection(refs[item.refKey!])}
+              onClick={() => handleNavItemClick(item.refKey)}
             />
           ) : (
             <NavItem key={item.label} label={item.label} href={item.href} />
           )
         )}
       </div>
+      <button className={styles.hamburger} onClick={toggleMenu}>
+        ☰
+      </button>
+      {menuOpen && (
+        <div className={styles.mobileNav}>
+          {NAV_ITEMS.map((item) =>
+            item.refKey ? (
+              <NavItem
+                key={item.label}
+                label={item.label}
+                onClick={() => handleNavItemClick(item.refKey)}
+              />
+            ) : (
+              <NavItem
+                key={item.label}
+                label={item.label}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+              />
+            )
+          )}
+        </div>
+      )}
     </nav>
   );
 };

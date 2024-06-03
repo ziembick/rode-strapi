@@ -11,6 +11,7 @@ import Psicanalise from "./components/psicanalise";
 import Atencao from "./components/atencao";
 import SemiFooter from "./components/semifooter";
 import Header from "./components/header";
+import BackToTop from "./components/back-to-top";
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -29,10 +30,10 @@ const Home = () => {
   const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
 
   useEffect(() => {
-    const img = new Image()
-    img.src = '/bgfull.png'
-    img.onload = () => setBackgroundImage(img.src)
-  }, [])
+    const img = new Image();
+    img.src = "/bgfull.svg";
+    img.onload = () => setBackgroundImage(img.src);
+  }, []);
 
   return (
     <>
@@ -52,12 +53,16 @@ const Home = () => {
       <div ref={heroRef}>
         <Hero />
       </div>
+
       <div ref={atuacaoRef}>
         <Atuacao />
       </div>
+
       <div
         className="backgroundContainer"
-        style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none' }}
+        style={{
+          backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
+        }}
       >
         <div ref={depoimentosRef}>
           <Depoimentos />
