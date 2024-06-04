@@ -55,7 +55,7 @@ export default function RootLayout({
           className={` ${openSans.className} ${openSans.variable} ${lato.variable} ${baloo.variable} ${baloo.className}`}
         > 
         <WhatsAppBtn />
-        <BackToTop />
+        {/* <BackToTop /> */}
           {children}
           <Footer />
         </body>
