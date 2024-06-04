@@ -6,27 +6,27 @@ import styles from "./depoimentos.module.sass";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Pagination } from "swiper/modules";
+import { IoIosStar } from "react-icons/io";
 
 const DEPOIMENTOS = [
   {
     comentario:
       "A psiquiatra transformou minha vida. Aprendi a lidar melhor com a ansiedade e encontrei um equilíbrio emocional que nunca pensei ser possível. A Dra. Rode Zembrick tem sido um pilar de apoio e crescimento em minha jornada. Sou muito grata pelo apoio e atenção contínua que recebo aqui.",
-    nome: "Ana Silva",
+    nome: "A.S",
     image: "/anon.webp",
   },
   {
     comentario:
       "Enfrentar a depressão foi um dos maiores desafios da minha vida, mas com a psiquiatra, consegui entender minhas emoções e encontrar caminhos para a recuperação. A Dra. Rode Zembrick me ajudou a reencontrar minha força e resiliência. Agradeço imensamente por todo o suporte e orientação.",
-    nome: "Carlos Mendes",
+    nome: "C.M",
     image: "/anon.webp",
   },
   {
     comentario:
       "Depois de anos sofrendo com estresse crônico no trabalho, finalmente encontrei alívio na psiquiatra. A Dra. Rode Zembrick me guiou com empatia e profissionalismo, e agora me sinto mais segura e confiante para enfrentar os desafios do dia a dia. Recomendo a todos que buscam uma vida melhor.",
-    nome: "Mariana Oliveira",
+    nome: "M.O",
     image: "/anon.webp",
   },
-
 ];
 
 export default function Depoimentos() {
@@ -57,7 +57,16 @@ export default function Depoimentos() {
                   width={40}
                   height={40}
                 />
-                <h6 className={styles.nome}>{depoimento.nome}</h6>
+                <div className={styles.nomeEstar}>
+                  <h6 className={styles.nome}>{depoimento.nome}</h6>
+                  <div className={styles.starContainer}>
+                  <IoIosStar size={20} className={styles.star} />
+                  <IoIosStar size={20} className={styles.star} />
+                  <IoIosStar size={20} className={styles.star} />
+                  <IoIosStar size={20} className={styles.star} />
+                  <IoIosStar size={20} className={styles.star} />
+                  </div>
+                </div>
               </div>
             </div>
           </SwiperSlide>

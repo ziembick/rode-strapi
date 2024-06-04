@@ -12,13 +12,27 @@
   justify-content: flex-start
   align-items: flex-start
   flex-direction: column
+  font-family: var(--font-baloo2)
+  color: #F4B2BE
+  text-align: justify
+
+  @media screen and (max-width: 768px)
+    max-width: none
+    text-align: justify
+    display: flex
+    flex-direction: column
 
 .texto
   text-align: justify
   width: 900px
 
-.testando
-  display: flex
-  justify-content: center
-  align-items: center
+  @media screen and (max-width: 768px)
+    width: 100%
 
+.title
+  font-family: var(--font-baloo2)
+  color: #F4B2BE
+  margin-bottom: 1rem
+
+  @media screen and (max-width: 768px)
+    font-size: 2rem

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./btn.module.sass"
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function BtnAgende() {
   return (
@@ -15,13 +16,7 @@ export default function BtnAgende() {
         }}
       >
         Agende sua consulta
-        <Image
-          src="/whatsapp.svg"
-          alt="Whatsapp"
-          width={20}
-          height={20}
-          className={`${styles.btnWp}`}
-        />
+        <FaWhatsapp size={20} className={styles.btnWp}/>
       </button>
     </>
   );

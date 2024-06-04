@@ -1,20 +1,29 @@
 .btn
-  background-color: #E77F80
+  background-color: #80C0DD
   color: #fff
-  margin-top: 10px
-  padding: 15px 30px
+  justify-content: center
   text-align: center
   font-family: var(--font-baloo2)
-  font-size: 1.05rem
+  font-weight: 500
+  font-size: 1rem
+  height: 51px
+  width: 306px
   text-decoration: none
-  display: inline-block
-  border-radius: 12px
-  transition: background-color 0.3s
+  border-radius: 25px
+  transition: background-color 0.3s, box-shadow 0.3s
+  display: flex
+  align-items: center
+  justify-content: center
+  border: none  
+  outline: none 
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.7) 
 
   &:hover
-    background-color: darken(#E77F80, 10%)
+    background-color: darken(#80C0DD, 10%)
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4), 0 6px 8px rgba(0, 0, 0, 0.2) 
+
+  &:focus
+    outline: none 
 
 .btnWp
-  position: relative
-  left: 0.4rem
-  top: 0.2rem
+  margin-left: 0.5rem 

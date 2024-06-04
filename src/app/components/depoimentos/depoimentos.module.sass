@@ -1,13 +1,31 @@
+.star
+  color: #F1E14B
+  margin-right: 0.3rem
+
+
+.nomeEstar
+  display: flex
+  flex-direction: row
+  gap: 10rem
+  align-items: center
+
+  @media screen and (max-width: 768px)
+    gap: 9rem
+
+
+.starContainer
+  margin-right: 10px
+
 .textContainer
   display: flex
   justify-content: center
   align-items: flex-start
   flex-direction: column
 
+
 .commentContainer
   background: #fff
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
-  border-radius: 8px
+  border-radius: 20px
   padding: 0.9rem
   box-sizing: border-box
   display: flex
@@ -15,10 +33,24 @@
   align-items: flex-start
   flex-direction: column
   width: 100%
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+  margin-bottom: 100px
+  margin-left: 10px
+  
+
+.title
+  font-family: var(--font-baloo2)
+  color: #F4B2BE
 
 .comentarios
+  font-family: var(--font-baloo2)
+  color: #F4B2BE
+  font-weight: 100
   font-size: 1rem
 
+.nome
+  font-family: var(--font-baloo2)
+  color: #F4B2BE
 
 // .commentContainer
 //   display: flex
