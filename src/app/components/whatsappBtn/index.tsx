@@ -16,8 +16,8 @@ export default function WhatsAppBtn() {
   };
 
   const handleScroll = useCallback(() => {
-    if (!show && window.scrollY > 500) setShow(true);
-    if (show && window.scrollY <= 500) setShow(false);
+    if (!show && window.scrollY > 300) setShow(true);
+    if (show && window.scrollY <= 300) setShow(false);
   }, [show]);
 
   useEffect(() => {

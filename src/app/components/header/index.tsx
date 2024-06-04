@@ -39,17 +39,26 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<keyof SectionRefs | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
+
+      const sections = Object.entries(refs).map(([key, ref]) => ({
+        key,
+        top: ref.current?.getBoundingClientRect().top,
+      }));
+
+      const active = sections.find((section) => section.top && section.top <= window.innerHeight / 2 && section.top >= 0);
+      setActiveSection(active ? (active.key as keyof SectionRefs) : null);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [refs]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -64,53 +73,58 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
 
   return (
     <nav className={`${styles.navItems} ${isScrolled ? styles.scrolled : ""}`}>
-      <div className={styles.imageContainer}>
-        <Link href="/">
-          <Image
-            src="/rwhite.png"
-            alt="Logo"
-            width={56}
-            height={73}
-            className={`${styles.logo} pt-10`}
-          />
-        </Link>
-      </div>
-      <div className={styles.desktopNav}>
-        {NAV_ITEMS.map((item) =>
-          item.refKey ? (
-            <NavItem
-              key={item.label}
-              label={item.label}
-              onClick={() => handleNavItemClick(item.refKey)}
+      <div className={`${styles.container} container`}>
+        <div className={styles.imageContainer}>
+          <Link href="/">
+            <Image
+              src="/rwhite.png"
+              alt="Logo"
+              width={56}
+              height={73}
+              className={`${styles.logo} pt-10`}
             />
-          ) : (
-            <NavItem key={item.label} label={item.label} href={item.href} />
-          )
-        )}
-      </div>
-      <button className={styles.hamburger} onClick={toggleMenu}>
-        ☰
-      </button>
-      {menuOpen && (
-        <div className={styles.mobileNav}>
+          </Link>
+        </div>
+        <div className={styles.desktopNav}>
           {NAV_ITEMS.map((item) =>
             item.refKey ? (
               <NavItem
                 key={item.label}
                 label={item.label}
                 onClick={() => handleNavItemClick(item.refKey)}
+                isActive={item.refKey === activeSection}
               />
             ) : (
-              <NavItem
-                key={item.label}
-                label={item.label}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-              />
+              <NavItem key={item.label} label={item.label} href={item.href} isActive={item.href === '/posts' && activeSection === null}/>
             )
           )}
         </div>
-      )}
+        <button className={styles.hamburger} onClick={toggleMenu}>
+          ☰
+        </button>
+        {menuOpen && (
+          <div className={styles.mobileNav}>
+            {NAV_ITEMS.map((item) =>
+              item.refKey ? (
+                <NavItem
+                  key={item.label}
+                  label={item.label}
+                  onClick={() => handleNavItemClick(item.refKey)}
+                  isActive={item.refKey === activeSection}
+                />
+              ) : (
+                <NavItem
+                  key={item.label}
+                  label={item.label}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  isActive={item.href === '/posts' && activeSection === null}
+                />
+              )
+            )}
+          </div>
+        )}
+      </div>
     </nav>
   );
 };
