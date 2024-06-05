@@ -9,7 +9,6 @@ export default function Sobre() {
   return (
     <div className={`${styles.sobre} container`}>
       <div className={styles.textContainer}>
-        <h4 className={styles.title}>Psicanalista</h4>
         <h1 className={styles.mainTitle}>Sobre mim</h1>
         <p className={styles.description}>
           Olá muito prazer, tudo bem? Meu nome é Marianne sou Psicóloga Clínica
@@ -36,7 +35,7 @@ export default function Sobre() {
         <BtnAgende />
       </div>
       <div className={styles.imageContainer}>
-        <Image src="/sobreMim.JPG" alt="Sobre mim" width={600} height={400} className={styles.imagem}/>
+        <Image src="/sobreMim1.svg" alt="Sobre mim" width={600} height={400} className={styles.imagem}/>
       </div>
     </div>
   );
