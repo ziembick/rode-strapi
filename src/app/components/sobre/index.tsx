@@ -9,7 +9,6 @@ export default function Sobre() {
   return (
     <div className={`${styles.sobre} container`}>
       <div className={styles.textContainer}>
-        <h4 className={styles.title}>Psicanalista</h4>
         <h1 className={styles.mainTitle}>Sobre mim</h1>
         <p className={styles.description}>
           Olá muito prazer, tudo bem? Meu nome é Marianne sou Psicóloga Clínica
