@@ -34,7 +34,9 @@ export default function Sobre() {
             transforme o mundo através da promoção de saúde mental de forma
             universal.
           </p>
-          <BtnAgende />
+          <div className={styles.btnAgende}>
+            <BtnAgende />
+          </div>
         </div>
         <div className={styles.imageContainer}>
           <Image

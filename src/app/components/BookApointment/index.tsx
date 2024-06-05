@@ -10,21 +10,20 @@ import {
 } from "@supabase/auth-helpers-react";
 import DateTimePicker from "react-datetime-picker";
 import { useState } from "react";
-import '../BookApointment/book.css'
+import "../BookApointment/book.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from "react-datepicker";
-import ptBR from 'date-fns/locale/pt-BR'
+import ptBR from "date-fns/locale/pt-BR";
+import Image from "next/image";
 
-
-registerLocale('pt-BR', ptBR) //funcionou mas tá com esse erro aqui
+registerLocale("pt-BR", ptBR); //funcionou mas tá com esse erro aqui
 
 export default function BookAppointment() {
-  
-  const [start, setStart] = useState(new Date())
-  const [end, setEnd] = useState(new Date())
-  const [eventName, setEventName] = useState("")
-  const [eventDescription, setEventDescription] = useState("")
+  const [start, setStart] = useState(new Date());
+  const [end, setEnd] = useState(new Date());
+  const [eventName, setEventName] = useState("");
+  const [eventDescription, setEventDescription] = useState("");
 
   const session = useSession(); //tokensa
   const supabase = useSupabaseClient(); //talk to supabase
@@ -52,98 +51,131 @@ export default function BookAppointment() {
   }
 
   async function createCalendarEvent() {
-    console.log("creating calendar event")
+    console.log("creating calendar event");
     const event = {
-      'summary': eventName,
-      'description': eventDescription,
-      'start': {
-        'dateTime': start.toISOString(), //Date.toISOString()
-        'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
+      summary: eventName,
+      description: eventDescription,
+      start: {
+        dateTime: start.toISOString(), //Date.toISOString()
+        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
       },
-      'end': {
-        'dateTime': end.toISOString(), //Date.toISOString()
-        'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
+      end: {
+        dateTime: end.toISOString(), //Date.toISOString()
+        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      },
+    };
+    await fetch(
+      "https://www.googleapis.com/calendar/v3/calendars/primary/events",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + session?.provider_token, // access token for google
+        },
+        body: JSON.stringify(event),
       }
-    }
-    await fetch("https://www.googleapis.com/calendar/v3/calendars/primary/events", {
-      method: "POST",
-      headers: {
-        Authorization: 'Bearer ' + session?.provider_token // access token for google
-      },
-      body: JSON.stringify(event)
-    }).then((data) => {
-      return data.json()
-    }).then((data) => {
-      console.log('Created Event', data)
-      alert("Event created, check your google calendar")
-    })
+    )
+      .then((data) => {
+        return data.json();
+      })
+      .then((data) => {
+        console.log("Created Event", data);
+        alert("Event created, check your google calendar");
+      });
   }
 
   console.log(session);
-  console.log(start)
-  console.log(eventName)
-  console.log(eventDescription)
+  console.log(start);
+  console.log(eventName);
+  console.log(eventDescription);
 
   return (
-    <div className="conteiner">
-      <div className="appointment-form">
-        {session ? (
-          <>
-            <h2 className="greeting">Bem vindx, {session.user.email}</h2>
-            <div className="form-group">
-              <label>Início da Consulta</label>
-              <DatePicker
-                onChange={(date: Date) => setStart(date)}
-                selected={start}
-                showTimeSelect
-                dateFormat="Pp"
-                locale="pt-BR"
-                timeIntervals={15}
-              />
+      <div className="conteiner">
+        <div className="appointment-form">
+          {session ? (
+            <>
+              <h2 className="greeting">Olá, {session.user.email}</h2>
+              <div className="form-group">
+                <label>Início da Consulta</label>
+                <DatePicker
+                  onChange={(date: Date) => setStart(date)}
+                  selected={start}
+                  showTimeSelect
+                  dateFormat="Pp"
+                  locale="pt-BR"
+                  timeIntervals={15}
+                />
+              </div>
+              <div className="form-group">
+                <label>Final da Consulta</label>
+                <DatePicker
+                  onChange={(date: Date) => setEnd(date)}
+                  selected={end}
+                  showTimeSelect
+                  dateFormat="Pp"
+                  locale="pt-BR"
+                  timeIntervals={15}
+                />
+              </div>
+              <div className="form-group">
+                <label>Seu nome</label>
+                <input
+                  type="text"
+                  onChange={(e) => setEventName(e.target.value)}
+                ></input>
+              </div>
+              <div className="form-group">
+                <label>Seu Telefone Whatasapp</label>
+                <input
+                  type="text"
+                  onChange={(e) => setEventDescription(e.target.value)}
+                ></input>
+              </div>
+              <hr />
+              <button
+                className="btn btn-primary"
+                onClick={() => createCalendarEvent()}
+              >
+                Agendar Consulta
+              </button>
+              <p></p>
+              <button className="btn btn-secondary" onClick={() => signOut()}>
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <>
+              <button className="btn btn-google" onClick={() => googleSignIn()}>
+                Agende sua consulta pelo Google
+              </button>
+            </>
+          )}
+        </div>
+        <div className="atencao-container">
+          <div className="atencao">
+            <div className="imageContainer">
+              <Image src="/alerta.svg" alt="Atencao" width={90} height={90} />
             </div>
-            <div className="form-group">
-              <label>Final da Consulta</label>
-              <DatePicker
-                onChange={(date: Date) => setEnd(date)}
-                selected={end}
-                showTimeSelect
-                dateFormat="Pp"
-                locale="pt-BR"
-                timeIntervals={15}
-              />
+            <div className="textContainer">
+              <h1 className="title">Atenção!</h1>
+              <p className="description">
+                Esse site não oferece atendimento imediato a paessoas em crise
+                suicida. Em caso de crise ligue para o{" "}
+                <strong>CVV - 188</strong>. Em caso de emergência, procure o
+                hospital mais próximo. Havendo risco de morte, ligue
+                imediatamente para o <strong>SAMU - telefone 192</strong>
+              </p>
             </div>
-            <div className="form-group">
-              <label>Seu nome</label>
-              <input
-                type="text"
-                onChange={(e) => setEventName(e.target.value)}
-              ></input>
-            </div>
-            <div className="form-group">
-              <label>Seu Telefone Whatasapp</label>
-              <input
-                type="text"
-                onChange={(e) => setEventDescription(e.target.value)}
-              ></input>
-            </div>
-            <hr />
-            <button className="btn btn-primary" onClick={() => createCalendarEvent()}>
-              Agendar Consulta
-            </button>
-            <p></p>
-            <button className="btn btn-secondary" onClick={() => signOut()}>
-              Sign Out
-            </button>
-          </>
-        ) : (
-          <>
-            <button className="btn btn-google" onClick={() => googleSignIn()}>
-              Agende sua consulta pelo Google 
-            </button>
-          </>
-        )}
+          </div>
+          <div className="imageSenhoraContainer">
+            <Image
+              src="senhoraSentada.svg"
+              alt="Senhora Sentada"
+              width={132}
+              height={401}
+            />
+          </div>
+        </div>
       </div>
-    </div>
   );
 }
 

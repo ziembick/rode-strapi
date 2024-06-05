@@ -77,9 +77,9 @@ const Home = () => {
       <div ref={sobreRef}>
         <Sobre />
       </div>
-      <div ref={atencaoRef}>
+      {/* <div ref={atencaoRef}>
         <Atencao />
-      </div>
+      </div> */}
       <div ref={contatoRef}>
         <Contato />
       </div>
