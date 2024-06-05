@@ -77,10 +77,10 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
         <div className={styles.imageContainer}>
           <Link href="/">
             <Image
-              src="/rwhite.png"
+              src="/razul.svg"
               alt="Logo"
-              width={56}
-              height={73}
+              width={44}
+              height={58}
               className={`${styles.logo} pt-10`}
             />
           </Link>

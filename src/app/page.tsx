@@ -71,9 +71,9 @@ const Home = () => {
           <Psicanalise />
         </div>
       </div>
-      <div ref={ajudarRef}>
+      {/* <div ref={ajudarRef}>
         <Ajudar />
-      </div>
+      </div> */}
       <div ref={sobreRef}>
         <Sobre />
       </div>

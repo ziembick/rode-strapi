@@ -138,7 +138,7 @@ export default function BookAppointment() {
         ) : (
           <>
             <button className="btn btn-google" onClick={() => googleSignIn()}>
-              Sign in with google
+              Agende sua consulta pelo Google 
             </button>
           </>
         )}

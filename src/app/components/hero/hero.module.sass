@@ -1,5 +1,5 @@
 .heroBackground
-  background-image: url('/linhaHero.svg')
+  background-image: url('/linhaHeroNova.svg')
   background-size: cover
   background-position: center
   background-repeat: no-repeat
@@ -10,6 +10,7 @@
   justify-content: space-between
   max-width: 1320px
   margin: 0 auto
+  margin-top: 80px
   
   @media screen and (max-width: 1000px)
     flex-direction: column
@@ -39,19 +40,32 @@
 
 .nome
   font-family: var(--font-baloo2)
-  font-weight: 700
-  color: #F4B2BE
+  font-weight: 900
+  font-size: 2.222rem
+  color: #80C0DD
 
 .titulo
   font-family: var(--font-baloo2)
-  font-weight: 500
-  color: #F4B2BE
+  font-weight: 400
+  color: #80C0DD
+  font-size: 1.333rem
 
 .comentario
   font-family: var(--font-baloo2)
   font-weight: 400
-  color: #F4B2BE
-  font-size: 1.5rem
+  color: #80C0DD
+  font-size: 2.222rem
+  line-height: 1.05
+  margin-top: 2.222rem
+  margin-bottom: 2.222rem
+  
+.textinho
+  font-family: var(--font-baloo2)
+  font-weight: 400
+  color: #80C0DD
+  font-size: 1.333rem
+  line-height: 1.05
+  margin-bottom: 2.222rem
 
 .ptag
   font-family: var(--font-baloo2)
@@ -70,11 +84,18 @@
     justify-content: center
     align-items: center
 
+.boldText
+  font-weight: 900
+  margin-left: 0.22rem
+  margin-right: 0.22rem
+
 .btnLap 
   margin-right: 0.5rem
+  color: #F5B2BF
 
 .btnAgende
   flex: 1
+  margin-bottom: 0.6rem
 
   @media screen and (max-width: 768px)
     align-items: center
