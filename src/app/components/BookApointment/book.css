@@ -77,6 +77,42 @@
   background-color: #c23321;
 }
 
+.atencao {
+  display: flex;
+  align-items: center;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+.description {
+  text-align: justify;
+  font-family: var(--font-baloo2);
+  font-weight: 400;
+  font-size: 20px;
+  color: #F5B2BF;
+}
+
+.bgContainer {
+  background-image: url("/contatoBg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title {
+  font-family: var(--font-baloo2);
+  font-weight: 700;
+  color: #81C0DD;
+  font-size: 2.22rem;
+}
+
 
 @media (max-width: 600px) {
   .appointment-form {
@@ -103,7 +139,6 @@
     font-size: 0.9rem;
   }
 }
-
 
 /* @import "@radix-ui/colors/black-alpha.css";
 @import "@radix-ui/colors/green.css";
