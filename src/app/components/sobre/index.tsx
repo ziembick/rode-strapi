@@ -36,7 +36,7 @@ export default function Sobre() {
         <BtnAgende />
       </div>
       <div className={styles.imageContainer}>
-        <Image src="/sobreMim.JPG" alt="Sobre mim" width={600} height={400} className={styles.imagem}/>
+        <Image src="/sobreMim1.svg" alt="Sobre mim" width={600} height={400} className={styles.imagem}/>
       </div>
     </div>
   );
