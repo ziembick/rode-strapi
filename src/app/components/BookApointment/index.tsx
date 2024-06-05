@@ -89,93 +89,94 @@ export default function BookAppointment() {
   console.log(eventDescription);
 
   return (
-      <div className="conteiner">
-        <div className="appointment-form">
-          {session ? (
-            <>
-              <h2 className="greeting">Olá, {session.user.email}</h2>
-              <div className="form-group">
-                <label>Início da Consulta</label>
-                <DatePicker
-                  onChange={(date: Date) => setStart(date)}
-                  selected={start}
-                  showTimeSelect
-                  dateFormat="Pp"
-                  locale="pt-BR"
-                  timeIntervals={15}
-                />
-              </div>
-              <div className="form-group">
-                <label>Final da Consulta</label>
-                <DatePicker
-                  onChange={(date: Date) => setEnd(date)}
-                  selected={end}
-                  showTimeSelect
-                  dateFormat="Pp"
-                  locale="pt-BR"
-                  timeIntervals={15}
-                />
-              </div>
-              <div className="form-group">
-                <label>Seu nome</label>
-                <input
-                  type="text"
-                  onChange={(e) => setEventName(e.target.value)}
-                ></input>
-              </div>
-              <div className="form-group">
-                <label>Seu Telefone Whatasapp</label>
-                <input
-                  type="text"
-                  onChange={(e) => setEventDescription(e.target.value)}
-                ></input>
-              </div>
-              <hr />
-              <button
-                className="btn btn-primary"
-                onClick={() => createCalendarEvent()}
-              >
-                Agendar Consulta
-              </button>
-              <p></p>
-              <button className="btn btn-secondary" onClick={() => signOut()}>
-                Sign Out
-              </button>
-            </>
-          ) : (
-            <>
-              <button className="btn btn-google" onClick={() => googleSignIn()}>
-                Agende sua consulta pelo Google
-              </button>
-            </>
-          )}
+    <div className="conteiner">
+      <div className="appointment-form">
+        {session ? (
+          <>
+            <h2 className="greeting">Olá, {session.user.email}</h2>
+            <div className="form-group">
+              <label>Início da Consulta</label>
+              <DatePicker
+                onChange={(date: Date) => setStart(date)}
+                selected={start}
+                showTimeSelect
+                dateFormat="Pp"
+                locale="pt-BR"
+                timeIntervals={15}
+              />
+            </div>
+            <div className="form-group">
+              <label>Final da Consulta</label>
+              <DatePicker
+                onChange={(date: Date) => setEnd(date)}
+                selected={end}
+                showTimeSelect
+                dateFormat="Pp"
+                locale="pt-BR"
+                timeIntervals={15}
+              />
+            </div>
+            <div className="form-group">
+              <label>Seu nome</label>
+              <input
+                type="text"
+                onChange={(e) => setEventName(e.target.value)}
+              ></input>
+            </div>
+            <div className="form-group">
+              <label>Seu Telefone Whatasapp</label>
+              <input
+                type="text"
+                onChange={(e) => setEventDescription(e.target.value)}
+              ></input>
+            </div>
+            <hr />
+            <button
+              className="btn btn-primary"
+              onClick={() => createCalendarEvent()}
+            >
+              Agendar Consulta
+            </button>
+            <p></p>
+            <button className="btn btn-secondary" onClick={() => signOut()}>
+              Sign Out
+            </button>
+          </>
+        ) : (
+          <div className="">
+            <button className="btn btn-google" onClick={() => googleSignIn()}>
+              Agende sua consulta pelo Google
+            </button>
+          </div>
+        )}
+      </div>
+      <div className="atencao-container">
+        <div className="atencao">
+          <div className="imageContainer">
+            <Image src="/alerta.svg" alt="Atencao" width={90} height={90} />
+          </div>
+          <div className="textContainer">
+            <h1 className="title">Atenção!</h1>
+            <p className="description">
+              Esse site não oferece atendimento imediato a paessoas em crise
+              suicida. Em caso de crise ligue para o <strong>CVV - 188</strong>.
+              Em caso de emergência, procure o hospital mais próximo. Havendo
+              risco de morte, ligue imediatamente para o{" "}
+              <strong>SAMU - telefone 192</strong>
+            </p>
+          </div>
         </div>
-        <div className="atencao-container">
-          <div className="atencao">
-            <div className="imageContainer">
-              <Image src="/alerta.svg" alt="Atencao" width={90} height={90} />
-            </div>
-            <div className="textContainer">
-              <h1 className="title">Atenção!</h1>
-              <p className="description">
-                Esse site não oferece atendimento imediato a paessoas em crise
-                suicida. Em caso de crise ligue para o{" "}
-                <strong>CVV - 188</strong>. Em caso de emergência, procure o
-                hospital mais próximo. Havendo risco de morte, ligue
-                imediatamente para o <strong>SAMU - telefone 192</strong>
-              </p>
-            </div>
-          </div>
-          <div className="imageSenhoraContainer">
-            <Image
-              src="senhoraSentada.svg"
-              alt="Senhora Sentada"
-              width={132}
-              height={401}
-            />
-          </div>
+        <div className="imageSenhoraContainer">
+          <Image
+            src="senhoraSentada.svg"
+            alt="Senhora Sentada"
+            width={132}
+            height={401}
+            layout="responsive"
+          />
         </div>
       </div>
+    </div>
   );
 }
 
