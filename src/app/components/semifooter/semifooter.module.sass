@@ -1,7 +1,8 @@
 .bgContainer
   background-color: #E8ECF7
+  display: flex
+  justify-content: center
 
-  
 .title
   font-family: var(--font-baloo2)
   font-weight: 700
@@ -13,14 +14,31 @@
   font-weight: 400
   font-size: 1.333rem
   color: #F5B2BF
+  margin: 0 0 0 0.5rem
 
 .semifooter
   display: flex
-  justify-content: space-around
   align-items: center
+  justify-content: space-between
+  width: 100%
+  max-width: 1320px
   font-family: var(--font-baloo2)
 
-.btnWp
-  position: relative
-  top: 0.2rem
-  right: 0.1rem
+  @media screen and (max-width: 768px)
+    flex-direction: column
+
+.imageContainer
+  flex: 1
+
+.textContainer
+  flex: 2
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+
+.contactItem
+  display: flex
+  align-items: center
+
+.icon
+  margin-right: 0.5rem
