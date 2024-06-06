@@ -4,12 +4,19 @@ import React from "react";
 import BtnAgende from "../btnAgende";
 import Image from "next/image";
 import styles from "./sobre.module.sass";
+import { motion } from "framer-motion";
 
 export default function Sobre() {
   return (
     <div className={styles.bgContainer}>
       <div className={`${styles.sobre} container`}>
-        <div className={styles.textContainer}>
+        <motion.div
+          className={styles.textContainer}
+          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+        >
           <h1 className={styles.mainTitle}>Sobre mim</h1>
           <p className={styles.description}>
             Olá muito prazer, tudo bem? Meu nome é Marianne sou Psicóloga
@@ -37,8 +44,14 @@ export default function Sobre() {
           <div className={styles.btnAgende}>
             <BtnAgende />
           </div>
-        </div>
-        <div className={styles.imageContainer}>
+        </motion.div>
+        <motion.div
+          className={styles.imageContainer}
+          initial={{ opacity: 0, y: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 100, scale: 0.5 }}
+          transition={{ duration: 0.5 }}
+        >
           <Image
             src="/sobreMim1.svg"
             alt="Sobre mim"
@@ -46,7 +59,7 @@ export default function Sobre() {
             height={527}
             className={styles.imagem}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

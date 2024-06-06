@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import "swiper/swiper-bundle.css";
 import "swiper";
 import { Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
 
 const AREAS_ATUACAO = [
   {
@@ -55,10 +56,24 @@ export default function Atuacao() {
   return (
     <div className={styles.atuacaoBackground}>
       <div className={`${styles.cont} container`}>
-        <h1 className={styles.aga1}>Áreas de Atuação</h1>
-        <p className={styles.pe}>
+        <motion.h1
+          className={styles.aga1}
+          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+        >
+          Áreas de Atuação
+        </motion.h1>
+        <motion.p
+          className={styles.pe}
+          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+        >
           Tratamentos e demandas mais frequentes que atendo atualmente
-        </p>
+        </motion.p>
         <Swiper
           spaceBetween={20}
           slidesPerView={1}
@@ -72,7 +87,13 @@ export default function Atuacao() {
         >
           {AREAS_ATUACAO.map((atuacao, index) => (
             <SwiperSlide key={index}>
-              <div className={styles.card}>
+              <motion.div
+                className={styles.card}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.15, delay: index * 0.2 }}
+              >
                 <Image
                   src={atuacao.image}
                   alt={atuacao.title}
@@ -82,7 +103,7 @@ export default function Atuacao() {
                 />
                 <h4 className={styles.card_title}>{atuacao.title}</h4>
                 <p className={styles.card_text}>{atuacao.description}</p>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
