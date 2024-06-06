@@ -5,23 +5,73 @@ import styles from "./hero.module.sass";
 import Image from "next/image";
 import { FaLaptop } from "react-icons/fa";
 import BtnAgende from "../btnAgende";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className={styles.heroBackground}>
+    <motion.div
+      className={styles.heroBackground}
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className={styles.container}>
         <div className={styles.textContainer}>
-          <h2 className={styles.nome}>Rode Ziembick</h2>
-          <h3 className={styles.titulo}>Psicanalista</h3>
-          <h4 className={`${styles.comentario}`}>
+          <motion.h2
+            className={styles.nome}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
+          >
+            Rode Ziembick
+          </motion.h2>
+          <motion.h3
+            className={styles.titulo}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.6 }}
+          >
+            Psicanalista
+          </motion.h3>
+          <motion.h4
+            className={`${styles.comentario}`}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -100 }}
+            transition={{ duration: 0.6 }}
+          >
             Meu propósito é <strong>Ajudar Você</strong> a ter mais qualidade de
             vida com saúde mental e emocional
-          </h4>
-          <p className={styles.textinho}>Alcance sua saúde mental e emocional para uma vida com mais qualidade através da psicanálise.</p>
-          <div className={styles.btnAgende}>
+          </motion.h4>
+          <motion.p
+            className={styles.textinho}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -100 }}
+            transition={{ duration: 0.6 }}
+          >
+            Alcance sua saúde mental e emocional para uma vida com mais
+            qualidade através da psicanálise.
+          </motion.p>
+          <motion.div
+            className={styles.btnAgende}
+            initial={{ opacity: 0, y: 200, scale: 0.5 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 200, scale: 0.5 }}
+            transition={{ duration: 0.5 }}
+          >
             <BtnAgende />
-          </div>
-          <div className={styles.laptop}>
+          </motion.div>
+          <motion.div
+            className={styles.laptop}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.6 }}
+          >
             <p className={`${styles.ptag} pt-0`}>
               <FaLaptop size={25} className={styles.btnLap} />
               Atendimento{" "}
@@ -31,9 +81,15 @@ const Hero = () => {
               </span> para{" "}
               <span className={styles.boldText}> adultos e idosos </span>
             </p>
-          </div>
+          </motion.div>
         </div>
-        <div className={styles.imageContainer}>
+        <motion.div
+          className={styles.imageContainer}
+          initial={{ opacity: 0, y: 200, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 200, scale: 0.5 }}
+          transition={{ duration: 0.5 }}
+        >
           <Image
             className={styles.rodeImage}
             src="/heroRode2.svg"
@@ -42,9 +98,9 @@ const Hero = () => {
             width={700}
             height={600}
           />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
