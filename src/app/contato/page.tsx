@@ -5,8 +5,7 @@ import styles from "./contato.module.sass";
 const Contato = () => {
   return (
     <div className={styles.bgContainer}>
-      <div className="container">
-        <h1 className={styles.contato}>Contato</h1>
+      <div className={`${styles.contatoContainer} container`}>
         <div>
           <BookAppointment />
         </div>

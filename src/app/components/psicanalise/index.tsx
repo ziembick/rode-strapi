@@ -5,15 +5,33 @@ import { motion } from "framer-motion";
 
 export default function Psicanalise() {
   return (
-    <motion.div
-      className={`${styles.psicanalise} container`}
-      transition={{ duration: 0.7 }}
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-    >
-      <h1 className={styles.title}>O que é Psicanalise</h1>
-      <div className={styles.textContainer}>
+    <div className={`${styles.psicanalise} container`}>
+      <motion.h1
+        className={styles.title}
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 30,
+          delay: 0.2,
+        }}
+      >
+        O que é Psicanalise
+      </motion.h1>
+      <motion.div
+        className={styles.textContainer}
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 30,
+          delay: 0.6,
+        }}
+      >
         <p className={styles.texto}>
           A psicanálise, criada por Sigmund Freud no final do século XIX, é uma
           teoria e prática terapêutica que revolucionou a compreensão da mente
@@ -43,10 +61,10 @@ export default function Psicanalise() {
           complexa e multifacetada para a compreensão do comportamento humano e
           o tratamento de distúrbios psicológicos.
         </p>
-      </div>
+      </motion.div>
       {/* <div className={styles.imageContainer}>
         <Image src="/mulher.png" alt="Psicanálise" width={330} height={635} className={styles.imageMulher}/>
       </div> */}
-    </motion.div>
+    </div>
   );
 }
