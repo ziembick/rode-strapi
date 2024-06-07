@@ -1,10 +1,17 @@
 import React from "react";
 import styles from "./psicanalise.module.sass";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Psicanalise() {
   return (
-    <div className={`${styles.psicanalise} container`}>
+    <motion.div
+      className={`${styles.psicanalise} container`}
+      transition={{ duration: 0.7 }}
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+    >
       <h1 className={styles.title}>O que é Psicanalise</h1>
       <div className={styles.textContainer}>
         <p className={styles.texto}>
@@ -24,22 +31,22 @@ export default function Psicanalise() {
           como a psicologia analítica de Carl Jung e a psicologia individual de
           Alfred Adler. A psicanálise lacaniana, proposta por Jacques Lacan,
           reformulou conceitos freudianos, introduzindo novas ideias sobre
-          simbolismo e linguagem. 
+          simbolismo e linguagem.
         </p>
         <p className={styles.texto}>
-        Embora seja aplicada no tratamento de uma
-          ampla gama de distúrbios psicológicos, a psicanálise enfrenta críticas
-          quanto à sua cientificidade e efetividade comparada a outras formas de
+          Embora seja aplicada no tratamento de uma ampla gama de distúrbios
+          psicológicos, a psicanálise enfrenta críticas quanto à sua
+          cientificidade e efetividade comparada a outras formas de
           psicoterapia, como a terapia cognitivo-comportamental. Apesar das
           controvérsias, a psicanálise continua a exercer uma influência
           profunda na compreensão da mente humana, proporcionando uma abordagem
           complexa e multifacetada para a compreensão do comportamento humano e
-          o tratamento de distúrbios psicológicos. 
+          o tratamento de distúrbios psicológicos.
         </p>
       </div>
       {/* <div className={styles.imageContainer}>
         <Image src="/mulher.png" alt="Psicanálise" width={330} height={635} className={styles.imageMulher}/>
       </div> */}
-    </div>
+    </motion.div>
   );
 }

@@ -10,7 +10,7 @@
   justify-content: space-between
   max-width: 1320px
   margin: 0 auto
-  margin-top: 80px
+  padding-top: 80px
   
   @media screen and (max-width: 1000px)
     flex-direction: column
@@ -24,19 +24,21 @@
 
 .textContainer
   flex: 1
+
+  @media screen and (max-width: 1280px)
+    margin-left: 2rem // Aplica margem esquerda para telas menores ou iguais a 1280px
+  
   @media screen and (max-width: 768px)
+    margin-left: 0  // Remove margem esquerda para telas menores ou iguais a 768px
     margin-right: 0
     text-align: center
-  
-  @media screen and (max-width: 1280px)
-    margin-left: 2rem
-
 
 .imageContainer
   flex-shrink: 0
+
   @media screen and (max-width: 768px)
     margin-top: 0.1rem
-
+    order: -1  // Move a imagem para cima do botão no modo responsivo
 
 .nome
   font-family: var(--font-baloo2)
@@ -79,6 +81,7 @@
     display: flex
     justify-content: center
     align-items: center
+
   @media screen and (max-width: 1000px)
     display: flex
     justify-content: center
@@ -101,6 +104,7 @@
     align-items: center
     justify-content: center
     display: flex
+
   @media screen and (max-width: 1000px)
     align-items: center
     justify-content: center

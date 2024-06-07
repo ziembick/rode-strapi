@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./header.module.sass";
 import { NavItem } from "./nav-item";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type NavItemType = {
   label: string;
@@ -39,7 +40,9 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<keyof SectionRefs | null>(null);
+  const [activeSection, setActiveSection] = useState<keyof SectionRefs | null>(
+    null
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +53,12 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
         top: ref.current?.getBoundingClientRect().top,
       }));
 
-      const active = sections.find((section) => section.top && section.top <= window.innerHeight / 2 && section.top >= 0);
+      const active = sections.find(
+        (section) =>
+          section.top &&
+          section.top <= window.innerHeight / 2 &&
+          section.top >= 0
+      );
       setActiveSection(active ? (active.key as keyof SectionRefs) : null);
     };
 
@@ -72,8 +80,18 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
   };
 
   return (
-    <nav className={`${styles.navItems} ${isScrolled ? styles.scrolled : ""}`}>
-      <div className={`${styles.container} container`}>
+    <motion.nav
+      initial={{ top: -100 }}
+      animate={{ top: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`${styles.navItems} ${isScrolled ? styles.scrolled : ""}`}
+    >
+      <motion.div
+        initial={{ top: -100 }}
+        animate={{ top: 0 }}
+        transition={{ duration: 0.5 }}
+        className={`${styles.container}`}
+      >
         <div className={styles.imageContainer}>
           <Link href="/">
             <Image
@@ -95,7 +113,12 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
                 isActive={item.refKey === activeSection}
               />
             ) : (
-              <NavItem key={item.label} label={item.label} href={item.href} isActive={item.href === '/posts' && activeSection === null}/>
+              <NavItem
+                key={item.label}
+                label={item.label}
+                href={item.href}
+                isActive={item.href === "/posts" && activeSection === null}
+              />
             )
           )}
         </div>
@@ -118,14 +141,14 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
                   label={item.label}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  isActive={item.href === '/posts' && activeSection === null}
+                  isActive={item.href === "/posts" && activeSection === null}
                 />
               )
             )}
           </div>
         )}
-      </div>
-    </nav>
+      </motion.div>
+    </motion.nav>
   );
 };
 
