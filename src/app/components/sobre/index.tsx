@@ -51,6 +51,7 @@ export default function Sobre() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 100, scale: 0.5 }}
           transition={{ duration: 0.5 }}
+          
         >
           <Image
             src="/sobreMim1.svg"

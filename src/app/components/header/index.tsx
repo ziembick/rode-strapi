@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
         initial={{ top: -100 }}
         animate={{ top: 0 }}
         transition={{ duration: 0.5 }}
-        className={`${styles.container} container`}
+        className={`${styles.container}`}
       >
         <div className={styles.imageContainer}>
           <Link href="/">

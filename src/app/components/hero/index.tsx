@@ -23,54 +23,84 @@ const Hero = () => {
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.2,
+            }}
           >
             Rode Ziembick
           </motion.h2>
           <motion.h3
             className={styles.titulo}
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.6 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.6,
+            }}
           >
             Psicanalista
           </motion.h3>
           <motion.h4
             className={`${styles.comentario}`}
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -100 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.8,
+            }}
           >
             Meu propósito é <strong>Ajudar Você</strong> a ter mais qualidade de
             vida com saúde mental e emocional
           </motion.h4>
           <motion.p
             className={styles.textinho}
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -100 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.8,
+            }}
           >
             Alcance sua saúde mental e emocional para uma vida com mais
             qualidade através da psicanálise.
           </motion.p>
           <motion.div
             className={styles.btnAgende}
-            initial={{ opacity: 0, y: 200, scale: 0.5 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 200, scale: 0.5 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 1 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.8,
+            }}
           >
             <BtnAgende />
           </motion.div>
           <motion.div
             className={styles.laptop}
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 1 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.9,
+            }}
           >
             <p className={`${styles.ptag} pt-0`}>
               <FaLaptop size={25} className={styles.btnLap} />
@@ -85,10 +115,15 @@ const Hero = () => {
         </div>
         <motion.div
           className={styles.imageContainer}
-          initial={{ opacity: 0, y: 200, scale: 0.5 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 200, scale: 0.5 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 100 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 30,
+            delay: 0.2,
+          }}
         >
           <Image
             className={styles.rodeImage}

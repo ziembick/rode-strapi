@@ -39,7 +39,7 @@ export default function Depoimentos() {
           initial={{ opacity: 0, y: 100, scale: 0.5 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 100, scale: 0.5 }}
-          transition={{ duration: 0.3, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           Depoimentos
         </motion.h1>
@@ -59,10 +59,15 @@ export default function Depoimentos() {
           <SwiperSlide key={index}>
             <motion.div
               className={styles.commentContainer}
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.15, delay: index * 0.2 }}
+              initial={{ opacity: 0, x: -100, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, x: -100, filter: "blur(10px)" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.5,
+                ease: "easeIn",
+                filter: { duration: 1, delay: index * 0.5 },
+              }}
             >
               <p className={styles.comentarios}>{depoimento.comentario}</p>
               <div className={styles.userInfo}>
