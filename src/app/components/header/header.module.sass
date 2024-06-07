@@ -10,6 +10,8 @@
   &.scrolled
     background-color: rgba(239, 242, 250, 0.2)
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
+    backdrop-filter: blur(15px)
+    -webkit-backdrop-filter: blur(15px)
 
 .container
   display: flex
@@ -18,6 +20,8 @@
   width: 100%
   max-width: 1320px
   margin: 0 auto
+  padding-bottom: 0.4rem
+  padding-top: 0.4rem
 
   @media screen and (max-width: 1280px)
     padding: 0 1.9rem

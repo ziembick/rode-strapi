@@ -104,11 +104,8 @@ const Hero = () => {
           >
             <p className={`${styles.ptag} pt-0`}>
               <FaLaptop size={25} className={styles.btnLap} />
-              Atendimento{" "}
-              <span className={styles.boldText}>
-                {" "}
-                online individual{" "}
-              </span> para{" "}
+              Atendimento
+              <span className={styles.boldText}>online individual</span> para
               <span className={styles.boldText}> adultos e idosos </span>
             </p>
           </motion.div>

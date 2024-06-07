@@ -59,14 +59,17 @@ export default function Depoimentos() {
           <SwiperSlide key={index}>
             <motion.div
               className={styles.commentContainer}
-              initial={{ opacity: 0, x: -100, filter: "blur(10px)" }}
+              initial={{ opacity: 0, x: -100, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, x: -100, filter: "blur(10px)" }}
+              exit={{ opacity: 0, x: -100, filter: "blur(8px)" }}
               transition={{
                 duration: 0.5,
-                delay: index * 0.5,
+                delay: index * 0.2,
+                type: "spring",
+                stiffness: 100,
+                damping: 30,
                 ease: "easeIn",
-                filter: { duration: 1, delay: index * 0.5 },
+                filter: { duration: 1, delay: index * 0.2 },
               }}
             >
               <p className={styles.comentarios}>{depoimento.comentario}</p>
