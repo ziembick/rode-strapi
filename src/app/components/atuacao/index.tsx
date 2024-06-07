@@ -54,86 +54,96 @@ const AREAS_ATUACAO = [
 
 export default function Atuacao() {
   return (
-    <div className={styles.atuacaoBackground}>
-      <div className={`${styles.cont} container`}>
-        <motion.h1
-          className={styles.aga1}
-          transition={{ duration: 0.7 }}
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-        >
-          Áreas de Atuação
-        </motion.h1>
-        <motion.p
-          className={styles.pe}
-          transition={{ duration: 0.7 }}
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-        >
-          Tratamentos e demandas mais frequentes que atendo atualmente
-        </motion.p>
-        <div className={styles.cardSwiper}>
-          <Swiper
-            spaceBetween={20}
-            slidesPerView={1}
-            breakpoints={{
-              320: { slidesPerView: 1 },
-              480: { slidesPerView: 1.2 },
-              640: { slidesPerView: 1.5 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-              1280: { slidesPerView: 3.3 },
-            }}
-            navigation={true}
-            modules={[Pagination, Navigation]}
+    <div className={styles.relativeContainer}>
+      <div className={styles.imagemDeTopo}>
+        <Image
+          src="/bordinha.svg"
+          alt="Image topo"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <div className={styles.atuacaoBackground}>
+        <div className={`${styles.cont} container`}>
+          <motion.h1
+            className={styles.aga1}
+            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
           >
-            {AREAS_ATUACAO.map((atuacao, index) => (
-              <SwiperSlide key={index}>
-                <motion.div
-                  className={styles.card}
-                  initial={{ opacity: 0, x: -100, filter: "blur(5px)" }}
-                  whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, x: -100, filter: "blur(5px)" }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.2,
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 30,
-                    ease: "easeIn",
-                    filter: { duration: 1, delay: index * 0.2 },
-                  }}
-                >
-                  <Image
-                    src={atuacao.image}
-                    alt={atuacao.title}
-                    width={100}
-                    height={80}
-                    className={styles.card_image}
-                  />
-                  <h4 className={styles.card_title}>{atuacao.title}</h4>
-                  <p className={styles.card_text}>{atuacao.description}</p>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+            Áreas de Atuação
+          </motion.h1>
+          <motion.p
+            className={styles.pe}
+            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+          >
+            Tratamentos e demandas mais frequentes que atendo atualmente
+          </motion.p>
+          <div className={styles.cardSwiper}>
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={1}
+              breakpoints={{
+                320: { slidesPerView: 1 },
+                480: { slidesPerView: 1.2 },
+                640: { slidesPerView: 1.5 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1280: { slidesPerView: 3.3 },
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+            >
+              {AREAS_ATUACAO.map((atuacao, index) => (
+                <SwiperSlide key={index}>
+                  <motion.div
+                    className={styles.card}
+                    initial={{ opacity: 0, x: -100, filter: "blur(5px)" }}
+                    whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, x: -100, filter: "blur(5px)" }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.2,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 30,
+                      ease: "easeIn",
+                      filter: { duration: 1, delay: index * 0.2 },
+                    }}
+                  >
+                    <Image
+                      src={atuacao.image}
+                      alt={atuacao.title}
+                      width={100}
+                      height={80}
+                      className={styles.card_image}
+                    />
+                    <h4 className={styles.card_title}>{atuacao.title}</h4>
+                    <p className={styles.card_text}>{atuacao.description}</p>
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <motion.div
+            className={styles.btnAgende}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 1 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.8,
+            }}
+          >
+            <BtnAgende />
+          </motion.div>
         </div>
-        <motion.div
-          className={styles.btnAgende}
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 1 }}
-          exit={{ opacity: 0, y: 100 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 30,
-            delay: 0.8,
-          }}
-        >
-          <BtnAgende />
-        </motion.div>
       </div>
     </div>
   );
