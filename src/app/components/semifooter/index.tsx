@@ -12,6 +12,7 @@ export default function SemiFooter() {
             alt="Logo"
             width={276}
             height={136}
+            layout="responsive"
           />
         </div>
         <div className={styles.textContainer}>
