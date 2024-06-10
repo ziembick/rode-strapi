@@ -58,8 +58,8 @@ const Hero = () => {
               delay: 0.8,
             }}
           >
-            Meu propósito é <strong>Ajudar Você</strong> a ter mais qualidade de
-            vida com saúde mental e emocional
+            Cada pessoa é única e, portanto, merece uma abordagem terapêutica
+            personalizada.
           </motion.h4>
           <motion.p
             className={styles.textinho}
@@ -73,9 +73,26 @@ const Hero = () => {
               delay: 0.8,
             }}
           >
-            Alcance sua saúde mental e emocional para uma vida com mais
-            qualidade através da psicanálise.
+            Minha prática envolve entender profundamente a história de vida,
+            emoções e comportamentos dos pacientes, para criar estratégias que
+            promovam seu crescimento pessoal e bem-estar emocional.
           </motion.p>
+          <motion.p
+            className={styles.textinho2}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.8,
+            }}
+          >
+            Através da Psicanálise, você será capaz de enfrentar desafios
+            futuros com confiança e independência.
+          </motion.p>
+
           <motion.div
             className={styles.btnAgende}
             initial={{ opacity: 0, y: 100 }}
