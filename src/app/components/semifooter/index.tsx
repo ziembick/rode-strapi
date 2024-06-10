@@ -8,11 +8,10 @@ export default function SemiFooter() {
       <div className={`${styles.semifooter} container mt-10 mb-30`}>
         <div className={styles.imageContainer}>
           <Image
-            src="/logoSemiFooter.svg"
+            src="/logoSemiFooterVerde.svg"
             alt="Logo"
             width={276}
             height={136}
-            layout="responsive"
           />
         </div>
         <div className={styles.textContainer}>

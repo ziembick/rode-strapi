@@ -99,7 +99,7 @@
   font-family: var(--font-baloo2);
   font-weight: 400;
   font-size: 20px;
-  color: #F5B2BF;
+  color: #E8ECF7;
 }
 
 .bgContainer {
@@ -112,7 +112,7 @@
 .title {
   font-family: var(--font-baloo2);
   font-weight: 700;
-  color: #81C0DD;
+  color: #809B92;
   font-size: 2.22rem;
 }
 
@@ -127,7 +127,7 @@
   font-family: var(--font-baloo2);
   padding-top: 2rem;
   padding-bottom: 4rem;
-  color: #81C0DD;
+  color: #809B92;
 }
 
 @media (max-width: 600px) {
