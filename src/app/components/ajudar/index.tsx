@@ -1,19 +1,19 @@
-'use client'
+"use client";
 
 import React from "react";
 import BtnAgende from "../btnAgende";
-import styles from "./ajudar.module.sass"
+import styles from "./ajudar.module.sass";
 
 export default function Ajudar() {
   return (
     <div className={styles.ajudar}>
-      <h1 className={styles.ajudarTitle}>Posso ajudar você</h1>
+      <h1 className={styles.ajudarTitle}>Atenção!</h1>
       <p className={`${styles.descriptionTitle} container`}>
-        Caso você se identifique com algum desses sintomas ou alguma dessas
-        situações, saiba que a <strong>Psicoterapia Jungiana</strong> pode ser
-        de grande ajuda para transformar a sua vidade de maneira signficativa!
+        Esse site não oferece atendimento imediato a pessoas em crise suicida.
+        Em caso de crise, ligue para o CVV - 188. Em caso de emergência, procure
+        o hospital mais próximo. Havendo risco de morte, ligue imediatamente
+        para o SAMU - telefone 192
       </p>
-      <BtnAgende />
     </div>
   );
 }

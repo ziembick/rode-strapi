@@ -31,7 +31,7 @@ const Home = () => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/bgfull.svg";
+    img.src = "/bgFullVerde.svg";
     img.onload = () => setBackgroundImage(img.src);
   }, []);
 
@@ -71,15 +71,16 @@ const Home = () => {
           <Psicanalise />
         </div>
       </div>
-      {/* <div ref={ajudarRef}>
-        <Ajudar />
-      </div> */}
+
       <div ref={sobreRef}>
         <Sobre />
       </div>
-      {/* <div ref={atencaoRef}>
-        <Atencao />
+      {/* <div ref={ajudarRef}>
+        <Ajudar />
       </div> */}
+      <div ref={atencaoRef}>
+        <Atencao />
+      </div>
       <div ref={contatoRef}>
         <Contato />
       </div>

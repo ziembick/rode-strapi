@@ -33,33 +33,37 @@ export default function Psicanalise() {
         }}
       >
         <p className={styles.texto}>
-          A psicanálise, criada por Sigmund Freud no final do século XIX, é uma
-          teoria e prática terapêutica que revolucionou a compreensão da mente
-          humana. Fundamentada na ideia do inconsciente, Freud propôs que grande
-          parte do comportamento humano é influenciada por pensamentos,
-          sentimentos e memórias reprimidas, acessíveis através de técnicas como
-          associação livre e análise de sonhos.
+          A Psicanálise é o campo do conhecimento onde a premissa é o
+          inconsciente, que é uma dimensão do psiquismo que determina nosso modo
+          de reagir e sentir no mundo. A psicanálise é uma técnica que faz
+          aflorar, em um ambiente controlado, essa dimensão desconhecida, que é
+          o inconsciente, para que a partir deste processo se torne mais
+          consciente de suas decisões, comportamentos e emoções.
         </p>
         <p className={styles.texto}>
-          Essa abordagem enfatiza os conflitos psíquicos entre o id, ego e
-          superego, além do desenvolvimento psicossexual em estágios infantis.
-          Os mecanismos de defesa, como a repressão e a projeção, são centrais
-          na compreensão dos sintomas psicológicos. Ao longo dos anos, a
-          psicanálise evoluiu, dando origem a diversas escolas de pensamento,
-          como a psicologia analítica de Carl Jung e a psicologia individual de
-          Alfred Adler. A psicanálise lacaniana, proposta por Jacques Lacan,
-          reformulou conceitos freudianos, introduzindo novas ideias sobre
-          simbolismo e linguagem.
+          O Psicanalista se utiliza da linguagem do paciente em associação livre
+          para acessar o inconsciente. Principalmente da linguagem, mas não
+          apenas dela. Tudo que acontece no setting psicanalítico e material de
+          análise. Isso porque nosso inconsciente se comunica de várias outras
+          formas para além da linguagem.
         </p>
         <p className={styles.texto}>
-          Embora seja aplicada no tratamento de uma ampla gama de distúrbios
-          psicológicos, a psicanálise enfrenta críticas quanto à sua
-          cientificidade e efetividade comparada a outras formas de
-          psicoterapia, como a terapia cognitivo-comportamental. Apesar das
-          controvérsias, a psicanálise continua a exercer uma influência
-          profunda na compreensão da mente humana, proporcionando uma abordagem
-          complexa e multifacetada para a compreensão do comportamento humano e
-          o tratamento de distúrbios psicológicos.
+          O Psicanalista enfrenta junto com o paciente uma série de resistências
+          ao longo da jornada analítica. Revelar, descobrir traumas, dores,
+          medos que foram muito bem encobertos ao longo da vida, não é tarefa
+          simples. Nosso psiquismo se utiliza de mecanismos de defesa muito
+          refinados para proteger a sanidade mental. Quando passamos por alguma
+          situação que nossa mente não é capaz de tolerar, tendemos ao recalque
+          desses eventos para que não soframos toda a dor implicada a eles.
+          Entretanto, esses conteúdos que foram recalcados, continuam existindo
+          na nossa dimensão psíquica por toda a nossa vida, impactando nossas
+          decisões, nosso modo de ser no mundo. 
+        </p>
+        <p className={styles.texto}>
+        &quot;O Eu não é senhor em sua própria casa&quot;. Essa é uma das frases mais
+          emblemáticas de Freud. Viver sem acessar a nossa dimensão inconsciente
+          é viver no domínio do desconhecido. Faça Psicanálise e seja o senhor
+          da sua própria casa!
         </p>
       </motion.div>
       {/* <div className={styles.imageContainer}>
