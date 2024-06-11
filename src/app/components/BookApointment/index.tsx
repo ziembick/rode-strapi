@@ -16,6 +16,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 registerLocale("pt-BR", ptBR); //funcionou mas tá com esse erro aqui
 
@@ -105,7 +106,7 @@ export default function BookAppointment() {
                 timeIntervals={15}
               />
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label>Final da Consulta</label>
               <DatePicker
                 onChange={(date: Date) => setEnd(date)}
@@ -115,7 +116,7 @@ export default function BookAppointment() {
                 locale="pt-BR"
                 timeIntervals={15}
               />
-            </div>
+            </div> */}
             <div className="form-group">
               <label>Seu nome</label>
               <input
@@ -143,9 +144,17 @@ export default function BookAppointment() {
           </>
         ) : (
           <div className="">
-            <button className="btn btn-google" onClick={() => googleSignIn()}>
+            <motion.button
+              className="btn btn-google"
+              onClick={() => googleSignIn()}
+              whileHover={{
+                scale: 1.03,
+                transition: { duration: 0.3 },
+              }}
+              whileTap={{ scale: 0.9 }}
+            >
               Agende sua consulta pelo Google
-            </button>
+            </motion.button>
           </div>
         )}
       </div>
