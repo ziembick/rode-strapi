@@ -19,15 +19,17 @@ const NAV_ITEMS2 = [
 
 export const Header2 = () => {
 
+  
+
   return (
     <nav className={`${styles.navItems} container`}>
       <div className={styles.imageContainer}>
         <Link href="/">
           <Image
-            src="/rlogo3.png"
+            src="/logoRVerde.svg"
             alt="Logo"
-            width={50}
-            height={70}
+            width={44}
+            height={58}
             className={`${styles.logo} pt-10`}
           />
         </Link>

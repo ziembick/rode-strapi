@@ -31,7 +31,7 @@ const Home = () => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/bgFullVerde.svg";
+    img.src = "/novoBgFullHelp.svg";
     img.onload = () => setBackgroundImage(img.src);
   }, []);
 
@@ -57,24 +57,23 @@ const Home = () => {
       <div ref={atuacaoRef}>
         <Atuacao />
       </div>
-
+      <div ref={sobreRef}>
+        <Sobre />
+      </div>
       <div
         className="backgroundContainer"
         style={{
           backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
         }}
       >
-        <div ref={depoimentosRef}>
-          <Depoimentos />
-        </div>
         <div ref={psicanaliseRef}>
           <Psicanalise />
         </div>
+        <div ref={depoimentosRef}>
+          <Depoimentos />
+        </div>
       </div>
 
-      <div ref={sobreRef}>
-        <Sobre />
-      </div>
       {/* <div ref={ajudarRef}>
         <Ajudar />
       </div> */}

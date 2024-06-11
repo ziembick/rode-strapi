@@ -5,7 +5,7 @@ import styles from "./atencao.module.sass";
 export default function Atencao() {
   return (
     <div className={styles.imagemDeTopo}>
-      <div className={`${styles.atencao} container mt-10`}>
+      <div className={`${styles.atencao} container`}>
         <div className={styles.textContainer}>
           <h1 className={styles.title}>Atenção!</h1>
           <div className={`${styles.imageContainer} mt-10`}>
@@ -13,8 +13,8 @@ export default function Atencao() {
               <Image
                 src="/atencaoNovo.svg"
                 alt="Atencao"
-                width={90}
-                height={90}
+                width={70}
+                height={50}
                 className={styles.imageAtencao}
               />
               Esse site não oferece atendimento imediato a paessoas em crise
