@@ -5,6 +5,7 @@ import BtnAgende from "../btnAgende";
 import Image from "next/image";
 import styles from "./sobre.module.sass";
 import { motion } from "framer-motion";
+import { FaHeart } from "react-icons/fa6";
 
 export default function Sobre() {
   return (
@@ -46,28 +47,29 @@ export default function Sobre() {
               }}
             >
               <p className={styles.description}>
-                Olá muito prazer, tudo bem? Meu nome é Marianne sou Psicóloga
-                Clínica e o meu trabalho é pautado na abordagem Junguiana,
-                graduada em Psicologia pelas Faculdades Metropolitanas Unidas
-                (FMU). Realizei o Curso de Introdução a Clínica Junguiana pelo
-                Instituto Sedes Sapientiae, fiz Aprimoramento Profissional pelo
-                Instituto Práxis Analítica, atualmente faço Supervisão Clínica,
-                Aprimoramento Profissional sobre A Prática Junguiana na
-                Contemporaneidade pelo Instituto Freedom , e Psicoterapia
-                Pessoal há 6 anos.
+                Como Psicanalista, estudiosa das Neurociências, especialista em
+                Comunicação Não Violenta e uma extensa trajetória como executiva
+                de Recursos Humanos no mundo corporativo, é uma alegria
+                recebê-la (o) aqui. <FaHeart size={13} className={styles.heart}/> <FaHeart size={13} className={styles.heart}/>
               </p>
               <p className={styles.description}>
-                Meu objetivo como Psicóloga é tratar os transtornos mentais,
-                aliviar o sofrimento mental, promover o autoconhecimento, para
-                que o paciente torne se “a si mesmo”, buscando a consciência
-                necessária, para transitar pela vida criando novos caminhos.
-                Estou trilhando um caminho pessoal motivada pelo que me brilha
-                os olhos que é ser Psicóloga Clínica, estar neste lugar me
-                inspira a ser uma profissional mais competente, ética e humana
-                proporcionando a experiência de encontro com você mesmo. E
-                também acredito numa clínica psicológica que lute contra todo
-                tipo de preconceito e transforme o mundo através da promoção de
-                saúde mental de forma universal.
+                Ao longo de mais de três décadas, dediquei-me ao desenvolvimento
+                humano, ajudando indivíduos a expandirem sua capacidade de
+                reflexão sob diferentes perspectivas, a superarem limitações e a
+                aprimorarem seus relacionamentos, tanto consigo mesmos quanto
+                com os outros.
+              </p>
+              <p className={styles.description}>
+                A Psicanálise destina-se àqueles que buscam desvendar seus
+                desejos mais ocultos e àqueles que anseiam pela liberdade de
+                serem autênticos. É também recomendada para momentos de crise,
+                dificuldades emocionais e os diversos desafios que possam estar
+                enfrentando atualmente.
+              </p>
+              <p className={styles.description}>
+                Sinta-se à vontade para explorar esse caminho de descobertas e
+                transformações ao seu próprio ritmo. Estou aqui para
+                acompanhá-la (o) na sua jornada ao desconhecido.
               </p>
             </motion.div>
             <motion.div
