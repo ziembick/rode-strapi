@@ -11,11 +11,6 @@ const Contato = () => {
         <div>
           <BookAppointment />
         </div>
-        <div>
-          <p></p>
-          <p>Ou via WhatsApp</p>
-        </div>
-        <BtnAgende />
       </div>
     </div>
   );

@@ -137,7 +137,6 @@ export default function BookAppointment() {
             >
               Agendar Consulta
             </button>
-            <p></p>
             <button className="btn btn-secondary" onClick={() => signOut()}>
               Sign Out
             </button>

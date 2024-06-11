@@ -1,6 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./semifooter.module.sass";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+import { GrInstagram } from "react-icons/gr";
 
 export default function SemiFooter() {
   return (
@@ -10,41 +13,23 @@ export default function SemiFooter() {
           <Image
             src="/logoSemiFooterVerde.svg"
             alt="Logo"
-            width={276}
-            height={136}
+            width={210}
+            height={103}
           />
         </div>
         <div className={styles.textContainer}>
           <div>
             <h4 className={styles.title}>Formas de contato</h4>
             <div className={styles.contactItem}>
-              <Image
-                src="/whatsapp.svg"
-                alt="Whatsapp"
-                width={20}
-                height={20}
-                className={styles.icon}
-              />
+              <FaWhatsapp size={20} />
               <p className={styles.formas}>(11) 98765-4321</p>
             </div>
             <div className={styles.contactItem}>
-              <Image
-                src="/email2.png"
-                alt="Email"
-                width={20}
-                height={20}
-                className={styles.icon}
-              />
+              <MdOutlineEmail size={20} />
               <p className={styles.formas}>rodeziembick@gmail.com</p>
             </div>
             <div className={styles.contactItem}>
-              <Image
-                src="/ig2.svg"
-                alt="Instagram"
-                width={20}
-                height={20}
-                className={styles.icon}
-              />
+            <GrInstagram size={20}/>
               <p className={styles.formas}>@rodeziembick</p>
             </div>
           </div>
