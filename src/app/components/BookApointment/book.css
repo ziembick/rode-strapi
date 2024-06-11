@@ -72,8 +72,10 @@
   background-color: #81C0DD;
   color: #fff;
   font-family: var(--font-baloo2);
-  font-size: 1.1rem;
+  font-size: 1rem;
   border-radius: 20px;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .btn-google:hover {
@@ -102,12 +104,7 @@
   color: #E8ECF7;
 }
 
-.bgContainer {
-  background-image: url("/contatoBg.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
 
 .title {
   font-family: var(--font-baloo2);

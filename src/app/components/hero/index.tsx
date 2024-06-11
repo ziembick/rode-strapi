@@ -61,7 +61,7 @@ const Hero = () => {
             Cada pessoa é única e, portanto, merece uma abordagem terapêutica
             personalizada.
           </motion.h4>
-          <motion.p
+          {/* <motion.p
             className={styles.textinho}
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -76,7 +76,7 @@ const Hero = () => {
             Minha prática envolve entender profundamente a história de vida,
             emoções e comportamentos dos pacientes, para criar estratégias que
             promovam seu crescimento pessoal e bem-estar emocional.
-          </motion.p>
+          </motion.p> */}
           <motion.p
             className={styles.textinho2}
             initial={{ opacity: 0, x: -100 }}

@@ -150,30 +150,6 @@ export default function BookAppointment() {
           </div>
         )}
       </div>
-      <div className="atencao-container">
-        <div className="atencao">
-          <div className="textContainer">
-            <h1 className="titleContato">Contato</h1>
-            <h1 className="title">Atenção!</h1>
-            <p className="description">
-              Esse site não oferece atendimento imediato a pessoas em crise
-              suicida. Em caso de crise, ligue para o <strong>CVV - 188</strong>
-              . Em caso de emergência, procure o hospital mais próximo. Havendo
-              risco de morte, ligue imediatamente para o{" "}
-              <strong>SAMU - telefone 192</strong>
-            </p>
-          </div>
-        </div>
-        <div className="imageSenhoraContainer">
-          <Image
-            src="senhoraSentada.svg"
-            alt="Senhora Sentada"
-            width={132}
-            height={401}
-            layout="responsive"
-          />
-        </div>
-      </div>
     </div>
   );
 }
