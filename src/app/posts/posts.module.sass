@@ -5,7 +5,6 @@
   align-items: center
   justify-content: space-between
   padding: 6rem
-  background-color: #fff
 
 .elementSection
   width: 100%
@@ -28,21 +27,26 @@
 .headerDiv
   display: flex
   flex-direction: column
-  align-items: center
-  justify-content: center
+  align-items: flex-start
+  justify-content: flex-start
   text-align: center
 
   > * + *
     margin-top: 1rem
 
 .textDiv
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
   > * + *
     margin-top: 0.5rem
 
 .textH1
   font-size: 1.875rem
-  font-weight: bold
+  font-weight: 600
   letter-spacing: -0.05rem
+  font-family: var(--font-baloo2)
+  color: #627C75
 
   @media (min-width: 640px)
     font-size: 3rem
@@ -73,36 +77,43 @@
 .card
   display: grid
   gap: 2rem
+  font-family: var(--font-baloo2)
 
   @media (min-width: 768px)
     grid-template-columns: repeat(2, 1rf)
 
   @media (min-width: 1024px)
-    grid-template-columns: repeat(3, 1fr)
+    grid-template-columns: repeat(1, 1fr)
 
 .articleCard
   height: 100%
   display: flex
-  flex-direction: column
-  border-radius: 0.5rem
+  flex-direction: row
+  border-radius: 1rem
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
   overflow: hidden
+  background: #E8ECF7
 
 .image
-  aspect-ratio: 4 / 3
+  // aspect-ratio: 4 / 3
   object-fit: cover
-  width: 100%
+  // width: 100%
+  width: auto
+  height: auto
 
 .linksDiv
   flex: 1
-  padding: 1.5rem
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem
+
+.bgContainer
+  background: linear-gradient(to bottom, #809B92, #E8ECF7)
 
 .articleTitle
   font-size: 1.5rem
   font-weight: bold
   line-height: 1.25
   color: #333
-  padding-top: 1rem
+  padding-top: 0
   padding-bottom: 1rem
   text-decoration: none
 
