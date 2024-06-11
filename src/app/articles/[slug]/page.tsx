@@ -2,7 +2,8 @@ import { getAllArticles, getArticle } from "@/../lib/api";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import styles from './article.module.sass'
+import styles from "./article.module.sass";
+import { Header2 } from "@/app/components/header copy";
 
 interface KnowledgeArticleProps {
   params: {
@@ -28,35 +29,37 @@ export default async function KnowledgeArticle({
   }
 
   return (
-    <main className={`${styles.mainContainer} container`}>
-      <section className={styles.secao}>
-        <div className={styles.mainDiv}>
-          <div className={styles.article}>
-            <h1 className={styles.articleTitle}>
-              {article.title}
-            </h1>
-            <p className={styles.articleSummary}>
-              {article.summary}
-            </p>
-          </div>
-          <div className={styles.imageDiv}>
-            <Image
-              alt="Article Image"
-              className={styles.imageClass}
-              height="365"
-              src={article.articleImage.url}
-              width="650"
-            />
-            <div className={styles.detailsDiv}>
-              <div className={styles.details}>
-                <div className={styles.detailsMain}>
-                  {documentToReactComponents(article.details.json)}
+    <>
+      <Header2 />
+      <div className={styles.bgContainer}>
+        <main className={`${styles.mainContainer} container`}>
+          <section className={styles.secao}>
+            <div className={styles.mainDiv}>
+              <div className={styles.article}>
+                <p>{article.categoryName}</p>
+                <h1 className={styles.articleTitle}>{article.title}</h1>
+                <p className={styles.articleSummary}>{article.summary}</p>
+              </div>
+              <div className={styles.imageDiv}>
+                <Image
+                  alt="Article Image"
+                  className={styles.imageClass}
+                  height="365"
+                  src={article.articleImage.url}
+                  width="650"
+                />
+                <div className={styles.detailsDiv}>
+                  <div className={styles.details}>
+                    <div className={styles.detailsMain}>
+                      {documentToReactComponents(article.details.json)}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-    </main>
+          </section>
+        </main>
+      </div>
+    </>
   );
 }
