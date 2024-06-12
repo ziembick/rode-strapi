@@ -37,7 +37,6 @@ export default async function KnowledgeArticle({
             <div className={styles.mainDiv}>
               <div className={styles.article}>
                 <p>{article.categoryName}</p>
-                
                 <h1 className={styles.articleTitle}>{article.title}</h1>
                 <p className={styles.articleSummary}>{article.summary}</p>
               </div>
@@ -45,9 +44,9 @@ export default async function KnowledgeArticle({
                 <Image
                   alt="Article Image"
                   className={styles.imageClass}
-                  height="365"
+                  height={600}
                   src={article.articleImage.url}
-                  width="650"
+                  width={100}
                 />
                 <div className={styles.detailsDiv}>
                   <div className={styles.details}>
