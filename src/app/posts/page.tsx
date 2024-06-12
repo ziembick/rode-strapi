@@ -49,9 +49,12 @@ export default async function Home() {
                           <p className={styles.articleSummary}>
                             {article.summary}
                           </p>
-                          <p className={styles.articleAuthor}>
-                            Written by: {article.authorName}
+                          <p className={styles.articleSummary}>
+                            {article.date}
                           </p>
+                          {/* <p className={styles.articleAuthor}>
+                            Written by: {article.authorName}
+                          </p> */}
                           <div className={styles.readMore}>
                             <Link
                               className={styles.linkReadMore}

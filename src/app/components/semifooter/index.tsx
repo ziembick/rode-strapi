@@ -22,7 +22,7 @@ export default function SemiFooter() {
             <h4 className={styles.title}>Formas de contato</h4>
             <div className={styles.contactItem}>
               <FaWhatsapp size={20} />
-              <p className={styles.formas}>(11) 98765-4321</p>
+              <p className={styles.formas}>(11) 97099-7779</p>
             </div>
             <div className={styles.contactItem}>
               <MdOutlineEmail size={20} />

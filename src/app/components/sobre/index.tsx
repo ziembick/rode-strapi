@@ -101,11 +101,12 @@ export default function Sobre() {
             }}
           >
             <Image
-              src="/sobreMim1.svg"
+              src="/sobreMim2.svg"
               alt="Sobre mim"
               width={999}
-              height={527}
+              height={510}
               className={styles.imagem}
+              // layout="reponsive"
             />
           </motion.div>
         </div>
