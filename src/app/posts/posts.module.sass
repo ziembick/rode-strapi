@@ -4,7 +4,7 @@
   flex-direction: column
   align-items: center
   justify-content: space-between
-  padding: 6rem
+  padding: 2rem
 
 .elementSection
   width: 100%
@@ -14,8 +14,6 @@
   margin-left: auto
   margin-right: auto
   max-width: 100%
-  padding-left: 1rem
-  padding-right: 1rem
 
   > * + *
     margin-top: 3rem
@@ -53,7 +51,7 @@
 
 .ptag
   max-width: 900px
-  color: #71717a
+  color: #000
 
   @media screen and (min-width: 768px)
     font-size: 1.25rem
@@ -67,8 +65,6 @@
     font-size: 1.25rem
     line-height: 1.75rem
 
-  @media (prefers-color-scheme: dark)
-    color: #a1a1aa
 
 .cardContainer
   > * + *
@@ -103,25 +99,24 @@
 
 .linksDiv
   flex: 1
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem
+  padding: 1.5rem
+
+.tituloCategory
+  display: flex
+  align-items: center
+  justify-content: space-between
 
 .bgContainer
   background: linear-gradient(to bottom, #809B92, #E8ECF7)
 
 .articleTitle
-  font-size: 1.5rem
-  font-weight: bold
-  line-height: 1.25
-  color: #333
-  padding-top: 0
-  padding-bottom: 1rem
-  text-decoration: none
+  font-size: 2rem
+  font-weight: 700
+  color: #809B92
+  
 
-  @media (prefers-color-scheme: dark)
-    color: #130000
 
 .category
-  display: inline-block
   border-radius: 10px
   background-color: #ced4da
   padding-left: 0.75rem
@@ -129,17 +124,15 @@
   padding-top: 0.25rem
   padding-bottom: 0.25rem
   font-weight: bold
-  color: #2d3748
+  color: #809B92
 
 .articleSummary
   max-width: none
-  color: #71717a
+  color: #809B92
   margin-top: 1rem
-  margin-bottom: 0.5rem
-  font-size: 0.875rem
+  margin-bottom: 1rem
+  font-size: 0.94rem
 
-  @media (prefers-color-scheme: dark)
-    color: #a1a1aa
 
 .articleAuthor
   max-width: none
@@ -149,19 +142,26 @@
   font-size: 0.875rem
   font-weight: bold
 
-  @media (prefers-color-scheme: dark)
-    color: #a1a1aa
+.titleArtigo
+  text-decoration: none
+  font-family: var(--font-baloo2)
+  font-weight: 700
+  color: #809B92
 
 .readMore
   display: flex
-  justify-content: flex-end
+  justify-content: space-between
+  align-items: center
 
 .linkReadMore
   display: inline-flex
   height: 2.5rem
   align-items: center
   justify-content: center
-  font-size: 0.875rem
+  font-size: 1rem
   font-weight: 500
   text-decoration: none
-  color: #000
+  color: #809B92
+
+  &:hover
+    color: #E77F80

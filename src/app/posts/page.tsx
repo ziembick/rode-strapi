@@ -17,9 +17,7 @@ export default async function Home() {
             <div className={styles.mainDiv}>
               <div className={styles.headerDiv}>
                 <div className={styles.textDiv}>
-                  <h1 className={styles.textH1}>
-                    Últimas postagens
-                  </h1>
+                  <h1 className={styles.textH1}>Últimas postagens</h1>
                 </div>
               </div>
               <div className={styles.cardContainer}>
@@ -38,29 +36,32 @@ export default async function Home() {
                           width="350"
                         />
                         <div className={styles.linksDiv}>
-                          <Link href={`/articles/${article.slug}`}>
-                            <h3 className={styles.articleTitle}>
-                              {article.title}
-                            </h3>
-                          </Link>
-                          <div className={styles.category}>
-                            {article.categoryName}
+                          <div className={styles.tituloCategory}>
+                            <Link href={`/articles/${article.slug}`} className={styles.titleArtigo}>
+                              <h3 className={styles.articleTitle}>
+                                {article.title}
+                              </h3>
+                            </Link>
+                            <div className={styles.category}>
+                              {article.categoryName}
+                            </div>
                           </div>
                           <p className={styles.articleSummary}>
                             {article.summary}
                           </p>
-                          <p className={styles.articleSummary}>
-                            {article.date}
-                          </p>
+
                           {/* <p className={styles.articleAuthor}>
                             Written by: {article.authorName}
                           </p> */}
                           <div className={styles.readMore}>
+                            <p className={styles.articleSummary}>
+                              {article.date}
+                            </p>
                             <Link
                               className={styles.linkReadMore}
                               href={`/articles/${article.slug}`}
                             >
-                              Read More →
+                              Leia mais →
                             </Link>
                           </div>
                         </div>

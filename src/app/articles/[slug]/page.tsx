@@ -45,9 +45,9 @@ export default async function KnowledgeArticle({
                 <Image
                   alt="Article Image"
                   className={styles.imageClass}
-                  height="365"
+                  height={600}
                   src={article.articleImage.url}
-                  width="650"
+                  width={100}
                 />
                 <div className={styles.detailsDiv}>
                   <div className={styles.details}>
