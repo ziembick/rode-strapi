@@ -37,6 +37,7 @@ export default async function KnowledgeArticle({
             <div className={styles.mainDiv}>
               <div className={styles.article}>
                 <p>{article.categoryName}</p>
+                
                 <h1 className={styles.articleTitle}>{article.title}</h1>
                 <p className={styles.articleSummary}>{article.summary}</p>
               </div>
