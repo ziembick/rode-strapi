@@ -22,18 +22,18 @@ const NAV_ITEMS: NavItemType[] = [
 ];
 
 interface SectionRefs {
-  heroRef: React.MutableRefObject<null>;
-  atuacaoRef: React.MutableRefObject<null>;
-  psicanaliseRef: React.MutableRefObject<null>;
-  ajudarRef: React.MutableRefObject<null>;
-  sobreRef: React.MutableRefObject<null>;
-  depoimentosRef: React.MutableRefObject<null>;
-  atencaoRef: React.MutableRefObject<null>;
-  contatoRef: React.MutableRefObject<null>;
+  heroRef: React.RefObject<HTMLDivElement>;
+  atuacaoRef: React.RefObject<HTMLDivElement>;
+  psicanaliseRef: React.RefObject<HTMLDivElement>;
+  ajudarRef: React.RefObject<HTMLDivElement>;
+  sobreRef: React.RefObject<HTMLDivElement>;
+  depoimentosRef: React.RefObject<HTMLDivElement>;
+  atencaoRef: React.RefObject<HTMLDivElement>;
+  contatoRef: React.RefObject<HTMLDivElement>;
 }
 
 interface HeaderProps {
-  scrollToSection: (sectionRef: React.MutableRefObject<null>) => void;
+  scrollToSection: (sectionRef: React.RefObject<HTMLDivElement>) => void;
   refs: SectionRefs;
 }
 
@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
 
       const active = sections.find(
         (section) =>
-          section.top &&
+          section.top !== undefined &&
           section.top <= window.innerHeight / 2 &&
           section.top >= 0
       );

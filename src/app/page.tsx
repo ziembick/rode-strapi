@@ -14,17 +14,17 @@ import Header from "./components/header";
 import BackToTop from "./components/back-to-top";
 
 const Home = () => {
-  const heroRef = useRef(null);
-  const atuacaoRef = useRef(null);
-  const psicanaliseRef = useRef(null);
-  const ajudarRef = useRef(null);
-  const sobreRef = useRef(null);
-  const depoimentosRef = useRef(null);
-  const atencaoRef = useRef(null);
-  const contatoRef = useRef(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const atuacaoRef = useRef<HTMLDivElement>(null);
+  const psicanaliseRef = useRef<HTMLDivElement>(null);
+  const ajudarRef = useRef<HTMLDivElement>(null);
+  const sobreRef = useRef<HTMLDivElement>(null);
+  const depoimentosRef = useRef<HTMLDivElement>(null);
+  const atencaoRef = useRef<HTMLDivElement>(null);
+  const contatoRef = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = (sectionRef: any) => {
-    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
+    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const [backgroundImage, setBackgroundImage] = useState<string | null>(null);

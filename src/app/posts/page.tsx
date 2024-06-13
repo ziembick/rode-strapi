@@ -6,7 +6,7 @@ import Header from "../components/header";
 import { Header2 } from "../components/header copy";
 
 export default async function Home() {
-  const articles = await getAllArticles();
+  const articles = await getAllArticles(); // @ts-ignore
 
   return (
     <>

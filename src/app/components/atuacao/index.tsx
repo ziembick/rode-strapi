@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./atuacao.module.sass";
 import BtnAgende from "../btnAgende";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -53,8 +53,26 @@ const AREAS_ATUACAO = [
 ];
 
 export default function Atuacao() {
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("atuac");
+      if (element) {
+        const topPos = element.getBoundingClientRect().top;
+        const bottomPos = element.getBoundingClientRect().bottom;
+        const visible = topPos < window.innerHeight && bottomPos >= 0;
+        setIsVisible(visible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Verificar visibilidade no carregamento inicial
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className={styles.relativeContainer}>
+    <div id="atuac" className={styles.relativeContainer}>
       <div className={styles.imagemDeTopo}>
         <Image
           src="/bordinha.svg"
@@ -67,19 +85,29 @@ export default function Atuacao() {
         <div className={`${styles.cont} container`}>
           <motion.h1
             className={styles.aga1}
-            transition={{ duration: 0.7 }}
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
             exit={{ opacity: 0, x: -100 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.2,
+            }}
           >
             Áreas de Atuação
           </motion.h1>
           <motion.p
             className={styles.pe}
-            transition={{ duration: 0.7 }}
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
             exit={{ opacity: 0, x: -100 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 30,
+              delay: 0.6,
+            }}
           >
             Tratamentos e demandas mais frequentes que atendo atualmente
           </motion.p>
@@ -100,31 +128,33 @@ export default function Atuacao() {
             >
               {AREAS_ATUACAO.map((atuacao, index) => (
                 <SwiperSlide key={index}>
-                  <motion.div
-                    className={styles.card}
-                    initial={{ opacity: 0, x: -100, filter: "blur(5px)" }}
-                    whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                    exit={{ opacity: 0, x: -100, filter: "blur(5px)" }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.2,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 30,
-                      ease: "easeIn",
-                      filter: { duration: 1, delay: index * 0.2 },
-                    }}
-                  >
-                    <Image
-                      src={atuacao.image}
-                      alt={atuacao.title}
-                      width={100}
-                      height={80}
-                      className={styles.card_image}
-                    />
-                    <h4 className={styles.card_title}>{atuacao.title}</h4>
-                    <p className={styles.card_text}>{atuacao.description}</p>
-                  </motion.div>
+                  {atuacao && (
+                    <motion.div
+                      className={styles.card}
+                      initial={{ opacity: 0, x: -100, filter: "blur(5px)" }}
+                      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, x: -100, filter: "blur(5px)" }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.4,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 30,
+                        ease: "easeIn",
+                        filter: { duration: 1, delay: index * 0.4},
+                      }}
+                    >
+                      <Image
+                        src={atuacao.image}
+                        alt={atuacao.title}
+                        width={100}
+                        height={80}
+                        className={styles.card_image}
+                      />
+                      <h4 className={styles.card_title}>{atuacao.title}</h4>
+                      <p className={styles.card_text}>{atuacao.description}</p>
+                    </motion.div>
+                  )}
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -132,7 +162,7 @@ export default function Atuacao() {
           <motion.div
             className={styles.btnAgende}
             initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 1 }}
+            animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
             transition={{
               type: "spring",
