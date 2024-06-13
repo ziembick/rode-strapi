@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./hero.module.sass";
 import Image from "next/image";
 import { FaLaptop } from "react-icons/fa";
@@ -8,20 +8,32 @@ import BtnAgende from "../btnAgende";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("hero");
+      if (element) {
+        const topPos = element.getBoundingClientRect().top;
+        const bottomPos = element.getBoundingClientRect().bottom;
+        const visible = topPos < window.innerHeight && bottomPos >= 0;
+        setIsVisible(visible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Verificar visibilidade no carregamento inicial
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <motion.div
-      className={styles.heroBackground}
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div id="hero" className={styles.heroBackground}>
       <div className={styles.container}>
         <div className={styles.textContainer}>
           <motion.h2
             className={styles.nome}
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
             exit={{ opacity: 0, x: -100 }}
             transition={{
               type: "spring",
@@ -35,7 +47,7 @@ const Hero = () => {
           <motion.h3
             className={styles.titulo}
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
             exit={{ opacity: 0, x: -100 }}
             transition={{
               type: "spring",
@@ -49,7 +61,7 @@ const Hero = () => {
           <motion.h4
             className={`${styles.comentario}`}
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
             exit={{ opacity: 0, x: -100 }}
             transition={{
               type: "spring",
@@ -61,26 +73,10 @@ const Hero = () => {
             Cada pessoa é única e, portanto, merece uma abordagem terapêutica
             personalizada.
           </motion.h4>
-          {/* <motion.p
-            className={styles.textinho}
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 30,
-              delay: 0.8,
-            }}
-          >
-            Minha prática envolve entender profundamente a história de vida,
-            emoções e comportamentos dos pacientes, para criar estratégias que
-            promovam seu crescimento pessoal e bem-estar emocional.
-          </motion.p> */}
           <motion.p
             className={styles.textinho2}
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
             exit={{ opacity: 0, x: -100 }}
             transition={{
               type: "spring",
@@ -96,7 +92,7 @@ const Hero = () => {
           <motion.div
             className={styles.btnAgende}
             initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 1 }}
+            animate={isVisible ? { opacity: 1, y: 1 } : {}}
             exit={{ opacity: 0, y: 100 }}
             transition={{
               type: "spring",
@@ -110,7 +106,7 @@ const Hero = () => {
           <motion.div
             className={styles.laptop}
             initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 1 }}
+            animate={isVisible ? { opacity: 1, y: 1 } : {}}
             exit={{ opacity: 0, y: 100 }}
             transition={{
               type: "spring",
@@ -130,7 +126,7 @@ const Hero = () => {
         <motion.div
           className={styles.imageContainer}
           initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          animate={isVisible ? { opacity: 1, x: 0 } : {}}
           exit={{ opacity: 0, x: 100 }}
           transition={{
             type: "spring",
@@ -149,7 +145,7 @@ const Hero = () => {
           />
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

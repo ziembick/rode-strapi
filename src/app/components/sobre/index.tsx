@@ -1,15 +1,32 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BtnAgende from "../btnAgende";
 import Image from "next/image";
 import styles from "./sobre.module.sass";
 import { motion } from "framer-motion";
-import { FaHeart } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa";
 
 export default function Sobre() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("sobre");
+      if (element) {
+        const topPos = element.getBoundingClientRect().top;
+        const bottomPos = element.getBoundingClientRect().bottom;
+        const visible = topPos < window.innerHeight && bottomPos >= 0;
+        setIsVisible(visible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Verificar visibilidade no carregamento inicial
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className={styles.relativeContainer}>
+    <div id="sobre" className={styles.relativeContainer}>
       <div className={styles.imagemDeTopo}>
         <Image
           src="/bordinha.svg"
@@ -25,6 +42,7 @@ export default function Sobre() {
               className={styles.mainTitle}
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
               exit={{ opacity: 0, x: -100 }}
               transition={{
                 type: "spring",
@@ -35,9 +53,11 @@ export default function Sobre() {
             >
               Sobre mim
             </motion.h1>
+
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
               exit={{ opacity: 0, x: -100 }}
               transition={{
                 type: "spring",
@@ -50,7 +70,9 @@ export default function Sobre() {
                 Como Psicanalista, estudiosa das Neurociências, especialista em
                 Comunicação Não Violenta e uma extensa trajetória como executiva
                 de Recursos Humanos no mundo corporativo, é uma alegria
-                recebê-la (o) aqui. <FaHeart size={13} className={styles.heart}/> <FaHeart size={13} className={styles.heart}/>
+                recebê-la (o) aqui.{" "}
+                <FaHeart size={13} className={styles.heart} />{" "}
+                <FaHeart size={13} className={styles.heart} />
               </p>
               <p className={styles.description}>
                 Ao longo de mais de três décadas, dediquei-me ao desenvolvimento
@@ -75,7 +97,8 @@ export default function Sobre() {
             <motion.div
               className={styles.btnAgende}
               initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 1 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              animate={isVisible ? { opacity: 1, y: 1 } : {}}
               exit={{ opacity: 0, y: 100 }}
               transition={{
                 type: "spring",
@@ -90,7 +113,7 @@ export default function Sobre() {
           <motion.div
             className={styles.imageContainer}
             initial={{ opacity: 0, y: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
             exit={{ opacity: 0, y: 100, scale: 0.5 }}
             transition={{
               duration: 0.5,

@@ -1,13 +1,30 @@
-'use client'
+"use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./psicanalise.module.sass";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Psicanalise() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("psi");
+      if (element) {
+        const topPos = element.getBoundingClientRect().top;
+        const bottomPos = element.getBoundingClientRect().bottom;
+        const visible = topPos < window.innerHeight && bottomPos >= 0;
+        setIsVisible(visible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Verificar visibilidade no carregamento inicial
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className={styles.relativeContainer}>
+    <div id="psi" className={styles.relativeContainer}>
       <div className={styles.imagemDeTopo}>
         <Image
           src="/bordinha.svg"
@@ -22,6 +39,7 @@ export default function Psicanalise() {
             className={styles.title}
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
             exit={{ opacity: 0, x: -100 }}
             transition={{
               type: "spring",
@@ -32,9 +50,11 @@ export default function Psicanalise() {
           >
             O que é Psicanalise
           </motion.h1>
+
           <motion.div
             className={styles.textContainer}
             initial={{ opacity: 0, x: -100 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
             whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{

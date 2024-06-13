@@ -27,7 +27,7 @@ export default function WhatsAppBtn() {
 
   return (
     <AnimatePresence>
-      {show && (
+      {show !== null && show !== undefined && show && (
         <motion.div
           className={styles.motionDiv}
           initial={{ opacity: 0, right: -10 }}
