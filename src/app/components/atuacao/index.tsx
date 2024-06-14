@@ -85,9 +85,9 @@ export default function Atuacao() {
         <div className={`${styles.cont} container`}>
           <motion.h1
             className={styles.aga1}
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: -200 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            exit={{ opacity: 0, x: -100 }}
+            exit={{ opacity: 0, x: -200 }}
             transition={{
               type: "spring",
               stiffness: 100,
@@ -99,9 +99,9 @@ export default function Atuacao() {
           </motion.h1>
           <motion.p
             className={styles.pe}
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: -200 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            exit={{ opacity: 0, x: -100 }}
+            exit={{ opacity: 0, x: -200 }}
             transition={{
               type: "spring",
               stiffness: 100,
@@ -131,17 +131,19 @@ export default function Atuacao() {
                   {atuacao && (
                     <motion.div
                       className={styles.card}
-                      initial={{ opacity: 0, x: -100, filter: "blur(5px)" }}
-                      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                      exit={{ opacity: 0, x: -100, filter: "blur(5px)" }}
+                      initial={{ opacity: 0, x: -100, filter: "blur(8px)" }}
+                      animate={
+                        isVisible ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}
+                      }
+                      exit={{ opacity: 0, x: -100, filter: "blur(8px)" }}
                       transition={{
                         duration: 0.5,
-                        delay: index * 0.4,
+                        delay: index * 0.2,
                         type: "spring",
                         stiffness: 100,
                         damping: 30,
                         ease: "easeIn",
-                        filter: { duration: 1, delay: index * 0.4},
+                        filter: { duration: 1, delay: index * 0.2 },
                       }}
                     >
                       <Image
@@ -162,7 +164,7 @@ export default function Atuacao() {
           <motion.div
             className={styles.btnAgende}
             initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isVisible ? { opacity: 1, y: 1 } : {}}
             exit={{ opacity: 0, y: 100 }}
             transition={{
               type: "spring",

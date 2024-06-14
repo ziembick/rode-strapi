@@ -11,7 +11,6 @@ import {
 } from "@supabase/auth-helpers-react";
 import AppProviders from "./AppProviders";
 import Header from "./components/header";
-import BackToTop from "./components/back-to-top";
 import WhatsAppBtn from "./components/whatsappBtn";
 
 // import "./globals.css";

@@ -73,14 +73,13 @@
   background-color: #81C0DD;
   color: #fff;
   font-family: var(--font-baloo2);
-  font-size: 1rem;
   border-radius: 20px;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding: 0.8rem 1rem;
 }
 
 .btn-google:hover {
-  background-color: #5cc3f3
+  background-color: #5cc3f3;
+  font-size: 1rem;
 }
 
 .atencao {
@@ -134,7 +133,6 @@
     border-radius: 6px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   }
-
   .greeting {
     font-size: 1.25rem;
   }
@@ -148,10 +146,15 @@
     font-size: 0.9rem;
   }
 
-  .btn {
-    padding: 8px 0;
+  .btn-google {
+    background-color: #81C0DD;
+    color: #fff;
+    font-family: var(--font-baloo2);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
+
 }
 
 

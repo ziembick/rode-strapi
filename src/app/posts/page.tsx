@@ -31,11 +31,13 @@ export default async function Home() {
                         <Image
                           alt="placeholder"
                           className={styles.image}
-                          height="263"
+                          height={263}
                           src={article.articleImage.url}
-                          width="350"
+                          width={350}
+                          layout="responsive"
                         />
                         <div className={styles.linksDiv}>
+                          <div className={styles.topSection}>
                           <div className={styles.tituloCategory}>
                             <Link href={`/articles/${article.slug}`} className={styles.titleArtigo}>
                               <h3 className={styles.articleTitle}>
@@ -49,13 +51,14 @@ export default async function Home() {
                           <p className={styles.articleSummary}>
                             {article.summary}
                           </p>
-
+                          </div>
                           {/* <p className={styles.articleAuthor}>
                             Written by: {article.authorName}
                           </p> */}
+                          <div className={styles.bottomSection}>
                           <div className={styles.readMore}>
-                            <p className={styles.articleSummary}>
-                              {article.date}
+                            <p className={styles.data}>
+                              {new Date(article.date).toLocaleDateString()}
                             </p>
                             <Link
                               className={styles.linkReadMore}
@@ -63,6 +66,7 @@ export default async function Home() {
                             >
                               Leia mais →
                             </Link>
+                          </div>
                           </div>
                         </div>
                       </article>
