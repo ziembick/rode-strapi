@@ -36,10 +36,14 @@ export default async function KnowledgeArticle({
           <section className={styles.secao}>
             <div className={styles.mainDiv}>
               <div className={styles.article}>
-                <p>{article.categoryName}</p>
-                
-                <h1 className={styles.articleTitle}>{article.title}</h1>
-                <p className={styles.articleSummary}>{article.summary}</p>
+                <div className={styles.categoryName}>
+                  {article.categoryName}
+                </div>
+                <div className={styles.tituloEsummary}>
+                  <h1 className={styles.articleTitle}>{article.title}</h1>
+                  <p className={styles.articleSummary}>{article.summary}</p>
+                </div>
+                <p>{new Date(article.date).toLocaleDateString()}</p>
               </div>
               <div className={styles.imageDiv}>
                 <Image
