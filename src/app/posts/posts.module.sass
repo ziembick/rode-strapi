@@ -36,6 +36,7 @@
   display: flex
   justify-content: flex-start
   align-items: flex-start
+
   > * + *
     margin-top: 0.5rem
 
@@ -44,7 +45,7 @@
   font-weight: 600
   letter-spacing: -0.05rem
   font-family: var(--font-baloo2)
-  color: #627C75
+  color: #627c75
 
   @media (min-width: 640px)
     font-size: 3rem
@@ -65,41 +66,47 @@
     font-size: 1.25rem
     line-height: 1.75rem
 
-
 .cardContainer
   > * + *
     margin-top: 3rem
 
 .card
-  display: grid
+  display: flex
+  flex-direction: column
   gap: 2rem
   font-family: var(--font-baloo2)
-
-  @media (min-width: 768px)
-    grid-template-columns: repeat(2, 1rf)
-
-  @media (min-width: 1024px)
-    grid-template-columns: repeat(1, 1fr)
 
 .articleCard
   height: 100%
   display: flex
-  flex-direction: row
+  flex-direction: column
   border-radius: 1rem
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
   overflow: hidden
-  background: #E8ECF7
+  background: #e8ecf7
+
+  @media screen and (min-width: 820px)
+    flex-direction: row
 
 .image
-  // aspect-ratio: 4 / 3
   object-fit: cover
-  // width: 100%
   width: auto
   height: auto
 
+  @media screen and (min-width: 820px)
+    height: 100%
+    max-width: 350px // Definindo a largura máxima para telas maiores
+
 .linksDiv
-  flex: 1
-  padding: 1.5rem
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding: 1rem
+
+.topSection
+  display: flex
+  flex-direction: column
+  justify-content: space-between
 
 .tituloCategory
   display: flex
@@ -107,14 +114,12 @@
   justify-content: space-between
 
 .bgContainer
-  background: linear-gradient(to bottom, #809B92, #E8ECF7)
+  background: linear-gradient(to bottom, #809b92, #e8ecf7)
 
 .articleTitle
   font-size: 2rem
   font-weight: 700
-  color: #809B92
-  
-
+  color: #809b92
 
 .category
   border-radius: 10px
@@ -124,15 +129,14 @@
   padding-top: 0.25rem
   padding-bottom: 0.25rem
   font-weight: bold
-  color: #809B92
+  color: #809b92
 
 .articleSummary
   max-width: none
-  color: #809B92
+  color: #809b92
   margin-top: 1rem
   margin-bottom: 1rem
   font-size: 0.94rem
-
 
 .articleAuthor
   max-width: none
@@ -146,12 +150,20 @@
   text-decoration: none
   font-family: var(--font-baloo2)
   font-weight: 700
-  color: #809B92
+  color: #809b92
 
 .readMore
   display: flex
   justify-content: space-between
   align-items: center
+
+.data
+  font-family: var(--font-baloo2)
+  max-width: none
+  color: #809b92
+  margin-top: 1rem
+  margin-bottom: 1rem
+  font-size: 0.94rem
 
 .linkReadMore
   display: inline-flex
@@ -159,9 +171,11 @@
   align-items: center
   justify-content: center
   font-size: 1rem
+  margin-top: auto
   font-weight: 500
   text-decoration: none
-  color: #809B92
+  color: #809b92
+
 
   &:hover
-    color: #E77F80
+    color: #e77f80

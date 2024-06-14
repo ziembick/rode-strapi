@@ -5,15 +5,15 @@ import React, { useEffect, useState } from "react";
 import styles from "./depoimentos.module.sass";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { IoIosStar } from "react-icons/io";
 import { motion } from "framer-motion";
 
 const DEPOIMENTOS = [
   {
     comentario:
-      "Minha análise com a Rode Ziembick foi uma experiência transformadora. Ela me ajudou a explorar áreas da minha vida que eu nunca imaginei que precisassem de atenção. Sua abordagem cuidadosa e empática me fez sentir segura e compreendida desde o primeiro momento. Com sua ajuda, consegui superar traumas antigos e desenvolver uma melhor compreensão de mim mesma. Recomendo a Psicanalista Rode Ziembick a qualquer pessoa que esteja buscando um caminho para o autoconhecimento e desenvolvimento pessoal.",
-    nome: "A.R",
+      "Desde que comecei a terapia com a Rode, minha vida mudou drasticamente para melhor. Ela tem uma percepção aguçada e oferece insights que sempre me surpreendem. Sua paciência e dedicação são evidentes em cada sessão. Com a ajuda dela, aprendi a lidar com meus problemas emocionais de uma maneira que nunca pensei ser possível. Ela é, sem dúvida, uma psicanalista excepcional que realmente se importa com seus pacientes.",
+    nome: "M.C",
     image: "/anon.webp",
   },
   {
@@ -90,7 +90,7 @@ export default function Depoimentos() {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            pagination={{ clickable: true }}
+            pagination={true}
             modules={[Pagination]}
             style={{ padding: "0 20px 0 0" }}
           >

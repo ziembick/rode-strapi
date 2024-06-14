@@ -34,7 +34,7 @@ export default function Psicanalise() {
         />
       </div>
       <div className={`${styles.psicanalise} container`}>
-        <div className={styles.boiadero}>
+        <div className={`${styles.boiadero}`}>
           <motion.h1
             className={styles.title}
             initial={{ opacity: 0, x: -100 }}

@@ -15,6 +15,7 @@ export default function SemiFooter() {
             alt="Logo"
             width={210}
             height={103}
+            className={styles.imageSemiFooter}
           />
         </div>
         <div className={styles.textContainer}>

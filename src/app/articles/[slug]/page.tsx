@@ -54,6 +54,7 @@ export default async function KnowledgeArticle({
                     <div className={styles.detailsMain}>
                       {documentToReactComponents(article.details.json)}
                       <p>Escrito por: {article.authorName}</p>
+                      <p>{article.date}</p>
                     </div>
                   </div>
                 </div>
