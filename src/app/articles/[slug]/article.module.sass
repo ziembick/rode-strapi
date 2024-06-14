@@ -7,13 +7,14 @@
   flex-direction: column
   align-items: center
   justify-content: space-between
-  padding: 6rem 0
+  padding: 5rem 0
   font-family: var(--font-baloo2)
   color: #809B92
 
-
 .secao
-  width: 100%
+  background: #fff
+  padding: 1rem 0
+  border-radius: 20px
 
 .mainDiv
   width: 100%
@@ -25,38 +26,52 @@
   > * + *
     margin-top: 3rem
 
-  @media (min-width: 768px)
+  @media (max-width: 768px)
     padding-left: 1.5rem
     padding-right: 1.5rem
 
-.article
-  > * + *
-    margin-top: 1rem
+
+
+.categoryName 
+  font-family: var(--font-baloo2)
+  font-size: 0.9rem
+  font-weight: 500
+  border-radius: 10px
+  background-color: #ced4da
+  color: #809b92
+  display: inline-block
+  padding-left: 0.75rem
+  padding-right: 0.75rem
+  padding-top: 0.25rem
+  padding-bottom: 0.25rem
+  margin-bottom: 0.5rem
+
+  
+
 
 .articleTitle
-  font-size: 2.25rem
-  font-weight: bold
-  letter-spacing: -0.05em
+  font-size: 2rem
+  font-weight: 700
   color: #809B92
+  font-family: var(--font-baloo2)
+  margin-bottom: 1rem
 
-  @media (min-width: 640px)
-    font-size: 3rem
+  @media (max-width: 768px)
+    font-size: 2rem
 
 .articleSummary
   color: #809B92
-  max-width: 900px
-  font-size: 1rem
-  line-height: 1.75rem
+  font-size: 1.1rem
 
-  @media (min-width: 768px)
+  @media (max-width: 768px)
     font-size: 1.25rem
     line-height: 1.75rem
 
-  @media (min-width: 1024px)
+  @media (max-width: 1024px)
     font-size: 1rem
     line-height: 1.75rem
 
-  @media (min-width: 1280px)
+  @media (max-width: 1280px)
     font-size: 1.25rem
     line-height: 1.75rem
 
@@ -65,7 +80,7 @@
   > * + *
     margin-top: 2rem
 
-  @media (min-width: 1024px)
+  @media (max-width: 1024px)
     > * + *
       margin-top: 2.5rem
 
@@ -83,7 +98,7 @@
   > * + *
     margin-top: 1rem
 
-  @media (min-width: 768px)
+  @media (max-width: 768px)
     > * + *
       margin-top: 1.5rem
 
@@ -97,15 +112,15 @@
   font-size: 0.875rem
   line-height: 1.75rem
 
-  @media (min-width: 768px)
+  @media (max-width: 768px)
     font-size: 1.25rem
     line-height: 1.75rem
 
-  @media (min-width: 1024px)
+  @media (max-width: 1024px)
     font-size: 1rem
     line-height: 1.75rem
 
-  @media (min-width: 1280px)
+  @media (max-width: 1280px)
     font-size: 1.25rem
     line-height: 1.75rem
 

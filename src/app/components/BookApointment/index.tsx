@@ -103,10 +103,10 @@ export default function BookAppointment() {
                 showTimeSelect
                 dateFormat="Pp"
                 locale="pt-BR"
-                timeIntervals={15}
+                timeIntervals={30}
               />
             </div>
-            {/* <div className="form-group">
+            <div className="form-group">
               <label>Final da Consulta</label>
               <DatePicker
                 onChange={(date: Date) => setEnd(date)}
@@ -114,9 +114,9 @@ export default function BookAppointment() {
                 showTimeSelect
                 dateFormat="Pp"
                 locale="pt-BR"
-                timeIntervals={15}
+                timeIntervals={30}
               />
-            </div> */}
+            </div>
             <div className="form-group">
               <label>Seu nome</label>
               <input

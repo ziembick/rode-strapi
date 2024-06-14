@@ -77,7 +77,6 @@
   font-family: var(--font-baloo2)
 
 .articleCard
-  height: 100%
   display: flex
   flex-direction: column
   border-radius: 1rem
@@ -102,16 +101,32 @@
   flex-direction: column
   justify-content: space-between
   padding: 1rem
+  flex: 1
 
-.topSection
+.topSection 
   display: flex
   flex-direction: column
   justify-content: space-between
 
+
+
+
+.bottomSection
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-top: auto
+
 .tituloCategory
   display: flex
   align-items: center
-  justify-content: space-between
+  justify-content: flex-start
+  width: 100%
+
+  @media screen and (max-width: 768px)
+    flex-direction: column-reverse
+    align-items: flex-start
+    width: 100%
 
 .bgContainer
   background: linear-gradient(to bottom, #809b92, #e8ecf7)
@@ -122,6 +137,7 @@
   color: #809b92
 
 .category
+  margin-left: auto
   border-radius: 10px
   background-color: #ced4da
   padding-left: 0.75rem
@@ -130,6 +146,10 @@
   padding-bottom: 0.25rem
   font-weight: bold
   color: #809b92
+
+  @media screen and (max-width: 768px)
+    margin-left: 0
+    margin-bottom: 0.5rem
 
 .articleSummary
   max-width: none
@@ -156,6 +176,7 @@
   display: flex
   justify-content: space-between
   align-items: center
+  width: 100%
 
 .data
   font-family: var(--font-baloo2)
@@ -171,11 +192,10 @@
   align-items: center
   justify-content: center
   font-size: 1rem
-  margin-top: auto
   font-weight: 500
   text-decoration: none
   color: #809b92
-
+  margin-left: auto
 
   &:hover
     color: #e77f80
