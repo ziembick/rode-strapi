@@ -43,24 +43,21 @@ export default async function KnowledgeArticle({
                   <h1 className={styles.articleTitle}>{article.title}</h1>
                   <p className={styles.articleSummary}>{article.summary}</p>
                 </div>
-                <p>{new Date(article.date).toLocaleDateString()}</p>
+                <div className={styles.date}>
+                  <p>Escrito por: {article.authorName}</p>
+                  {new Date(article.date).toLocaleDateString()}
+                </div>
               </div>
               <div className={styles.imageDiv}>
                 <Image
                   alt="Article Image"
                   className={styles.imageClass}
-                  height={600}
+                  height={605}
                   src={article.articleImage.url}
-                  width={100}
+                  width={1282}
                 />
                 <div className={styles.detailsDiv}>
-                  <div className={styles.details}>
-                    <div className={styles.detailsMain}>
-                      {documentToReactComponents(article.details.json)}
-                      <p>Escrito por: {article.authorName}</p>
-                      <p>{article.date}</p>
-                    </div>
-                  </div>
+                  {documentToReactComponents(article.details.json)}
                 </div>
               </div>
             </div>
