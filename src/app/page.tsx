@@ -11,7 +11,7 @@ import Psicanalise from "./components/psicanalise";
 import Atencao from "./components/atencao";
 import SemiFooter from "./components/semifooter";
 import Header from "./components/header";
-import BackToTop from "./components/back-to-top";
+import styles from "./page.module.sass";
 
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,6 @@ const Home = () => {
       <div ref={heroRef}>
         <Hero />
       </div>
-
       <div ref={atuacaoRef}>
         <Atuacao />
       </div>

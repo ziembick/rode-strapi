@@ -123,7 +123,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
           )}
         </div>
         <button className={styles.hamburger} onClick={toggleMenu}>
-          ☰
+          {menuOpen ? "✕" : "☰"}
         </button>
         {menuOpen && (
           <div className={styles.mobileNav}>

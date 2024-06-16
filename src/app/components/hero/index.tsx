@@ -88,7 +88,6 @@ const Hero = () => {
             Através da Psicanálise, você será capaz de enfrentar desafios
             futuros com confiança e independência.
           </motion.p>
-
           <motion.div
             className={styles.btnAgende}
             initial={{ opacity: 0, y: 100 }}
@@ -118,8 +117,11 @@ const Hero = () => {
             <p className={`${styles.ptag} pt-0`}>
               <FaLaptop size={25} className={styles.btnLap} />
               Atendimento
-              <span className={styles.boldText}>online individual</span> para
-              <span className={styles.boldText}> adultos e idosos </span>
+              <strong className={styles.boldText}>
+                online individual
+              </strong>
+              para
+              <strong className={styles.boldText}> adultos e idosos </strong>
             </p>
           </motion.div>
         </div>
