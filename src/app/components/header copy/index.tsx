@@ -19,6 +19,7 @@ const NAV_ITEMS2 = [
 
 export const Header2 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +30,11 @@ export const Header2 = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className={`${styles.navItems} ${isScrolled ? styles.scrolled : ""}`}>
@@ -50,6 +55,18 @@ export const Header2 = () => {
             <NavItem2 {...item} key={item.label} />
           ))}
         </div>
+
+        <button className={styles.hamburger} onClick={toggleMenu}>
+          {isMenuOpen ? "✕" : "☰"}
+        </button>
+
+        {isMenuOpen && (
+          <div className={styles.mobileNav}>
+            {NAV_ITEMS2.map((item) => (
+              <NavItem2 {...item} key={item.label} />
+            ))}
+          </div>
+        )}
       </nav>
     </div>
   );
