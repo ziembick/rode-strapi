@@ -22,6 +22,6 @@
     },
     // "strictNullChecks": false // Aqui está a adição
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/contentful/client.js", "src/app/components/BookApointment/index.tsx", "src/app/components/header/index.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/contentful/client.js", "src/app/components/BookApointment/index.tsx", "src/app/components/header/index.tsx", "src/app/pages/404.js"],
   "exclude": ["node_modules"]
 }
