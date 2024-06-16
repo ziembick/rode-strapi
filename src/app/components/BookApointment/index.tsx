@@ -53,6 +53,10 @@ export default function BookAppointment() {
 
   async function createCalendarEvent() {
     console.log("creating calendar event");
+
+    const endTime = new Date(start);
+    endTime.setMinutes(endTime.getMinutes() + 30);
+
     const event = {
       summary: eventName,
       description: eventDescription,
@@ -80,7 +84,7 @@ export default function BookAppointment() {
       })
       .then((data) => {
         console.log("Created Event", data);
-        alert("Event created, check your google calendar");
+        alert("Horário marcado! Cheque o seu Google Agenda");
       });
   }
 
@@ -98,7 +102,13 @@ export default function BookAppointment() {
             <div className="form-group">
               <label>Início da Consulta</label>
               <DatePicker
-                onChange={(date: Date) => setStart(date)}
+                onChange={(date: Date) => {
+                  setStart(date);
+                  // Automatically set end time 30 minutes after start time
+                  const endTime = new Date(date);
+                  endTime.setMinutes(endTime.getMinutes() + 30);
+                  setEnd(endTime);
+                }}
                 selected={start}
                 showTimeSelect
                 dateFormat="Pp"
@@ -107,15 +117,14 @@ export default function BookAppointment() {
               />
             </div>
             <div className="form-group">
-              <label>Final da Consulta</label>
-              <DatePicker
-                onChange={(date: Date) => setEnd(date)}
-                selected={end}
-                showTimeSelect
-                dateFormat="Pp"
-                locale="pt-BR"
-                timeIntervals={30}
-              />
+              <label>
+                Final da Consulta: 
+                {end.toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </label>
+              {/* Display the calculated end time in a readable format */}
             </div>
             <div className="form-group">
               <label>Seu nome</label>
