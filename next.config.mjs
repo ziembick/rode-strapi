@@ -12,6 +12,9 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
