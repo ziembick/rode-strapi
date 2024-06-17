@@ -21,7 +21,7 @@ const NAV_ITEMS: NavItemType[] = [
   { label: "O que é Psicanálise", refKey: "psicanaliseRef" },
   { label: "Depoimentos", refKey: "depoimentosRef" },
   { label: "Contato", refKey: "contatoRef" },
-  { label: "Posts", href: "/posts" },
+  { label: "Posts", href: "./posts" },
 ];
 
 interface SectionRefs {
