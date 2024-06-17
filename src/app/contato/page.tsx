@@ -4,6 +4,7 @@ import BookAppointment from "../components/BookApointment";
 import styles from "./contato.module.sass";
 import BtnAgende from "../components/btnAgende";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Contato = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,6 +27,13 @@ const Contato = () => {
 
   return (
     <div className={styles.bgContainer}>
+     <Image
+        src="./bgAtencao2.svg"
+        alt="Background"
+        layout="fill"
+        objectFit="cover"
+        className={styles.backgroundImage}
+      />
       <div ref={contatoRef} className={`${styles.contatoContainer} container`}>
         {isVisible && (
           <motion.h1
