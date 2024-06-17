@@ -29,7 +29,7 @@ export default function Sobre() {
     <div id="sobre" className={styles.relativeContainer}>
       <div className={styles.imagemDeTopo}>
         <Image
-          src="/bordinha.svg"
+          src="./bordinha.svg"
           alt="Image topo"
           layout="fill"
           objectFit="cover"
@@ -124,7 +124,7 @@ export default function Sobre() {
             }}
           >
             <Image
-              src="/sobreMim2.svg"
+              src="./sobreMim2.svg"
               alt="Sobre mim"
               width={999}
               height={510}
