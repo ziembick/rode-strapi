@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/rode-strapi',
   output:'export',
   images: {
     remotePatterns: [
