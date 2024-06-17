@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/rode-strapi' : '',
-  output:'export',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/rode-strapi/' : '',
+  output: 'export',
+  trailingSlash: true,
   images: {
     remotePatterns: [
       {
@@ -19,5 +21,6 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
 
 // hostname: "127.0.0.1",

@@ -42,7 +42,7 @@ export const Header2 = () => {
         <div className={styles.imageContainer}>
           <Link href="/">
             <Image
-              src="./logoRVerde.svg"
+              src={`${process.env.NODE_ENV === 'production' ? '/rode-strapi' : ''}/logoRVerde.svg`}
               alt="Logo"
               width={44}
               height={58}
