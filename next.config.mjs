@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/rode-strapi',
+  basePath: process.env.NODE_ENV === 'production' ? '/rode-strapi' : '',
   output:'export',
   images: {
     remotePatterns: [
