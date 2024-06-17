@@ -4,23 +4,9 @@ import Link from "next/link";
 import styles from "./posts.module.sass";
 import Header from "../components/header";
 import { Header2 } from "../components/header copy";
-import { useEffect, useState } from "react";
 
 export default async function Postagem() {
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    async function fetchArticles() {
-      try {
-        const fetchedArticles = await getAllArticles(); //@ts-ignore
-        setArticles(fetchedArticles || []);
-      } catch (error) {
-        console.error("Error fetching articles:", error);
-        setArticles([]); // Handle error state
-      }
-    }
-    fetchArticles();
-  }, []);
+  const articles = await getAllArticles(); // @ts-ignore
 
   return (
     <>
