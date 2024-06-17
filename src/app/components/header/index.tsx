@@ -1,11 +1,12 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState, lazy } from "react";
 import Image from "next/image";
 import styles from "./header.module.sass";
 import { NavItem } from "./nav-item";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Post from "@/app/posts/[slug]";
-import Postagem from "@/app/posts/page";
+
+// Carrega o componente de postagem de forma assíncrona
+const Postagem = lazy(() => import("@/app/posts/page"));
 
 type NavItemType = {
   label: string;
@@ -39,12 +40,28 @@ interface HeaderProps {
   refs: SectionRefs;
 }
 
+
+const LoadingFallback: React.FC = () => (
+  <div className={styles.loadingFallback}>
+    <p className={styles.loading}>Carregando</p>
+    <div className={styles.typing_indicator}>
+      <div className={styles.typing_circle}></div>
+      <div className={styles.typing_circle}></div>
+      <div className={styles.typing_circle}></div>
+      <div className={styles.typing_shadow}></div>
+      <div className={styles.typing_shadow}></div>
+      <div className={styles.typing_shadow}></div>
+    </div>
+  </div>
+);
+
 const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<keyof SectionRefs | null>(
     null
   );
+  const [showPosts, setShowPosts] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,6 +98,10 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
     setMenuOpen(false);
   };
 
+  const handlePostsClick = () => {
+    setShowPosts(true);
+  };
+
   return (
     <motion.nav
       initial={{ top: -100 }}
@@ -115,15 +136,15 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
                 isActive={item.refKey === activeSection}
               />
             ) : (
-              // eslint-disable-next-line react/jsx-key
-              <Suspense fallback={<Postagem />}>
-                <NavItem
-                  key={item.label}
-                  label={item.label}
-                  href={item.href}
-                  isActive={item.href === "/posts" && activeSection === null}
-                />
-              </Suspense>
+              <NavItem
+                key={item.label}
+                label={item.label}
+                href={item.href}
+                onClick={() => {
+                  if (item.href === "/posts") handlePostsClick();
+                }}
+                isActive={item.href === "/posts" && activeSection === null}
+              />
             )
           )}
         </div>
@@ -145,7 +166,10 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
                   key={item.label}
                   label={item.label}
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    if (item.href === "/posts") handlePostsClick();
+                  }}
                   isActive={item.href === "/posts" && activeSection === null}
                 />
               )
@@ -153,11 +177,17 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
           </div>
         )}
       </motion.div>
+      {showPosts && (
+        <Suspense fallback={<LoadingFallback />}>
+          <Postagem />
+        </Suspense>
+      )}
     </motion.nav>
   );
 };
 
 export default Header;
+
 
 
 // import React, { useEffect, useState, Suspense } from "react";
