@@ -1,97 +1,99 @@
-import React from 'react'
+import { getAllArticles } from "@/../lib/api";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./posts.module.sass";
+import Header from "../components/header";
+import { Header2 } from "../components/header copy";
+import { useEffect, useState } from "react";
 
-export default function Postage() {
+export default async function Postagem() {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    async function fetchArticles() {
+      try {
+        const fetchedArticles = await getAllArticles(); //@ts-ignore
+        setArticles(fetchedArticles || []);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+        setArticles([]); // Handle error state
+      }
+    }
+    fetchArticles();
+  }, []);
+
   return (
-    <div>
-      <h1>teste</h1>
-    </div>
-  )
+    <>
+      <Header2 />
+      <div className={styles.bgContainer}>
+        <main className={`${styles.contentMain} container`}>
+          <section className={styles.elementSection}>
+            <div className={styles.mainDiv}>
+              <div className={styles.headerDiv}>
+                <div className={styles.textDiv}>
+                  <h1 className={styles.textH1}>Últimas postagens</h1>
+                </div>
+              </div>
+              <div className={styles.cardContainer}>
+                <div className={styles.card}>
+                  {articles &&
+                    articles.map((article: any) => (
+                      <article
+                        key={article.sys.id}
+                        className={styles.articleCard}
+                      >
+                        <Image
+                          alt="placeholder"
+                          className={styles.image}
+                          height={263}
+                          src={article.articleImage.url}
+                          width={350}
+                          layout="responsive"
+                        />
+                        <div className={styles.linksDiv}>
+                          <div className={styles.topSection}>
+                          <div className={styles.tituloCategory}>
+                            <Link href={`/articles/${article.slug}`} className={styles.titleArtigo}>
+                              <h3 className={styles.articleTitle}>
+                                {article.title}
+                              </h3>
+                            </Link>
+                            <div className={styles.category}>
+                              {article.categoryName}
+                            </div>
+                          </div>
+                          <p className={styles.articleSummary}>
+                            {article.summary}
+                          </p>
+                          </div>
+                          {/* <p className={styles.articleAuthor}>
+                            Written by: {article.authorName}
+                          </p> */}
+                          <div className={styles.bottomSection}>
+                          <div className={styles.readMore}>
+                            <p className={styles.data}>
+                              {new Date(article.date).toLocaleDateString()}
+                            </p>
+                            <Link
+                              className={styles.linkReadMore}
+                              href={`/articles/${article.slug}`}
+                            >
+                              Leia mais →
+                            </Link>
+                          </div>
+                          </div>
+                        </div>
+                      </article>
+                    ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </>
+  );
 }
-
-
-
-// import { getAllArticles } from "@/../lib/api";
-// import Image from "next/image";
-// import Link from "next/link";
-// import styles from "./posts.module.sass";
-// import Header from "../components/header";
-// import { Header2 } from "../components/header copy";
-
-// export default async function Postagem() {
-//   const articles = await getAllArticles(); // @ts-ignore
-
-//   return (
-//     <>
-//       <Header2 />
-//       <div className={styles.bgContainer}>
-//         <main className={`${styles.contentMain} container`}>
-//           <section className={styles.elementSection}>
-//             <div className={styles.mainDiv}>
-//               <div className={styles.headerDiv}>
-//                 <div className={styles.textDiv}>
-//                   <h1 className={styles.textH1}>Últimas postagens</h1>
-//                 </div>
-//               </div>
-//               <div className={styles.cardContainer}>
-//                 <div className={styles.card}>
-//                   {articles &&
-//                     articles.map((article: any) => (
-//                       <article
-//                         key={article.sys.id}
-//                         className={styles.articleCard}
-//                       >
-//                         <Image
-//                           alt="placeholder"
-//                           className={styles.image}
-//                           height={263}
-//                           src={article.articleImage.url}
-//                           width={350}
-//                           layout="responsive"
-//                         />
-//                         <div className={styles.linksDiv}>
-//                           <div className={styles.topSection}>
-//                           <div className={styles.tituloCategory}>
-//                             <Link href={`/articles/${article.slug}`} className={styles.titleArtigo}>
-//                               <h3 className={styles.articleTitle}>
-//                                 {article.title}
-//                               </h3>
-//                             </Link>
-//                             <div className={styles.category}>
-//                               {article.categoryName}
-//                             </div>
-//                           </div>
-//                           <p className={styles.articleSummary}>
-//                             {article.summary}
-//                           </p>
-//                           </div>
-//                           {/* <p className={styles.articleAuthor}>
-//                             Written by: {article.authorName}
-//                           </p> */}
-//                           <div className={styles.bottomSection}>
-//                           <div className={styles.readMore}>
-//                             <p className={styles.data}>
-//                               {new Date(article.date).toLocaleDateString()}
-//                             </p>
-//                             <Link
-//                               className={styles.linkReadMore}
-//                               href={`/articles/${article.slug}`}
-//                             >
-//                               Leia mais →
-//                             </Link>
-//                           </div>
-//                           </div>
-//                         </div>
-//                       </article>
-//                     ))}
-//                 </div>
-//               </div>
-//             </div>
-//           </section>
-//         </main>
-//       </div>
-//     </>
-//   );
-// }
 
 // import React from "react";
 // import { client } from "../../../lib/contentful/client";
