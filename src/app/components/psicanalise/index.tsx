@@ -27,7 +27,7 @@ export default function Psicanalise() {
     <div id="psi" className={styles.relativeContainer}>
       <div className={styles.imagemDeTopo}>
         <Image
-          src="/bordinha.svg"
+          src="./bordinha.svg"
           alt="Image topo"
           layout="fill"
           objectFit="cover"

@@ -11,7 +11,7 @@ export default function Atencao() {
           <div className={`${styles.imageContainer} mt-10`}>
             <p className={styles.description}>
               <Image
-                src="/atencaoNovo.svg"
+                src="./atencaoNovo.svg"
                 alt="Atencao"
                 width={70}
                 height={50}
