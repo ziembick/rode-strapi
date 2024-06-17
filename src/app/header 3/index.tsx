@@ -42,7 +42,7 @@ export const Header3 = () => {
         <div className={styles.imageContainer}>
           <Link href="/">
             <Image
-              src="/logoRVerde.svg"
+              src="/depresso3.svg"
               alt="Logo"
               width={44}
               height={58}
