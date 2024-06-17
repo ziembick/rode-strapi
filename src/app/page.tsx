@@ -31,7 +31,7 @@ const Home = () => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/novoBgFullHelp.svg";
+    img.src = "./novoBgFullHelp.svg";
     img.onload = () => setBackgroundImage(img.src);
   }, []);
 
