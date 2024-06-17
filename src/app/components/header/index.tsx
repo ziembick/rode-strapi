@@ -141,9 +141,9 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
                 label={item.label}
                 href={item.href}
                 onClick={() => {
-                  if (item.href === "/posts") handlePostsClick();
+                  if (item.href === "./posts") handlePostsClick();
                 }}
-                isActive={item.href === "/posts" && activeSection === null}
+                isActive={item.href === "./posts" && activeSection === null}
               />
             )
           )}
@@ -168,9 +168,9 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
                   href={item.href}
                   onClick={() => {
                     setMenuOpen(false);
-                    if (item.href === "/posts") handlePostsClick();
+                    if (item.href === "./posts") handlePostsClick();
                   }}
-                  isActive={item.href === "/posts" && activeSection === null}
+                  isActive={item.href === "./posts" && activeSection === null}
                 />
               )
             )}
