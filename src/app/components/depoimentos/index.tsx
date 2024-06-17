@@ -14,37 +14,37 @@ const DEPOIMENTOS = [
     comentario:
       "Desde que comecei a terapia com a Rode, minha vida mudou drasticamente para melhor. Ela tem uma percepção aguçada e oferece insights que sempre me surpreendem. Sua paciência e dedicação são evidentes em cada sessão. Com a ajuda dela, aprendi a lidar com meus problemas emocionais de uma maneira que nunca pensei ser possível. Ela é, sem dúvida, uma psicanalista excepcional que realmente se importa com seus pacientes.",
     nome: "M.C",
-    image: "/anon.webp",
+    image: "./anon.webp",
   },
   {
     comentario:
       "A Rode não só me ajudou a lidar com questões pessoais profundas, mas sua experiência no mundo corporativo foi fundamental para o meu desenvolvimento profissional. Com sua orientação, consegui melhorar minha comunicação e minhas habilidades de liderança. Ela me ajudou a encontrar um equilíbrio entre vida pessoal e profissional, o que resultou em um desempenho muito melhor no trabalho.",
     nome: "D.F",
-    image: "/anon.webp",
+    image: "./anon.webp",
   },
   {
     comentario:
       "A Rode tem uma habilidade incrível de ouvir e realmente entender o que estou passando. Suas sessões são um espaço seguro onde posso me abrir sem medo de julgamento. Com sua orientação, eu consegui enfrentar meus medos e ansiedades de maneira mais eficaz. A abordagem dela é ao mesmo tempo profissional e profundamente humana, o que faz toda a diferença. Sou eternamente grato pelo apoio e pelas ferramentas que ela me forneceu para melhorar minha vida.",
     nome: "R.G",
-    image: "/anon.webp",
+    image: "./anon.webp",
   },
   {
     comentario:
       "Buscar ajuda da Rode foi uma das melhores decisões da minha vida. Sua expertise em psicanálise, combinada com uma sólida compreensão do ambiente corporativo, me proporcionou insights valiosos sobre minhas relações no trabalho e minha trajetória de carreira. Aprendi a gerenciar melhor o estresse e a ansiedade relacionados ao trabalho, o que me permitiu assumir novas responsabilidades com mais confiança.",
     nome: "R.D",
-    image: "/anon.webp",
+    image: "./anon.webp",
   },
   {
     comentario:
       "A Rode possui um coração amável e uma abordagem acolhedora que fazem dela uma psicanalista excepcional. Sua compreensão profunda e sua maneira gentil de lidar com meus problemas me proporcionaram o suporte necessário para superar várias dificuldades. Ela é verdadeiramente uma profissional dedicada e atenciosa, e sou muito grata por todo o seu apoio.",
     nome: "T.M",
-    image: "/anon.webp",
+    image: "./anon.webp",
   },
   {
     comentario:
       "A Rode possui um coração amável e uma abordagem acolhedora que fazem dela uma psicanalista excepcional. Sua compreensão profunda e sua maneira gentil de lidar com meus problemas me proporcionaram o suporte necessário para superar várias dificuldades. Ela é verdadeiramente uma profissional dedicada e atenciosa, e sou muito grata por todo o seu apoio.",
     nome: "R.D",
-    image: "/anon.webp",
+    image: "./anon.webp",
   },
 ];
 
