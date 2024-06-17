@@ -139,7 +139,7 @@ const Hero = () => {
         >
           <Image
             className={styles.rodeImage}
-            src="/heroRode2.svg"
+            src="./heroRode2.svg"
             alt="Rode Ziembick"
             layout="responsive"
             width={700}
