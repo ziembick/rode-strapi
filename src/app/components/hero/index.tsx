@@ -28,6 +28,13 @@ const Hero = () => {
 
   return (
     <div id="hero" className={styles.heroBackground}>
+       <Image
+        src="./linhaHeroVerde2.svg"
+        alt="Background"
+        layout="fill"
+        objectFit="cover"
+        className={styles.backgroundImage}
+      />
       <div className={styles.container}>
         <div className={styles.textContainer}>
           <motion.h2
