@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import styles from "./article.module.sass";
 import { Header2 } from "@/app/components/header copy";
+import { Header3 } from "@/app/header copy";
 
 interface KnowledgeArticleProps {
   params: {
@@ -30,7 +31,7 @@ export default async function KnowledgeArticle({
 
   return (
     <>
-      <Header2 />
+      <Header3 />
       <div className={styles.bgContainer}>
         <main className={`${styles.mainContainer} container`}>
           <section className={styles.secao}>
