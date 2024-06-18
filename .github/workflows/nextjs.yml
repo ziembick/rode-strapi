@@ -100,7 +100,7 @@ jobs:
 
       - name: Trigger revalidation webhook
         env:
-          REVALIDATE_WEBHOOK_URL: https://rodepsi.com/api/revalidate?secret=${{ secrets.CONTENTFUL_REVALIDATE_SECRET }}
+          REVALIDATE_WEBHOOK_URL: https://www.rodepsi.com/api/revalidate?secret=${{ secrets.CONTENTFUL_REVALIDATE_SECRET }}
         run: |
           curl -X POST $REVALIDATE_WEBHOOK_URL
 
