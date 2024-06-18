@@ -9,6 +9,13 @@ on:
   push:
     branches: ["main"]
 
+  # Trigger on Contentful webhook events
+  repository_dispatch:
+    types: [contentful_webhook]
+    # Allow manual dispatching of the repository_dispatch event from the Actions tab
+    permissions:
+      contents: read
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -79,11 +86,11 @@ jobs:
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           CONTENTFUL_PREVIEW_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}
           API_TOKEN: ${{ secrets.API_TOKEN }}
-          CONTENTFUL_REVALIDATE_SECRET: ${{ secrets.CONTENTFUL_REVALIDATE_SECRET }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
+          name: built-site
           path: ./out
 
   # Deployment job
@@ -97,3 +104,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Revalidation job triggered by Contentful webhook
+  revalidate:
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.secret == github.event.client_payload.CONTENTFUL_REVALIDATE_SECRET }}
+    steps:
+      - name: Verify webhook secret
+        run: |
+          curl -X POST https://www.rodepsi.com/api/revalidation?secret=ContentfulOnlySecret123
