@@ -25,7 +25,7 @@ const DEPOIMENTOS = [
   {
     comentario:
       "A Rode tem uma habilidade incrível de ouvir e realmente entender o que estou passando. Suas sessões são um espaço seguro onde posso me abrir sem medo de julgamento. Com sua orientação, eu consegui enfrentar meus medos e ansiedades de maneira mais eficaz. A abordagem dela é ao mesmo tempo profissional e profundamente humana, o que faz toda a diferença. Sou eternamente grato pelo apoio e pelas ferramentas que ela me forneceu para melhorar minha vida.",
-    nome: "R.G",
+    nome: "P.H",
     image: "./anon.webp",
   },
   {
@@ -90,8 +90,8 @@ export default function Depoimentos() {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            pagination={true}
-            modules={[Pagination]}
+            navigation={true}
+            modules={[Pagination, Navigation]}
             style={{ padding: "0 20px 0 0" }}
           >
             {DEPOIMENTOS.map((depoimento, index) => (

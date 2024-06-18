@@ -5,6 +5,7 @@ import styles from "./posts.module.sass";
 import Header from "../components/header";
 import { Header2 } from "../components/header copy";
 
+
 export default async function Postagem() {
   const articles = await getAllArticles(); // @ts-ignore
 
