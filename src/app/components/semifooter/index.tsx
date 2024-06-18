@@ -36,8 +36,8 @@ export default function SemiFooter() {
           <Image
             src="./logoSemiFooterVerde.svg"
             alt="Logo"
-            width={210}
-            height={103}
+            width={110}
+            height={90}
             className={styles.imageSemiFooter}
           />
         </div>
