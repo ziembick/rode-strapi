@@ -22,7 +22,6 @@ const NAV_ITEMS: NavItemType[] = [
   { label: "Depoimentos", refKey: "depoimentosRef" },
   { label: "Contato", refKey: "contatoRef" },
   { label: "Posts", href: "/posts" },
-  { label: "Testando", href: "/testando" },
 ];
 
 interface SectionRefs {
