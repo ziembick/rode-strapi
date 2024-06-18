@@ -7,7 +7,13 @@ export default async function handler(req, res) {
   
     try {
       // Revalida a página de postagens
-      await res.revalidate('/posts');
+      await fetch(`https://www.rodepsi.com/api/revalidation?secret=${process.env.CONTENTFUL_REVALIDATE_SECRET}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ page: '/posts' })
+      });
       return res.json({ revalidated: true });
     } catch (err) {
       return res.status(500).send('Error revalidating');
