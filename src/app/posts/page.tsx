@@ -6,6 +6,8 @@ import Header from "../components/header";
 import { Header2 } from "../components/header copy";
 
 
+export const revalidate = 60;
+
 export default async function Postagem() {
   const articles = await getAllArticles(); // @ts-ignore
 
