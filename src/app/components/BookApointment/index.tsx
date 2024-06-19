@@ -41,6 +41,8 @@ export default function BookAppointment() {
         scopes: "https://www.googleapis.com/auth/calendar",
       },
     });
+
+    alert("Login efetuado! Volte para a área de contato para efetuar o agendamento.")
     if (error) {
       alert("Error logging in to Google Provider with Supabase");
       console.log(error);
@@ -52,9 +54,7 @@ export default function BookAppointment() {
   }
 
   async function createCalendarEvent() {
-    console.log("creating calendar event");
-
-    alert("Login efetuado! Volte para a área de contato para efetuar o agendamento.")
+    console.log("creating calendar event");  
 
     const endTime = new Date(start);
     endTime.setMinutes(endTime.getMinutes() + 30);
