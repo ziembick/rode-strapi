@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import {
   SessionContextProvider,
@@ -25,10 +25,18 @@ export default function BookAppointment() {
   const [end, setEnd] = useState(new Date());
   const [eventName, setEventName] = useState("");
   const [eventDescription, setEventDescription] = useState("");
+  const [hasLoggedIn, setHasLoggedIn] = useState(false)
 
   const session = useSession(); //tokensa
   const supabase = useSupabaseClient(); //talk to supabase
   const { isLoading } = useSessionContext();
+
+  useEffect(() => {
+    if(session && !hasLoggedIn) {
+      setHasLoggedIn(true)
+      alert("Login efetuado! Volte a área de contato para efetuar o agendamento.")
+    }
+  }, [session, hasLoggedIn])
 
   if (isLoading) {
     return <></>;
@@ -46,13 +54,12 @@ export default function BookAppointment() {
     if (error) {
       alert("Error logging in to Google Provider with Supabase");
       console.log(error);
-    } else {
-      alert("Login efetuado! Volte para a área de contato para efetuar o agendamento.")
-    }
+    } 
   }
 
   async function signOut() {
     await supabase.auth.signOut();
+    setHasLoggedIn(false)
   }
 
   async function createCalendarEvent() {
