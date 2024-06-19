@@ -42,10 +42,12 @@ export default function BookAppointment() {
       },
     });
 
-    alert("Login efetuado! Volte para a área de contato para efetuar o agendamento.")
+    
     if (error) {
       alert("Error logging in to Google Provider with Supabase");
       console.log(error);
+    } else {
+      alert("Login efetuado! Volte para a área de contato para efetuar o agendamento.")
     }
   }
 
