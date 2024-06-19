@@ -92,7 +92,7 @@ const Hero = () => {
               delay: 0.8,
             }}
           >
-            Através da Psicanálise, você será capaz de enfrentar desafios com confiança e independência.
+            Através da Psicanálise, você será capaz de enfrentar os desafios com confiança e independência.
           </motion.p>
           <motion.div
             className={styles.btnAgende}

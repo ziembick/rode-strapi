@@ -46,7 +46,7 @@ export default async function KnowledgeArticle({
                 </div>
                 <div className={styles.date}>
                   <p>Escrito por: {article.authorName}</p>
-                  {new Date(article.date).toLocaleDateString()}
+                  {new Date(article.date).toLocaleDateString('pt-BR')}
                 </div>
               </div>
               <div className={styles.imageDiv}>

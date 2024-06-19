@@ -98,9 +98,9 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Trigger revalidation webhook
-        env:
-          REVALIDATE_WEBHOOK_URL: https://www.rodepsi.com/api/revalidate?secret=${{ secrets.CONTENTFUL_REVALIDATE_SECRET }}
-        run: |
-          curl -X POST $REVALIDATE_WEBHOOK_URL
+      # - name: Trigger revalidation webhook
+      #   env:
+      #     REVALIDATE_WEBHOOK_URL: https://www.rodepsi.com/api/revalidate?secret=${{ secrets.CONTENTFUL_REVALIDATE_SECRET }}
+      #   run: |
+      #     curl -X POST $REVALIDATE_WEBHOOK_URL
 
