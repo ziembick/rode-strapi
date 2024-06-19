@@ -54,6 +54,8 @@ export default function BookAppointment() {
   async function createCalendarEvent() {
     console.log("creating calendar event");
 
+    alert("Login efetuado! Volte para a área de contato para efetuar o agendamento.")
+
     const endTime = new Date(start);
     endTime.setMinutes(endTime.getMinutes() + 30);
 
