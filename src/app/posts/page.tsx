@@ -61,7 +61,7 @@ export default async function Postagem() {
                           <div className={styles.bottomSection}>
                           <div className={styles.readMore}>
                             <p className={styles.data}>
-                              {new Date(article.date).toLocaleDateString()}
+                              {new Date(article.date).toLocaleDateString('pt-BR')}
                             </p>
                             <Link
                               className={styles.linkReadMore}
