@@ -79,8 +79,8 @@ const Home = () => {
       <div ref={atencaoRef}>
         <Atencao />
       </div>
-        {/* <Contato /> */}
       <div ref={contatoRef}>
+        <Contato /> 
       <SemiFooter />
       </div>
     </>
