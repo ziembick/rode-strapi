@@ -43,7 +43,7 @@ const DEPOIMENTOS = [
   {
     comentario:
       "A Rode possui um coração amável e uma abordagem acolhedora que fazem dela uma psicanalista excepcional. Sua compreensão profunda e sua maneira gentil de lidar com meus problemas me proporcionaram o suporte necessário para superar várias dificuldades. Ela é verdadeiramente uma profissional dedicada e atenciosa, e sou muito grata por todo o seu apoio.",
-    nome: "R.D",
+    nome: "L.N",
     image: "./anon.webp",
   },
 ];

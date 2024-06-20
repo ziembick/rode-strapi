@@ -7,7 +7,7 @@ import { GrInstagram } from "react-icons/gr";
 import Link from "next/link";
 
 export default function SemiFooter() {
-  const recipient = "rodeziembick@gmail.com";
+  const recipient = "rodeziem@gmail.com";
   const subject = "Agendar consulta";
   const body = "Gostaria de agendar uma consulta";
 
@@ -52,7 +52,7 @@ export default function SemiFooter() {
 
             <div className={styles.contactItem} onClick={handleEmailClick}>
               <MdOutlineEmail size={20} />
-              <p className={styles.formas}>rodeziembick@gmail.com</p>
+              <p className={styles.formas}>rodeziem@gmail.com</p>
             </div>
 
             <div className={styles.contactItemInsta} onClick={handleInstaClick}>
