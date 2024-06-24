@@ -42,7 +42,7 @@ const DEPOIMENTOS = [
   },
   {
     comentario:
-      "A Rode possui um coração amável e uma abordagem acolhedora que fazem dela uma psicanalista excepcional. Sua compreensão profunda e sua maneira gentil de lidar com meus problemas me proporcionaram o suporte necessário para superar várias dificuldades. Ela é verdadeiramente uma profissional dedicada e atenciosa, e sou muito grata por todo o seu apoio.",
+      "Desde que comecei a terapia com a Rode, minha vida mudou drasticamente para melhor. Ela tem uma percepção aguçada e oferece insights que sempre me surpreendem. Sua paciência e dedicação são evidentes em cada sessão. Com a ajuda dela, aprendi a lidar com meus problemas emocionais de uma maneira que nunca pensei ser possível. Ela é, sem dúvida, uma psicanalista excepcional que realmente se importa com seus pacientes.",
     nome: "L.N",
     image: "./anon.webp",
   },

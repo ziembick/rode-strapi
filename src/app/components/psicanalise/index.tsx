@@ -74,14 +74,14 @@ export default function Psicanalise() {
               e emoções.
             </p>
             <p className={styles.texto}>
-              O Psicanalista se utiliza da linguagem do paciente em associação
+              A Psicanalista se utiliza da linguagem do paciente em associação
               livre para acessar o inconsciente. Principalmente da linguagem,
               mas não apenas dela. Tudo que acontece no setting psicanalítico e
               material de análise. Isso porque nosso inconsciente se comunica de
               várias outras formas para além da linguagem.
             </p>
             <p className={styles.texto}>
-              O Psicanalista enfrenta junto com o paciente uma série de
+              A Psicanalista enfrenta junto com o paciente uma série de
               resistências ao longo da jornada analítica. Revelar, descobrir
               traumas, dores, medos que foram muito bem encobertos ao longo da
               vida, não é tarefa simples. Nosso psiquismo se utiliza de
