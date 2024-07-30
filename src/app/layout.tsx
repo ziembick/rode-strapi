@@ -33,7 +33,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Rode Ziembick - Psicanalista",
+  title: "Rode ZIEMBICK - Psicanalista",
   description: "Rode Ziembick - Psicanalista",
 };
 
