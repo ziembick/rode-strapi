@@ -127,7 +127,7 @@ const Hero = () => {
                 online individual
               </strong>
               para
-              <strong className={styles.boldText}> adultos e idosos </strong>
+              <strong className={styles.boldText}> adolescentes, adultos e idosos </strong>
             </p>
           </motion.div>
         </div>
