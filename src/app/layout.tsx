@@ -12,6 +12,7 @@ import {
 import AppProviders from "./AppProviders";
 import Header from "./components/header";
 import WhatsAppBtn from "./components/whatsappBtn";
+import Script from "next/script";
 
 // import "./globals.css";
 
@@ -50,6 +51,25 @@ export default function RootLayout({
   return (
     <AppProviders>
       <html lang="pt-BR">
+      <head>
+          {/* Google Ads Tag */}
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=AW-16490733914"
+          />
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'AW-16490733914');
+              `,
+            }}
+          />
+        </head>
         <body
           className={` ${openSans.className} ${openSans.variable} ${lato.variable} ${baloo.variable} ${baloo.className}`}
         > 
