@@ -5,6 +5,8 @@ import React from "react";
 import styles from "./btn.module.sass";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { sendGTMEvent } from '@next/third-parties/google'
+import { sendGAEvent } from '@next/third-parties/google'
 
 export default function BtnAgende() {
   return (
@@ -17,6 +19,10 @@ export default function BtnAgende() {
         whileTap={{ scale: 0.9 }}
         className={styles.btn}
         onClick={() => {
+          // Send the GTM event before opening the WhatsApp URL
+          sendGTMEvent({event: 'buttonClicked', value: "xyz"});
+          sendGAEvent({event: 'buttonClicked', value: "xyz"})
+
           const whatsappUrl = `https://wa.me/5511970997779?text=Olá, gostaria de agendar uma consulta!`;
           window.open(whatsappUrl, "_blank");
         }}
