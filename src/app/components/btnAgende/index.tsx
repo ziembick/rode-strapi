@@ -20,8 +20,8 @@ export default function BtnAgende() {
         className={styles.btn}
         onClick={() => {
           // Send the GTM event before opening the WhatsApp URL
-          sendGTMEvent({event: 'buttonClicked', value: "xyz"});
-          sendGAEvent({event: 'buttonClicked', value: "xyz"})
+          sendGTMEvent({event: 'lead_wpp', value: "Lead do whatsapp"});
+          sendGAEvent({event: 'lead_wpp', value: "Lead do whatsapp"})
 
           const whatsappUrl = `https://wa.me/5511970997779?text=Olá, gostaria de agendar uma consulta!`;
           window.open(whatsappUrl, "_blank");

@@ -10,7 +10,7 @@ import {
   useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 import AppProviders from "./AppProviders";
-import Header from "./components/header";
+// import Header from "./components/header";
 import WhatsAppBtn from "./components/whatsappBtn";
 import { GoogleTagManager } from '@next/third-parties/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
@@ -54,17 +54,21 @@ export default function RootLayout({
   return (
     <AppProviders>
       <html lang="pt-BR">
-      <GoogleTagManager gtmId="AW-16490733914" dataLayerName="dataLayer"/>
-      <GoogleAnalytics gaId="AW-16490733914" dataLayerName="dataLayer"/>
+        <GoogleTagManager gtmId="GTM-597W6MXB" dataLayerName="dataLayer" />
+        <GoogleAnalytics gaId="AW-16490733914" dataLayerName="dataLayer"/>
+
         <body
           className={` ${openSans.className} ${openSans.variable} ${lato.variable} ${baloo.variable} ${baloo.className}`}
         >
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-597W6MXB"
+            height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
+
           <WhatsAppBtn />
           {/* <BackToTop /> */}
           {children}
           <Footer />
         </body>
-        
+
       </html>
     </AppProviders>
   );
