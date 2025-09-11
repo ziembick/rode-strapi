@@ -17,7 +17,7 @@ export default function Atencao() {
                 height={50}
                 className={styles.imageAtencao}
               />
-              Esse site não oferece atendimento imediato a paessoas em crise
+              Esse site não oferece atendimento imediato a pessoas em crise
               suicida. Em caso de crise ligue para o CVV - 188. Em caso de
               emergência, procure o hospital mais próximo. Havendo risco de
               morte, ligue imediatamente para o SAMU - telefone 192

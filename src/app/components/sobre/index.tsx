@@ -67,33 +67,20 @@ export default function Sobre() {
               }}
             >
               <p className={styles.description}>
-                Como Psicanalista, estudiosa das Neurociências, especialista em
-                Comunicação Não Violenta e uma extensa trajetória como executiva
-                de Recursos Humanos no mundo corporativo, é uma alegria
-                recebê-la (o) aqui.{" "}
-                <FaHeart size={13} className={styles.heart} />{" "}
+              Como psicanalista em constante formação e sustentada pelo tripé analítico – análise pessoal, supervisão e estudo teórico – é uma satisfação recebê-la(o) aqui.
+Minha trajetória voltada à elaboração subjetiva encontra na psicanálise um espaço privilegiado para a escuta do inconsciente, onde emergem desejos, fantasias e significantes que estruturam nossa forma de estar no mundo.
+              <br />
+              <br />
+
+              O percurso analítico pode ajudar em momentos de crise, de sofrimento ou simplesmente no desejo de compreender melhor a si mesmo e suas relações. Freud nos mostrou a importância de dar voz ao inconsciente, e Lacan nos lembrou que é na fala que cada sujeito pode se aproximar de sua própria verdade.
+              <br />
+              <br />
+              Convido você a percorrer esse caminho em seu próprio tempo: uma travessia em direção ao desconhecido de si, onde cada palavra pode revelar novas possibilidades de existência. Estarei ao seu lado nesse processo de escuta e investigação do inconsciente
+            <FaHeart size={13} className={styles.heart} />{" "}
                 <FaHeart size={13} className={styles.heart} />
               </p>
-              <p className={styles.description}>
-                Ao longo de mais de três décadas, dediquei-me ao desenvolvimento
-                humano, ajudando indivíduos a expandirem sua capacidade de
-                reflexão sob diferentes perspectivas, a superarem limitações e a
-                aprimorarem seus relacionamentos, tanto consigo mesmos quanto
-                com os outros.
-              </p>
-              <p className={styles.description}>
-                A Psicanálise destina-se àqueles que buscam desvendar seus
-                desejos mais ocultos e àqueles que anseiam pela liberdade de
-                serem autênticos. É também recomendada para momentos de crise,
-                dificuldades emocionais e os diversos desafios que possam estar
-                enfrentando atualmente.
-              </p>
-              <p className={styles.description}>
-                Sinta-se à vontade para explorar esse caminho de descobertas e
-                transformações ao seu próprio ritmo. Estou aqui para
-                acompanhá-la (o) na sua jornada ao desconhecido.
-              </p>
             </motion.div>
+
             <motion.div
               className={styles.btnAgende}
               initial={{ opacity: 0, y: 100 }}
