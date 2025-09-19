@@ -67,6 +67,7 @@ export default function RootLayout({
           <WhatsAppBtn />
           {/* <BackToTop /> */}
           {children}
+          <Analytics />
           <Footer />
         </body>
 
