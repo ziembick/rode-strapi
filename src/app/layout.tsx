@@ -14,6 +14,7 @@ import AppProviders from "./AppProviders";
 import WhatsAppBtn from "./components/whatsappBtn";
 import { GoogleTagManager } from '@next/third-parties/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from "@vercel/analytics/next"
 
 
 
