@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./hero.module.sass";
 import Image from "next/image";
 import { FaLaptop } from "react-icons/fa";
+import { LuSofa } from "react-icons/lu";
 import BtnAgende from "../btnAgende";
 import { motion } from "framer-motion";
 
@@ -124,11 +125,16 @@ const Hero = () => {
               <FaLaptop size={25} className={styles.btnLap} />
               Atendimento
               <strong className={styles.boldText}>
-                online individual
+                online
               </strong>
-              para
-              <strong className={styles.boldText}> adolescentes, adultos e idosos </strong>
             </p>
+
+            <p className={`${styles.ptag} pt-0`}>
+              <LuSofa size={25} className={styles.btnLap} />
+              Presencial na Vila Olímpia, Moema e Brooklin.
+              
+            </p>
+
           </motion.div>
         </div>
         <motion.div
