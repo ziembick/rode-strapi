@@ -23,7 +23,7 @@ export default function BtnAgende() {
           sendGTMEvent({event: 'lead_wpp', value: "Lead do whatsapp"});
           sendGAEvent({event: 'lead_wpp', value: "Lead do whatsapp"})
 
-          const whatsappUrl = `https://wa.me/5511970997779?text=Olá, gostaria de agendar uma consulta!`;
+          const whatsappUrl = `https://www.doctoralia.com.br/rode-ziembick/psicanalista/sao-paulo`;
           window.open(whatsappUrl, "_blank");
         }}
       >
