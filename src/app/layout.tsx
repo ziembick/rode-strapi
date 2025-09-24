@@ -13,7 +13,7 @@ import AppProviders from "./AppProviders";
 // import Header from "./components/header";
 import WhatsAppBtn from "./components/whatsappBtn";
 import { GoogleTagManager } from '@next/third-parties/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
+// import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from "@vercel/analytics/next"
 
 
@@ -56,7 +56,7 @@ export default function RootLayout({
     <AppProviders>
       <html lang="pt-BR">
         <GoogleTagManager gtmId="GTM-597W6MXB" dataLayerName="dataLayer" />
-        <GoogleAnalytics gaId="AW-16490733914" dataLayerName="dataLayer"/>
+        {/* <GoogleAnalytics gaId="AW-16490733914" dataLayerName="dataLayer"/> */}
 
         <body
           className={` ${openSans.className} ${openSans.variable} ${lato.variable} ${baloo.variable} ${baloo.className}`}
