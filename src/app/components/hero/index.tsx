@@ -93,7 +93,7 @@ const Hero = () => {
               delay: 0.8,
             }}
           >
-            Através da Psicanálise, você será capaz de enfrentar os desafios com confiança e independência.
+            A psicanálise possibilita elaborar sofrimentos e descobrir novas formas de se posicionar diante da vida.
           </motion.p>
           <motion.div
             className={styles.btnAgende}
@@ -131,7 +131,7 @@ const Hero = () => {
 
             <p className={`${styles.ptag} pt-0`}>
               <LuSofa size={25} className={styles.btnLap} />
-              Presencial na Vila Olímpia, Moema e Brooklin.
+              Presencial em São Paulo na Vila Olímpia, Moema e Brooklin.
               
             </p>
 

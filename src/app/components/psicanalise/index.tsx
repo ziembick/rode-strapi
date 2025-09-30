@@ -96,8 +96,7 @@ export default function Psicanalise() {
             <p className={styles.texto}>
               &quot;O Eu não é senhor em sua própria casa&quot;. Essa é uma das
               frases mais emblemáticas de Freud. Viver sem acessar a nossa
-              dimensão inconsciente é viver no domínio do desconhecido. Faça
-              Psicanálise e seja o senhor da sua própria casa!
+              dimensão inconsciente é viver no domínio do desconhecido. Agende sua sessão de psicanálise e mergulhe no oceano desconhecido de si mesmo.
             </p>
           </motion.div>
           {/* <div className={styles.imageContainer}>
