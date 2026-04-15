@@ -1,4 +1,4 @@
-import { getAllArticles, getArticle } from "@/../lib/api";
+import { getAllArticlesSlugs, getArticle } from "@/../lib/api";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -13,10 +13,8 @@ interface KnowledgeArticleProps {
 }
 
 export async function generateStaticParams() {
-  const allArticles = await getAllArticles();
-
-  if (!allArticles) return []
-
+  const allArticles = await getAllArticlesSlugs();
+  if (!allArticles) return [];
   return allArticles.map((article: any) => ({
     slug: article.slug,
   }));
