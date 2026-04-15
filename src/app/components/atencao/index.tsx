@@ -7,7 +7,6 @@ export default function Atencao() {
     <div className={styles.imagemDeTopo}>
       <div className={`${styles.atencao} container`}>
         <div className={styles.textContainer}>
-          <h1 className={styles.title}>Atenção!</h1>
           <div className={`${styles.imageContainer} mt-10`}>
             <p className={styles.description}>
               <Image

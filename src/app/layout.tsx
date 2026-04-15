@@ -68,7 +68,6 @@ export default function RootLayout({
           {/* <BackToTop /> */}
           {children}
           <Analytics />
-          <Footer />
         </body>
 
       </html>

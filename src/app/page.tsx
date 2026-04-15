@@ -153,12 +153,13 @@ const Home = () => {
       {/* <div ref={ajudarRef}>
         <Ajudar />
       </div> */}
-      <div ref={atencaoRef} id="atencao">
-        <Atencao />
-      </div>
+
       <div ref={contatoRef} id="contato">
         {/* <Contato />  */}
       <SemiFooter />
+      </div>
+            <div ref={atencaoRef} id="atencao">
+        <Atencao />
       </div>
     </>
   );
