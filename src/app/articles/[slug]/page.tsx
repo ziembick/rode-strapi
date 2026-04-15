@@ -15,6 +15,8 @@ interface KnowledgeArticleProps {
 export async function generateStaticParams() {
   const allArticles = await getAllArticles();
 
+  if (!allArticles) return []
+
   return allArticles.map((article: any) => ({
     slug: article.slug,
   }));
