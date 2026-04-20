@@ -78,8 +78,7 @@ const Hero = () => {
               delay: 0.8,
             }}
           >
-            Cada pessoa é única e, portanto, merece uma abordagem terapêutica
-            personalizada.
+            Psicanálise de orientação lacaniana e freudiana. Mais de 10 anos de clínica em São Paulo
           </motion.h4>
           <motion.p
             className={styles.textinho2}
@@ -131,7 +130,7 @@ const Hero = () => {
 
             <p className={`${styles.ptag} pt-0`}>
               <LuSofa size={25} className={styles.btnLap} />
-              Presencial em São Paulo na Vila Olímpia, Moema e Brooklin.
+              Presencial em São Paulo na Vila Olímpia e Brooklin.
               
             </p>
 

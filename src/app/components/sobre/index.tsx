@@ -67,11 +67,15 @@ export default function Sobre() {
               }}
             >
               <p className={styles.description}>
-              Como psicanalista em constante formação e sustentada pelo tripé analítico – análise pessoal, supervisão e estudo teórico – é uma satisfação recebê-la(o) aqui.
-Minha trajetória voltada à elaboração subjetiva encontra na psicanálise um espaço privilegiado para a escuta do inconsciente, onde emergem desejos, fantasias e significantes que estruturam nossa forma de estar no mundo.
+              Como psicanalista com mais de 10 anos de experiência clínica, formada pela Escola Paulista de Psicanálise, mestranda em Psicologia Social na USP e sustentada pelo tripé analítico — análise pessoal, supervisão e estudo teórico —, é uma satisfação recebê-la(o) aqui.
               <br />
               <br />
-
+              A orientação psicanalítica da minha clínica é freudiana-lacaniana; no entanto, possuo formação dupla, tanto na escola francesa quanto na escola inglesa de psicanálise.
+              <br />
+              <br />
+              Minha trajetória voltada à elaboração subjetiva encontra na psicanálise um espaço privilegiado para a escuta do inconsciente, onde emergem desejos, fantasias e significantes que estruturam nossa forma de estar no mundo.
+              <br />
+              <br />
               O percurso analítico pode ajudar em momentos de crise, de sofrimento ou simplesmente no desejo de compreender melhor a si mesmo e suas relações. Freud nos mostrou a importância de dar voz ao inconsciente, e Lacan nos lembrou que é na fala que cada sujeito pode se aproximar de sua própria verdade.
               <br />
               <br />
