@@ -40,7 +40,7 @@ export default function WhatsAppBtn() {
           exit={{ opacity: 0, right: -10 }}
         >
           <button onClick={handleClick} className={styles.btn}>
-            WhatsApp <FaWhatsapp size={30} />
+            WhatsApp<FaWhatsapp size={30} />
           </button>
         </motion.div>
     </AnimatePresence>
