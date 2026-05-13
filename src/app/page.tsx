@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Hero from "./components/hero";
-import Contato from "./contato/page";
+import Contato from "./components/contato_1/page";
 import Atuacao from "./components/atuacao";
 import Ajudar from "./components/ajudar";
 import Depoimentos from "./components/depoimentos";

@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect, useRef } from "react";
-import BookAppointment from "../components/BookApointment";
+import BookAppointment from "../BookApointment";
 import styles from "./contato.module.sass";
-import BtnAgende from "../components/btnAgende";
+import BtnAgende from "../btnAgende";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
