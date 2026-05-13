@@ -20,7 +20,7 @@ const NAV_ITEMS: NavItemType[] = [
   { label: "Sobre mim", refKey: "sobreRef" },
   { label: "O que é Psicanálise", refKey: "psicanaliseRef" },
   { label: "Depoimentos", refKey: "depoimentosRef" },
-  { label: "Contato", href: "/contato" },
+  { label: "Contato", href: "/psicanalista-em-sao-paulo" },
   { label: "Posts", href: "/posts" },
 ];
 

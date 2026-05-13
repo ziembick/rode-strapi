@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import styles from './contato.module.sass'
 import HeaderContato from '../components/header_contato'
+import BtnAgende from '../components/btnAgende'
 
 export default function Contato() {
   return (
@@ -42,14 +43,7 @@ export default function Contato() {
               <p className={styles.texto}>
                 Cuide de si, procure os caminhos possíveis.
               </p>
-              <a
-                href="https://wa.me/5511970997779?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.btn}
-              >
-                Vamos conversar?
-              </a>
+               <BtnAgende />
             </div>
 
           </div>

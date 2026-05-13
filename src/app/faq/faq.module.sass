@@ -1,0 +1,122 @@
+.page
+  background-color: #E8ECF7
+  min-height: 100vh
+  font-family: var(--font-baloo2)
+
+// ── Hero ──────────────────────────────────────────────────────────────────────
+
+.hero
+  background-color: #809B92
+  padding: 10px
+
+  @media screen and (max-width: 768px)
+    padding: 3rem 1.5rem
+
+.heroInner
+  max-width: 860px
+  margin: 0 auto
+  text-align: center
+
+.heroTitle
+  font-family: var(--font-baloo2)
+  font-weight: 900
+  font-size: 2.8rem
+  color: #E8ECF7
+  margin: 0 0 0.75rem
+  line-height: 1.1
+
+  @media screen and (max-width: 768px)
+    font-size: 2rem
+
+.heroSubtitle
+  font-family: var(--font-baloo2)
+  font-size: 1rem
+  color: rgba(232, 236, 247, 0.72)
+  margin: 0
+  line-height: 1.6
+
+// ── Lista de perguntas ────────────────────────────────────────────────────────
+
+.section
+  max-width: 860px
+  margin: 0 auto
+  padding: 4rem 2rem 5rem
+
+  @media screen and (max-width: 768px)
+    padding: 2.5rem 1.25rem 4rem
+
+.item
+  border-bottom: 1px solid rgba(128, 155, 146, 0.2)
+
+  &:first-child
+    border-top: 1px solid rgba(128, 155, 146, 0.2)
+
+.questionBtn
+  width: 100%
+  background: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 1rem
+  padding: 1.25rem 0
+  text-align: left
+
+.questionText
+  font-family: var(--font-baloo2)
+  font-size: 1rem
+  font-weight: 700
+  color: #809B92
+  transition: color 0.2s ease
+
+  .questionBtn:hover &,
+  .questionBtnOpen &
+    color: #E77F80
+
+.questionNum
+  font-family: var(--font-baloo2)
+  font-size: 0.8rem
+  font-weight: 700
+  color: #E77F80
+  margin-right: 0.5rem
+  flex-shrink: 0
+
+.chevron
+  flex-shrink: 0
+  color: #809B92
+  transition: transform 0.3s ease
+
+.chevronOpen
+  @extend .chevron
+  transform: rotate(180deg)
+
+.answer
+  overflow: hidden
+
+.answerInner
+  font-family: var(--font-baloo2)
+  font-size: 0.96rem
+  color: #809B92
+  line-height: 1.75
+  padding-bottom: 1.25rem
+
+// ── Botão WhatsApp no final ───────────────────────────────────────────────────
+
+.waBtn
+  display: inline-flex
+  align-items: center
+  gap: 0.5rem
+  margin-top: 1.25rem
+  background-color: #E77F80
+  color: #fff
+  font-family: var(--font-baloo2)
+  font-weight: 700
+  font-size: 0.96rem
+  padding: 0.7rem 1.6rem
+  border-radius: 6px
+  text-decoration: none
+  transition: background-color 0.2s ease
+
+  &:hover
+    background-color: #d96b6c
