@@ -5,7 +5,7 @@
 // ── 1. Hero — slide 1 ─────────────────────────────────────────────────────────
 
 .hero
-  background-color: #809B92
+  background-color: #5c7870
   position: relative
   overflow: hidden
   padding: 0
@@ -73,13 +73,14 @@
   display: grid
   grid-template-columns: 5fr 8fr
   min-height: 520px
+  border-top: 4px solid #E77F80
 
   @media screen and (max-width: 900px)
     grid-template-columns: 1fr
     min-height: unset
 
 .splitLeft
-  background-color: #809B92
+  background-color: #6b8079
   padding: 4rem 2.5rem
 
   @media screen and (max-width: 900px)
@@ -118,7 +119,7 @@
   line-height: 1.75
 
 .splitRight
-  background-color: #E8ECF7
+  background-color: #fff
   padding: 4rem 3rem
   display: flex
   flex-direction: column
@@ -170,8 +171,9 @@
 // ── Slides 3, 5, 7 — seção dark full width ────────────────────────────────────
 
 .darkSection
-  background-color: #809B92
+  background-color: #6b8079
   padding: 5rem 0
+  border-top: 4px solid #E77F80
 
 .darkInner
   max-width: 1320px
@@ -210,7 +212,7 @@
     grid-template-columns: 1fr
 
 .card
-  background-color: rgba(232, 236, 247, 0.09)
+  background-color: rgba(255, 255, 255, 0.1)
   border-left: 4px solid #E77F80
   border-radius: 2px
   padding: 1.5rem 1.75rem
@@ -224,7 +226,7 @@
 
 .cardText
   font-size: 0.88rem
-  color: rgba(232, 236, 247, 0.78)
+  color: rgba(232, 236, 247, 0.9)
   line-height: 1.75
   margin: 0
 
@@ -242,7 +244,7 @@
   gap: 1rem
 
 .memoriaItem
-  background-color: rgba(232, 236, 247, 0.09)
+  background-color: rgba(255, 255, 255, 0.1)
   border-left: 4px solid #E77F80
   padding: 1.25rem 1.5rem
 
@@ -255,17 +257,18 @@
 
 .memoriaText
   font-size: 0.88rem
-  color: rgba(232, 236, 247, 0.78)
+  color: rgba(232, 236, 247, 0.9)
   line-height: 1.7
   margin: 0
 
 // ── Slide 4 — Processo Analítico (light) ─────────────────────────────────────
 
 .lightBandSection
-  background-color: #E8ECF7
+  background-color: #fff
+  border-top: 4px solid #E77F80
 
 .lightBand
-  background-color: #809B92
+  background-color: #6b8079
   padding: 1.75rem 3rem
 
   @media screen and (max-width: 768px)
@@ -293,6 +296,7 @@
   max-width: 1320px
   margin: 0 auto
   padding: 4rem 3rem
+  background-color: #fff
 
   @media screen and (max-width: 768px)
     padding: 2.5rem 1.5rem
@@ -413,12 +417,13 @@
     grid-template-columns: 1fr
 
 .investCard
-  background-color: rgba(128, 155, 146, 0.1)
-  border-radius: 2px
+  background-color: #fff
+  border-radius: 4px
   overflow: hidden
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08)
 
 .investCardHeader
-  background-color: #809B92
+  background-color: #6b8079
   padding: 1.25rem
   text-align: center
 
@@ -450,7 +455,8 @@
 // ── Slide 10 — Quote final ────────────────────────────────────────────────────
 
 .quoteSection
-  background-color: #809B92
+  background-color: #6b8079
+  border-top: 4px solid #E77F80
   padding: 8rem 2rem
   position: relative
   overflow: hidden

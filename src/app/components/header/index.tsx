@@ -16,8 +16,8 @@ type NavItemType = {
 
 const NAV_ITEMS: NavItemType[] = [
   { label: "Home", refKey: "heroRef" },
-  { label: "Áreas de atuação", refKey: "atuacaoRef" },
-  { label: "Sobre mim", refKey: "sobreRef" },
+  { label: "Áreas de atuação", href: "areas-de-atuacao" },
+  { label: "Sobre mim", href: "sobre-mim"},
   { label: "O que é Psicanálise", refKey: "psicanaliseRef" },
   { label: "Depoimentos", refKey: "depoimentosRef" },
   { label: "Contato", href: "/psicanalista-em-sao-paulo" },

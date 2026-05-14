@@ -9,6 +9,14 @@ const Postagem = lazy(() => import("@/app/posts/page"));
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
+  { label: "Áreas de Atuação", href: "/areas-de-atuacao" },
+  { label: "Sobre Mim", href: "/sobre-mim" },
+  { label: "Contato", href: "/psicanalista-em-sao-paulo/" },
+  { label: "FAQ", href: "/faq" },
+  {
+    label: "Projeto Memórias Ancestrais",
+    href: "/projeto-memorias-ancestrais",
+  },
   { label: "Posts", href: "/posts" },
 ];
 
@@ -63,7 +71,10 @@ const HeaderContato: React.FC = () => {
           ))}
         </div>
 
-        <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+        <button
+          className={styles.hamburger}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           {menuOpen ? "✕" : "☰"}
         </button>
 
