@@ -21,6 +21,8 @@ const NAV_ITEMS: NavItemType[] = [
   { label: "O que é Psicanálise", refKey: "psicanaliseRef" },
   { label: "Depoimentos", refKey: "depoimentosRef" },
   { label: "Contato", href: "/psicanalista-em-sao-paulo" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Projeto Memórias Ancestrais", href: "/projeto-memorias-ancestrais" },
   { label: "Posts", href: "/posts" },
 ];
 

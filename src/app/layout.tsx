@@ -97,7 +97,7 @@ const schemaOrg = {
       logo: "https://www.rodepsi.com/logoRVerde.svg",
       description:
         "Consultório de psicanálise em São Paulo com atendimento presencial em Vila Olímpia, Brooklin (Market Place) e Moema, além de teleconsulta. Especializada em ansiedade, trauma, procrastinação, sexualidade e mentoria de carreira.",
-      telephone: "+55-11-XXXXX-XXXX",
+      telephone: "+55-11-97099-7779",
       priceRange: "R$ 300",
       paymentAccepted:
         "Dinheiro, Pix, Cartão de crédito, Transferência bancária",
@@ -233,54 +233,109 @@ const schemaFaq = {
   ],
 };
 
-const articlePage = {
+
+
+const schemaServices = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "@id": "[URL_COMPLETA_DO_ARTIGO]#article",
-  headline: "[TÍTULO DO ARTIGO]",
-  description: "[META-DESCRIPTION DO ARTIGO — até 160 caracteres]",
-  image: {
-    "@type": "ImageObject",
-    url: "[URL_DA_IMAGEM_DO_ARTIGO]",
-    width: 1200,
-    height: 630,
-  },
-  datePublished: "[YYYY-MM-DD]",
-  dateModified: "[YYYY-MM-DD]",
-  inLanguage: "pt-BR",
-  url: "[URL_COMPLETA_DO_ARTIGO]",
-  author: {
-    "@type": "Person",
-    "@id": "https://www.rodepsi.com/#rode-ziembick",
-    name: "Rode Ziembick",
-    jobTitle: "Psicanalista",
-    url: "https://www.rodepsi.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Rode Ziembick – Psicanalista",
-    url: "https://www.rodepsi.com",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.rodepsi.com/logoRVerde.svg",
+  "@type": "ItemList",
+  "name": "Serviços — Rode Ziembick Psicanalista",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Service",
+        "name": "Psicanálise Individual",
+        "description": "Processo analítico individual baseado na psicanálise freudiana e lacaniana. Atende ansiedade, trauma, relacionamentos, autoconhecimento e sofrimento emocional.",
+        "provider": { "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo" },
+        "areaServed": [
+          { "@type": "City", "name": "São Paulo" },
+          { "@type": "Country", "name": "Brasil" }
+        ],
+        "serviceType": "Psicanálise",
+        "availableChannel": [
+          { "@type": "ServiceChannel", "serviceType": "Presencial", "serviceLocation": { "@type": "Place", "name": "Vila Olímpia, São Paulo" } },
+          { "@type": "ServiceChannel", "serviceType": "Presencial", "serviceLocation": { "@type": "Place", "name": "Brooklin, São Paulo" } },
+          { "@type": "ServiceChannel", "serviceType": "Online (Teleconsulta)" }
+        ],
+        "url": "https://www.rodepsi.com/contato"
+      }
     },
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "[URL_COMPLETA_DO_ARTIGO]",
-  },
-  articleSection: "[CATEGORIA — ex: Sintomas, Carreira, Relacionamentos]",
-  keywords:
-    "[PALAVRA-CHAVE-1], [PALAVRA-CHAVE-2], [PALAVRA-CHAVE-3], psicanálise, Rode Ziembick",
-  about: {
-    "@type": "Thing",
-    name: "[TEMA PRINCIPAL DO ARTIGO]",
-  },
-  isPartOf: {
-    "@id": "https://www.rodepsi.com/#website",
-  },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
+        "name": "Terapia de Casal",
+        "description": "Acompanhamento psicanalítico para casais com foco em conflitos relacionais, comunicação, ciúmes e padrões afetivos repetitivos.",
+        "provider": { "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo" },
+        "serviceType": "Psicanálise de Casal",
+        "url": "https://www.rodepsi.com/contato"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Service",
+        "name": "Teleconsulta de Psicanálise",
+        "description": "Atendimento psicanalítico online para pacientes no Brasil e no exterior, com a mesma profundidade clínica do atendimento presencial.",
+        "provider": { "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "serviceType": "Teleconsulta",
+        "url": "https://www.rodepsi.com/contato"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Service",
+        "name": "Mentoria de Carreira com base Psicanalítica",
+        "description": "Orientação profissional e escuta clínica para compreender bloqueios inconscientes que impactam a carreira: procrastinação, autossabotagem, medo do sucesso e liderança.",
+        "provider": { "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo" },
+        "serviceType": "Mentoria de Carreira",
+        "url": "https://www.rodepsi.com/contato"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Service",
+        "name": "Projeto Memórias Ancestrais",
+        "description": "Processo analítico voltado à escuta e registro das memórias de vida, com elaboração subjetiva e publicação em livro personalizado.",
+        "provider": { "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo" },
+        "serviceType": "Psicanálise Especializada",
+        "url": "https://www.rodepsi.com/projeto-memorias-ancestrais"
+      }
+    }
+  ]
 };
 
+const schemaContactPage = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://www.rodepsi.com/contato",
+  "url": "https://www.rodepsi.com/contato",
+  "name": "Contato — Rode Ziembick Psicanalista",
+  "description": "Entre em contato para agendar uma sessão de psicanálise presencial em São Paulo (Vila Olímpia e Brooklin) ou online para todo o Brasil.",
+  "isPartOf": { "@id": "https://www.rodepsi.com/" },
+  "about": { "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo" },
+  "inLanguage": "pt-BR"
+};
+
+const schemaFaqPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.rodepsi.com/faq",
+  "url": "https://www.rodepsi.com/faq",
+  "name": "FAQ — Perguntas Frequentes sobre Psicanálise | Rode Ziembick",
+  "description": "Respostas às principais dúvidas sobre psicanálise, ansiedade, relacionamentos, atendimento online e a clínica da psicanalista Rode Ziembick.",
+  "isPartOf": { "@id": "https://www.rodepsi.com/" },
+  "about": { "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo" },
+  "inLanguage": "pt-BR"
+};
 
 const separedArticle = {
   "@context": "https://schema.org",
@@ -349,15 +404,19 @@ export default function RootLayout({
           />
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(articlePage) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(articlePage) }}
-          />
-          <script
-            type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(separedArticle) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaServices) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaContactPage) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaqPage) }}
           />
         </head>
         <body

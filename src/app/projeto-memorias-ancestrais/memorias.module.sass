@@ -1,0 +1,568 @@
+.page
+  font-family: var(--font-baloo2)
+  background-color: #E8ECF7
+
+// ── 1. Hero — slide 1 ─────────────────────────────────────────────────────────
+
+.hero
+  background-color: #809B92
+  position: relative
+  overflow: hidden
+  padding: 0
+  border-top: 8px solid #E77F80
+
+  &::after
+    content: ''
+    position: absolute
+    top: -80px
+    right: -80px
+    width: 420px
+    height: 420px
+    border-radius: 50%
+    background-color: rgba(232, 236, 247, 0.07)
+    pointer-events: none
+
+.heroInner
+  max-width: 1320px
+  margin: 0 auto
+  padding: 4rem 3rem 5rem
+
+  @media screen and (max-width: 768px)
+    padding: 3rem 1.5rem 4rem
+
+.heroEyebrow
+  font-size: 0.72rem
+  font-weight: 700
+  letter-spacing: 0.2em
+  text-transform: uppercase
+  color: #E77F80
+  margin: 0 0 2.5rem
+
+.heroTitle
+  font-family: var(--font-baloo2)
+  font-size: 5.5rem
+  font-weight: 900
+  color: #E8ECF7
+  line-height: 0.95
+  margin: 0 0 1.75rem
+
+  @media screen and (max-width: 768px)
+    font-size: 3rem
+
+.heroSubtitle
+  font-size: 1rem
+  font-style: italic
+  color: rgba(232, 236, 247, 0.65)
+  margin: 0 0 1.5rem
+
+.heroDivider
+  width: 80px
+  height: 3px
+  background-color: #E77F80
+  border: none
+  margin: 0 0 1.25rem
+
+.heroAuthor
+  font-size: 0.88rem
+  color: rgba(232, 236, 247, 0.55)
+  margin: 0
+
+// ── Slide 2 & 6 — layout duas colunas ────────────────────────────────────────
+
+.splitSection
+  display: grid
+  grid-template-columns: 5fr 8fr
+  min-height: 520px
+
+  @media screen and (max-width: 900px)
+    grid-template-columns: 1fr
+    min-height: unset
+
+.splitLeft
+  background-color: #809B92
+  padding: 4rem 2.5rem
+
+  @media screen and (max-width: 900px)
+    padding: 3rem 1.5rem
+
+.splitEyebrow
+  font-size: 0.7rem
+  font-weight: 700
+  letter-spacing: 0.18em
+  text-transform: uppercase
+  color: #E77F80
+  margin: 0 0 2rem
+
+.splitTitle
+  font-family: var(--font-baloo2)
+  font-size: 2.4rem
+  font-weight: 900
+  color: #E8ECF7
+  line-height: 1.15
+  margin: 0 0 1.75rem
+
+  @media screen and (max-width: 768px)
+    font-size: 1.8rem
+
+.splitDivider
+  width: 60px
+  height: 3px
+  background-color: #E77F80
+  border: none
+  margin: 0 0 1.75rem
+
+.splitQuote
+  font-size: 0.88rem
+  font-style: italic
+  color: rgba(232, 236, 247, 0.55)
+  line-height: 1.75
+
+.splitRight
+  background-color: #E8ECF7
+  padding: 4rem 3rem
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  @media screen and (max-width: 900px)
+    padding: 2.5rem 1.5rem
+
+.splitP
+  font-size: 0.96rem
+  color: #809B92
+  line-height: 1.85
+  margin: 0 0 1.25rem
+
+  &:last-of-type
+    margin-bottom: 0
+
+// Ética — itens do lado direito (slide 6)
+.eticaItem
+  padding-bottom: 2rem
+  margin-bottom: 2rem
+  border-bottom: 1px solid rgba(128, 155, 146, 0.18)
+
+  &:last-child
+    border-bottom: none
+    margin-bottom: 0
+    padding-bottom: 0
+
+.eticaItemTitle
+  font-family: var(--font-baloo2)
+  font-weight: 700
+  font-size: 1rem
+  color: #809B92
+  margin: 0 0 0.2rem
+
+.eticaItemBar
+  width: 100%
+  height: 2px
+  background-color: #E77F80
+  border: none
+  margin: 0 0 0.9rem
+
+.eticaItemText
+  font-size: 0.9rem
+  color: rgba(128, 155, 146, 0.8)
+  line-height: 1.7
+  margin: 0
+
+// ── Slides 3, 5, 7 — seção dark full width ────────────────────────────────────
+
+.darkSection
+  background-color: #809B92
+  padding: 5rem 0
+
+.darkInner
+  max-width: 1320px
+  margin: 0 auto
+  padding: 0 3rem
+
+  @media screen and (max-width: 768px)
+    padding: 0 1.5rem
+
+.darkEyebrow
+  font-size: 0.7rem
+  font-weight: 700
+  letter-spacing: 0.18em
+  text-transform: uppercase
+  color: #E77F80
+  margin: 0 0 0.5rem
+
+.darkTitle
+  font-family: var(--font-baloo2)
+  font-size: 3.5rem
+  font-weight: 900
+  color: #E8ECF7
+  margin: 0 0 3rem
+  line-height: 1
+
+  @media screen and (max-width: 768px)
+    font-size: 2.2rem
+
+// 2x2 cards (slides 3 e 7)
+.grid2x2
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 1.25rem
+
+  @media screen and (max-width: 768px)
+    grid-template-columns: 1fr
+
+.card
+  background-color: rgba(232, 236, 247, 0.09)
+  border-left: 4px solid #E77F80
+  border-radius: 2px
+  padding: 1.5rem 1.75rem
+
+.cardLabel
+  font-family: var(--font-baloo2)
+  font-size: 0.95rem
+  font-weight: 700
+  color: #E77F80
+  margin: 0 0 0.6rem
+
+.cardText
+  font-size: 0.88rem
+  color: rgba(232, 236, 247, 0.78)
+  line-height: 1.75
+  margin: 0
+
+// Memórias — quote + lista vertical (slide 5)
+.quoteItalic
+  font-size: 0.95rem
+  font-style: italic
+  color: rgba(232, 236, 247, 0.6)
+  line-height: 1.7
+  margin: 0 0 2.5rem
+
+.memoriasList
+  display: flex
+  flex-direction: column
+  gap: 1rem
+
+.memoriaItem
+  background-color: rgba(232, 236, 247, 0.09)
+  border-left: 4px solid #E77F80
+  padding: 1.25rem 1.5rem
+
+.memoriaLabel
+  font-family: var(--font-baloo2)
+  font-weight: 700
+  font-size: 0.95rem
+  color: #E77F80
+  margin: 0 0 0.4rem
+
+.memoriaText
+  font-size: 0.88rem
+  color: rgba(232, 236, 247, 0.78)
+  line-height: 1.7
+  margin: 0
+
+// ── Slide 4 — Processo Analítico (light) ─────────────────────────────────────
+
+.lightBandSection
+  background-color: #E8ECF7
+
+.lightBand
+  background-color: #809B92
+  padding: 1.75rem 3rem
+
+  @media screen and (max-width: 768px)
+    padding: 1.5rem 1.5rem
+
+.lightBandEyebrow
+  font-size: 0.7rem
+  font-weight: 700
+  letter-spacing: 0.18em
+  text-transform: uppercase
+  color: #E77F80
+  margin: 0 0 0.4rem
+
+.lightBandTitle
+  font-family: var(--font-baloo2)
+  font-size: 2rem
+  font-weight: 900
+  color: #E8ECF7
+  margin: 0
+
+  @media screen and (max-width: 768px)
+    font-size: 1.5rem
+
+.lightBody
+  max-width: 1320px
+  margin: 0 auto
+  padding: 4rem 3rem
+
+  @media screen and (max-width: 768px)
+    padding: 2.5rem 1.5rem
+
+.stepsGrid
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 3rem 4rem
+
+  @media screen and (max-width: 768px)
+    grid-template-columns: 1fr
+    gap: 2rem
+
+.step
+  display: flex
+  align-items: flex-start
+  gap: 1.5rem
+
+.stepNum
+  width: 4rem
+  height: 4rem
+  border-radius: 50%
+  background-color: #809B92
+  color: #E8ECF7
+  font-family: var(--font-baloo2)
+  font-size: 1rem
+  font-weight: 900
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-shrink: 0
+
+.stepTitle
+  font-family: var(--font-baloo2)
+  font-size: 1rem
+  font-weight: 700
+  color: #809B92
+  margin: 0.4rem 0 0.5rem
+
+.stepText
+  font-size: 0.88rem
+  color: rgba(128, 155, 146, 0.8)
+  line-height: 1.7
+  margin: 0
+
+// ── Slide 8 — O Livro (band + light) ─────────────────────────────────────────
+
+.livroText
+  font-size: 0.96rem
+  color: #809B92
+  line-height: 1.85
+  margin: 0 0 0.9rem
+
+  &:last-of-type
+    margin-bottom: 0
+
+.livroExLabel
+  font-size: 0.82rem
+  font-style: italic
+  color: rgba(128, 155, 146, 0.55)
+  text-align: center
+  margin: 2.5rem 0 1.25rem
+
+.livroGrid
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 1.5rem
+
+  @media screen and (max-width: 768px)
+    grid-template-columns: 1fr
+
+.livroCover
+  background-color: #809B92
+  border-top: 8px solid #E77F80
+  border-bottom: 8px solid #E77F80
+  padding: 3rem 1.5rem
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: 0.75rem
+  min-height: 220px
+
+.livroCoverTitle
+  font-family: var(--font-baloo2)
+  font-size: 0.9rem
+  font-weight: 700
+  color: #E8ECF7
+  line-height: 1.45
+  margin: 0
+
+.livroCoverSub
+  font-size: 0.72rem
+  font-weight: 600
+  letter-spacing: 0.1em
+  text-transform: uppercase
+  color: #E77F80
+  margin: 0
+
+// ── Slide 9 — Investimento (band + light) ────────────────────────────────────
+
+.investNote
+  font-size: 0.88rem
+  font-style: italic
+  color: rgba(128, 155, 146, 0.65)
+  margin: 0 0 2.5rem
+
+.investGrid
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  gap: 1.25rem
+
+  @media screen and (max-width: 900px)
+    grid-template-columns: repeat(2, 1fr)
+
+  @media screen and (max-width: 520px)
+    grid-template-columns: 1fr
+
+.investCard
+  background-color: rgba(128, 155, 146, 0.1)
+  border-radius: 2px
+  overflow: hidden
+
+.investCardHeader
+  background-color: #809B92
+  padding: 1.25rem
+  text-align: center
+
+.investCardNum
+  font-family: var(--font-baloo2)
+  font-size: 1.6rem
+  font-weight: 900
+  color: #E77F80
+  margin: 0
+
+.investCardBody
+  padding: 1.25rem 1rem
+
+.investCardTitle
+  font-family: var(--font-baloo2)
+  font-size: 0.9rem
+  font-weight: 700
+  color: #809B92
+  text-align: center
+  margin: 0 0 0.75rem
+
+.investCardText
+  font-size: 0.82rem
+  color: rgba(128, 155, 146, 0.8)
+  line-height: 1.65
+  text-align: center
+  margin: 0
+
+// ── Slide 10 — Quote final ────────────────────────────────────────────────────
+
+.quoteSection
+  background-color: #809B92
+  padding: 8rem 2rem
+  position: relative
+  overflow: hidden
+
+  &::before, &::after
+    content: ''
+    position: absolute
+    border-radius: 50%
+    background-color: rgba(232, 236, 247, 0.06)
+    pointer-events: none
+
+  &::before
+    width: 480px
+    height: 480px
+    bottom: -160px
+    left: -160px
+
+  &::after
+    width: 320px
+    height: 320px
+    top: -80px
+    right: -60px
+
+  @media screen and (max-width: 768px)
+    padding: 5rem 1.5rem
+
+.quoteInner
+  max-width: 760px
+  margin: 0 auto
+  text-align: center
+  position: relative
+  z-index: 1
+
+.finalQuote
+  font-family: var(--font-baloo2)
+  font-size: 2.2rem
+  font-weight: 900
+  font-style: italic
+  color: #E8ECF7
+  line-height: 1.35
+  margin: 0 0 2rem
+
+  @media screen and (max-width: 768px)
+    font-size: 1.5rem
+
+.finalDivider
+  width: 64px
+  height: 3px
+  background-color: #E77F80
+  border: none
+  margin: 0 auto 1.5rem
+
+.finalName
+  font-family: var(--font-baloo2)
+  font-size: 1rem
+  font-weight: 700
+  color: #E77F80
+  margin: 0 0 0.3rem
+
+.finalRole
+  font-size: 0.82rem
+  color: rgba(232, 236, 247, 0.45)
+  margin: 0
+
+// ── CTA ───────────────────────────────────────────────────────────────────────
+
+.cta
+  background-color: #E8ECF7
+  padding: 4rem 2rem
+  text-align: center
+
+.ctaTitle
+  font-family: var(--font-baloo2)
+  font-size: 1.5rem
+  font-weight: 900
+  color: #809B92
+  margin: 0 0 0.5rem
+
+.ctaText
+  font-size: 0.9rem
+  color: rgba(128, 155, 146, 0.7)
+  margin: 0 0 1.75rem
+
+.ctaBtn
+  display: inline-flex
+  align-items: center
+  gap: 0.5rem
+  background-color: #E77F80
+  color: #fff
+  font-family: var(--font-baloo2)
+  font-weight: 700
+  font-size: 0.96rem
+  padding: 0.8rem 2rem
+  border-radius: 6px
+  text-decoration: none
+  transition: background-color 0.2s
+
+  &:hover
+    background-color: #d96b6c
+
+// ── Footer line compartilhado ─────────────────────────────────────────────────
+
+.footerLine
+  font-size: 0.75rem
+  font-style: italic
+  color: rgba(128, 155, 146, 0.45)
+  text-align: center
+  margin-top: 3rem
+  padding-top: 1rem
+  border-top: 1px solid rgba(128, 155, 146, 0.15)
+
+.footerLineDark
+  @extend .footerLine
+  color: rgba(232, 236, 247, 0.3)
+  border-top-color: rgba(232, 236, 247, 0.1)
