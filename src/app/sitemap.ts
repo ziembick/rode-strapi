@@ -56,7 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const slugs = await getAllArticlesSlugs(false)
 
     articleRoutes = (slugs ?? []).map((item: { slug: string }) => ({
-      url: `${baseUrl}/posts/${item.slug}`,
+      url: `${baseUrl}/articles/${item.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,

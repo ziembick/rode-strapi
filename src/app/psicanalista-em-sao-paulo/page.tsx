@@ -4,10 +4,26 @@ import styles from './contato.module.sass'
 import HeaderContato from '../components/header_contato'
 import BtnAgende from '../components/btnAgende'
 
+const schemaContactPage = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo",
+  "url": "https://www.rodepsi.com/psicanalista-em-sao-paulo",
+  "name": "Contato — Rode Ziembick Psicanalista",
+  "description": "Entre em contato para agendar uma sessão de psicanálise presencial em São Paulo (Vila Olímpia e Brooklin) ou online para todo o Brasil.",
+  "isPartOf": { "@id": "https://www.rodepsi.com/#website" },
+  "about": { "@id": "https://www.rodepsi.com/#negocio" },
+  "inLanguage": "pt-BR"
+};
+
 export default function Contato() {
   return (
     <>
       <HeaderContato />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaContactPage) }}
+      />
       <main className={styles.page}>
 
         {/* ── Contato principal ── */}

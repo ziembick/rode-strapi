@@ -316,12 +316,12 @@ const schemaServices = {
 const schemaContactPage = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://www.rodepsi.com/contato",
-  "url": "https://www.rodepsi.com/contato",
+  "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo",
+  "url": "https://www.rodepsi.com/psicanalista-em-sao-paulo",
   "name": "Contato — Rode Ziembick Psicanalista",
   "description": "Entre em contato para agendar uma sessão de psicanálise presencial em São Paulo (Vila Olímpia e Brooklin) ou online para todo o Brasil.",
-  "isPartOf": { "@id": "https://www.rodepsi.com/" },
-  "about": { "@id": "https://www.rodepsi.com/psicanalista-em-sao-paulo" },
+  "isPartOf": { "@id": "https://www.rodepsi.com/#website" },
+  "about": { "@id": "https://www.rodepsi.com/#negocio" },
   "inLanguage": "pt-BR"
 };
 

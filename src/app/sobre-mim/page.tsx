@@ -42,33 +42,21 @@ export default function SobreMimSolo() {
         <div className={`${styles.sobre} container`}>
           <div className={styles.textContainer}>
             <motion.h1
-              className={styles.mainTitle}
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 30,
-                delay: 0.2,
-              }}
-            >
+                className={styles.mainTitle}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0.2 }}
+              >
               Sobre mim
             </motion.h1>
 
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 30,
-                delay: 0.6,
-              }}
-            >
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0.6 }}
+              >
               <p className={styles.description}>
               Como psicanalista com mais de 10 anos de experiência clínica, formada pela Escola Paulista de Psicanálise, mestranda em Psicologia Social na USP e sustentada pelo tripé analítico — análise pessoal, supervisão e estudo teórico —, é uma satisfação recebê-la(o) aqui.
               <br />
@@ -89,34 +77,22 @@ export default function SobreMimSolo() {
             </motion.div>
 
             <motion.div
-              className={styles.btnAgende}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              animate={isVisible ? { opacity: 1, y: 1 } : {}}
-              exit={{ opacity: 0, y: 100 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 30,
-                delay: 0.8,
-              }}
-            >
+                className={styles.btnAgende}
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0.8 }}
+              >
               <BtnAgende />
             </motion.div>
           </div>
           <motion.div
-            className={styles.imageContainer}
-            initial={{ opacity: 0, y: 0, scale: 0.5 }}
-            animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
-            exit={{ opacity: 0, y: 100, scale: 0.5 }}
-            transition={{
-              duration: 0.5,
-              type: "spring",
-              stiffness: 100,
-              damping: 30,
-              delay: 0.6,
-            }}
-          >
+              className={styles.imageContainer}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 30, delay: 0.6 }}
+            >
             <Image
               src="../sobreMim2.svg"
               alt="Sobre mim"
