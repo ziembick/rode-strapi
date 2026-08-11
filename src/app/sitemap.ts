@@ -56,11 +56,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const slugs = await getAllArticlesSlugs(false)
 
     articleRoutes = (slugs ?? []).map((item: { slug: string }) => ({
-      url: `${baseUrl}/articles/${item.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }))
+  url: `${baseUrl}/articles/${encodeURIComponent(item.slug)}`,
+  lastModified: new Date(),
+  changeFrequency: 'monthly' as const,
+  priority: 0.7,
+}))
   } catch (error) {
     console.error('Erro ao buscar slugs da Contentful para o sitemap:', error)
   }
