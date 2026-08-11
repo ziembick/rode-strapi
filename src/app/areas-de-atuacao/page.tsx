@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "../components/atuacao/atuacao.module.sass";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -82,23 +82,7 @@ const schemaAreasAtuacao = {
 };
 
 export default function AtuacaoSolo() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById("atuac");
-      if (element) {
-        const topPos = element.getBoundingClientRect().top;
-        const bottomPos = element.getBoundingClientRect().bottom;
-        const visible = topPos < window.innerHeight && bottomPos >= 0;
-        setIsVisible(visible);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Verificar visibilidade no carregamento inicial
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  
   return (
     <>
       <script
@@ -120,8 +104,8 @@ export default function AtuacaoSolo() {
             <motion.h1
               className={styles.aga1}
               initial={{ opacity: 0, x: -200 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              exit={{ opacity: 0, x: -200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -134,8 +118,8 @@ export default function AtuacaoSolo() {
             <motion.p
               className={styles.pe}
               initial={{ opacity: 0, x: -200 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              exit={{ opacity: 0, x: -200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -166,12 +150,8 @@ export default function AtuacaoSolo() {
                       <motion.div
                         className={styles.card}
                         initial={{ opacity: 0, x: -100, filter: "blur(8px)" }}
-                        animate={
-                          isVisible
-                            ? { opacity: 1, x: 0, filter: "blur(0px)" }
-                            : {}
-                        }
-                        exit={{ opacity: 0, x: -100, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                        viewport={{ once: true }}
                         transition={{
                           duration: 0.5,
                           delay: index * 0.2,
@@ -205,8 +185,8 @@ export default function AtuacaoSolo() {
             <motion.div
               className={styles.btnAgende}
               initial={{ opacity: 0, y: 100 }}
-              animate={isVisible ? { opacity: 1, y: 1 } : {}}
-              exit={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 1 }}
+              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 100,
