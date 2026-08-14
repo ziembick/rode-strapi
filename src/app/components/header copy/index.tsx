@@ -7,14 +7,16 @@ import Link from "next/link";
 import { NavItem2 } from "./nav-item";
 
 const NAV_ITEMS2 = [
+  { label: "Home", href: "/" },
+  { label: "Áreas de Atuação", href: "/areas-de-atuacao" },
+  { label: "Sobre Mim", href: "/sobre-mim" },
+  { label: "Contato", href: "/psicanalista-em-sao-paulo/" },
+  { label: "FAQ", href: "/faq" },
   {
-    label: "Home",
-    href: "/",
+    label: "Projeto Memórias Ancestrais",
+    href: "/projeto-memorias-ancestrais",
   },
-  {
-    label: "Posts",
-    href: "/posts",
-  },
+  { label: "Posts", href: "/posts" },
 ];
 
 export const Header2 = () => {

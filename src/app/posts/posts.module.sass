@@ -1,201 +1,232 @@
+.bgContainer
+  background: #809b92
+  min-height: 100vh
+
 .contentMain
   display: flex
-  min-height: 100vh
   flex-direction: column
   align-items: center
-  justify-content: space-between
-  padding: 2rem
-
-.elementSection
-  width: 100%
-  padding-top: 3rem
+  padding: 3rem 1.5rem
 
 .mainDiv
-  margin-left: auto
-  margin-right: auto
-  max-width: 100%
-
-  > * + *
-    margin-top: 3rem
-
-  @media screen and (min-width: 768px)
-    padding-left: 1.5rem
-    padding-right: 1.5rem
+  width: 100%
+  max-width: 1100px
+  margin: 0 auto
 
 .headerDiv
   display: flex
   flex-direction: column
-  align-items: flex-start
-  justify-content: flex-start
-  text-align: center
 
   > * + *
-    margin-top: 1rem
-
-.textDiv
-  display: flex
-  justify-content: flex-start
-  align-items: flex-start
-
-  > * + *
-    margin-top: 0.5rem
+    margin-top: 1.5rem
 
 .textH1
-  font-size: 1.875rem
-  font-weight: 600
-  letter-spacing: -0.05rem
   font-family: var(--font-baloo2)
-  color: #627c75
+  font-size: 2.5rem
+  font-weight: 700
+  color: #e8ecf7
+  margin: 0
 
-  @media (min-width: 640px)
-    font-size: 3rem
+  @media (max-width: 640px)
+    font-size: 1.875rem
 
-.ptag
-  max-width: 900px
-  color: #000
+.filtersDiv
+  display: flex
+  gap: 0.75rem
+  flex-wrap: wrap
 
-  @media screen and (min-width: 768px)
-    font-size: 1.25rem
-    line-height: 1.75rem
+.filterPill
+  font-family: var(--font-baloo2)
+  font-size: 0.95rem
+  font-weight: 600
+  padding: 0.5rem 1.25rem
+  border-radius: 999px
+  border: none
+  cursor: pointer
+  background: #e8ecf7
+  color: #4a5c56
+  transition: background 0.2s ease, color 0.2s ease
 
-  @media screen and (min-width: 1024px)
-    font-size: 1rem
-    line-height: 1.75rem
+  &:hover
+    background: #d5deec
 
-  @media screen and (min-width: 1280px)
-    font-size: 1.25rem
-    line-height: 1.75rem
+.filterPillActive
+  background: #4a5c56
+  color: #fff
 
-.cardContainer
-  > * + *
-    margin-top: 3rem
+  &:hover
+    background: #4a5c56
 
-.card
+.featuredCard
+  display: flex
+  border-radius: 1.5rem
+  overflow: hidden
+  background: #e8ecf7
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15)
+  text-decoration: none
+  color: inherit
+
+  @media (max-width: 768px)
+    flex-direction: column
+
+.featuredImageWrapper
+  position: relative
+  flex: 1 1 45%
+  min-height: 320px
+
+  @media (max-width: 768px)
+    min-height: 220px
+
+.featuredImage
+  object-fit: cover
+
+.featuredContent
+  flex: 1 1 55%
   display: flex
   flex-direction: column
-  gap: 2rem
+  justify-content: center
+  padding: 2.5rem
+
+  @media (max-width: 768px)
+    padding: 1.5rem
+
+.featuredTitle
   font-family: var(--font-baloo2)
+  font-size: 2rem
+  font-weight: 700
+  color: #4a5c56
+  margin: 0.75rem 0
+
+  @media (max-width: 640px)
+    font-size: 1.5rem
+
+.featuredSummary
+  color: #6b7c76
+  font-size: 1rem
+  line-height: 1.6rem
+  margin-bottom: 1.5rem
+
+.featuredFooter
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.cardGrid
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 2rem
+
+  @media (max-width: 900px)
+    grid-template-columns: repeat(2, 1fr)
+
+  @media (max-width: 640px)
+    grid-template-columns: 1fr
 
 .articleCard
   display: flex
   flex-direction: column
   border-radius: 1rem
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
   overflow: hidden
   background: #e8ecf7
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1)
+  text-decoration: none
+  color: inherit
 
-  @media screen and (min-width: 820px)
-    flex-direction: row
-
-.image
-  object-fit: cover
-  width: auto
-  height: auto
-
-  @media screen and (min-width: 820px)
-    height: 100%
-    max-width: 350px // Definindo a largura máxima para telas maiores
-
-.linksDiv
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  padding: 1rem
-  flex: 1
-
-.topSection 
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-
-
-
-
-.bottomSection
-  display: flex
-  justify-content: space-between
-  align-items: center
-  margin-top: auto
-
-.tituloCategory
-  display: flex
-  align-items: center
-  justify-content: flex-start
+.cardImageWrapper
+  position: relative
   width: 100%
+  aspect-ratio: 4 / 3
 
-  @media screen and (max-width: 768px)
-    flex-direction: column-reverse
-    align-items: flex-start
-    width: 100%
+.cardImage
+  object-fit: cover
 
-.bgContainer
-  background: linear-gradient(to bottom, #809b92, #e8ecf7)
+.cardBody
+  display: flex
+  flex-direction: column
+  flex: 1
+  padding: 1.25rem
 
-.articleTitle
-  font-size: 2rem
-  font-weight: 700
-  color: #809b92
-
-.category
-  margin-left: auto
+.categoryPill
+  font-family: var(--font-baloo2)
+  font-size: 0.8rem
+  font-weight: 600
   border-radius: 10px
   background-color: #ced4da
-  padding-left: 0.75rem
-  padding-right: 0.75rem
-  padding-top: 0.25rem
-  padding-bottom: 0.25rem
-  font-weight: bold
   color: #809b92
+  display: inline-block
+  padding: 0.25rem 0.75rem
+  align-self: flex-start
+  margin-bottom: 0.75rem
 
-  @media screen and (max-width: 768px)
-    margin-left: 0
-    margin-bottom: 0.5rem
-
-.articleSummary
-  max-width: none
-  color: #809b92
-  margin-top: 1rem
-  margin-bottom: 1rem
-  font-size: 0.94rem
-
-.articleAuthor
-  max-width: none
-  color: #4a5568
-  margin-top: 0.5rem
-  margin-bottom: 0.5rem
-  font-size: 0.875rem
-  font-weight: bold
-
-.titleArtigo
-  text-decoration: none
+.cardTitle
   font-family: var(--font-baloo2)
+  font-size: 1.25rem
   font-weight: 700
-  color: #809b92
+  color: #4a5c56
+  margin: 0 0 0.5rem 0
 
-.readMore
-  display: flex
-  justify-content: space-between
-  align-items: center
-  width: 100%
-
-.data
-  font-family: var(--font-baloo2)
-  max-width: none
-  color: #809b92
-  margin-top: 1rem
+.cardSummary
+  color: #6b7c76
+  font-size: 0.9rem
+  line-height: 1.4rem
+  flex: 1
   margin-bottom: 1rem
-  font-size: 0.94rem
+
+.cardFooter
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-top: auto
+
+.dateText
+  font-family: var(--font-baloo2)
+  color: #6b7c76
+  font-size: 0.85rem
 
 .linkReadMore
-  display: inline-flex
-  height: 2.5rem
-  align-items: center
-  justify-content: center
-  font-size: 1rem
-  font-weight: 500
+  font-family: var(--font-baloo2)
+  font-weight: 600
+  font-size: 0.9rem
+  color: #4a5c56
   text-decoration: none
-  color: #809b92
-  margin-left: auto
 
   &:hover
     color: #e77f80
+
+.pagination
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 0.5rem
+  padding-top: 1rem
+
+.pageButton
+  width: 2.25rem
+  height: 2.25rem
+  border-radius: 50%
+  border: none
+  background: #e8ecf7
+  color: #4a5c56
+  font-family: var(--font-baloo2)
+  font-weight: 600
+  cursor: pointer
+
+  &:hover
+    background: #d5deec
+
+  &:disabled
+    opacity: 0.4
+    cursor: not-allowed
+
+.pageButtonActive
+  background: #4a5c56
+  color: #fff
+
+  &:hover
+    background: #4a5c56
+
+.emptyState
+  color: #e8ecf7
+  font-family: var(--font-baloo2)
+  text-align: center
+  padding: 3rem 0

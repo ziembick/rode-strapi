@@ -1,6 +1,7 @@
-import { getAllArticlesSlugs, getArticle } from "@/../lib/api";
+import { getAllArticlesSlugs, getArticle, getAllArticles } from "@/../lib/api";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import styles from "./article.module.sass";
@@ -54,6 +55,12 @@ export default async function KnowledgeArticle({
     return notFound();
   }
 
+  const allArticles = await getAllArticles();
+  const relatedArticles = (allArticles || [])
+    .filter((item: any) => item.slug !== params.slug)
+    .sort((a: any) => (a.categoryName === article.categoryName ? -1 : 1))
+    .slice(0, 3);
+
   const schemaArticle = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -102,32 +109,82 @@ export default async function KnowledgeArticle({
       <div className={styles.bgContainer}>
         <main className={`${styles.mainContainer} container`}>
           <section className={styles.secao}>
-            <div className={styles.mainDiv}>
+            <div className={styles.layoutGrid}>
               <div className={styles.article}>
-                <div className={styles.categoryName}>
+                <span className={styles.categoryName}>
                   {article.categoryName}
+                </span>
+                <h1 className={styles.articleTitle}>{article.title}</h1>
+                <p className={styles.date}>
+                  Escrito por: <strong>{article.authorName}</strong> ·{" "}
+                  {new Date(article.date).toLocaleDateString("pt-BR")}
+                </p>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    alt={article.title}
+                    src={article.articleImage.url}
+                    fill
+                    className={styles.imageClass}
+                  />
                 </div>
-                <div className={styles.tituloEsummary}>
-                  <h1 className={styles.articleTitle}>{article.title}</h1>
-                  <p className={styles.articleSummary}>{article.summary}</p>
-                </div>
-                <div className={styles.date}>
-                  <p>Escrito por: {article.authorName}</p>
-                  {new Date(article.date).toLocaleDateString('pt-BR')}
-                </div>
-              </div>
-              <div className={styles.imageDiv}>
-                <Image
-                  alt="Article Image"
-                  className={styles.imageClass}
-                  height={605}
-                  src={article.articleImage.url}
-                  width={1282}
-                />
                 <div className={styles.detailsDiv}>
                   {documentToReactComponents(article.details.json)}
                 </div>
               </div>
+
+              <aside className={styles.sidebar}>
+                <div className={styles.sidebarCard}>
+                  <p className={styles.sidebarLabel}>Categoria</p>
+                  <span className={styles.categoryName}>
+                    {article.categoryName}
+                  </span>
+                </div>
+
+                <div className={styles.sidebarCard}>
+                  <p className={styles.sidebarLabel}>Autor</p>
+                  <div className={styles.authorRow}>
+                    <div className={styles.authorAvatar}>
+                      <Image
+                        alt={article.authorName}
+                        src="/sobreMim.JPG"
+                        fill
+                        className={styles.authorAvatarImage}
+                      />
+                    </div>
+                    <div>
+                      <p className={styles.authorName}>{article.authorName}</p>
+                      <p className={styles.authorRole}>Psicanalista</p>
+                    </div>
+                  </div>
+                </div>
+
+                {relatedArticles.length > 0 && (
+                  <div className={styles.sidebarCard}>
+                    <p className={styles.sidebarLabel}>Posts relacionados</p>
+                    <div className={styles.relatedList}>
+                      {relatedArticles.map((related: any) => (
+                        <Link
+                          key={related.sys.id}
+                          href={`/articles/${related.slug}`}
+                          className={styles.relatedItem}
+                        >
+                          <div className={styles.relatedThumb}>
+                            <Image
+                              alt={related.title}
+                              src={related.articleImage.url}
+                              fill
+                              className={styles.relatedThumbImage}
+                            />
+                          </div>
+                          <span className={styles.relatedTitle}>
+                            {related.title}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </aside>
             </div>
           </section>
         </main>
