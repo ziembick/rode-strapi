@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "./header.module.sass";
 import { NavItem } from "./nav-item";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 // Carrega o componente de postagem de forma assíncrona
 const Postagem = lazy(() => import("@/app/posts/page"));
@@ -105,16 +104,12 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
   };
 
   return (
-    <motion.nav
-      initial={{ top: -100 }}
-      animate={{ top: 0 }}
-      transition={{ duration: 0.5 }}
+    <nav
+
       className={`${styles.navItems} ${isScrolled ? styles.scrolled : ""}`}
     >
-      <motion.div
-        initial={{ top: -100 }}
-        animate={{ top: 0 }}
-        transition={{ duration: 0.5 }}
+      <div
+
         className={`${styles.container}`}
       >
         <div className={styles.imageContainer}>
@@ -178,13 +173,13 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, refs }) => {
             )}
           </div>
         )}
-      </motion.div>
+      </div>
       {showPosts && (
         <Suspense fallback={<LoadingFallback />}>
           <Postagem />
         </Suspense>
       )}
-    </motion.nav>
+    </nav>
   );
 };
 

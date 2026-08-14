@@ -16,7 +16,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 registerLocale("pt-BR", ptBR); //funcionou mas tá com esse erro aqui
 
@@ -164,17 +163,13 @@ export default function BookAppointment() {
           </>
         ) : (
           <div className="">
-            <motion.button
+            <button
               className="btn btn-google"
               onClick={() => googleSignIn()}
-              whileHover={{
-                scale: 1.03,
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.9 }}
+
             >
               Agende sua consulta pelo Google
-            </motion.button>
+            </button>
           </div>
         )}
       </div>

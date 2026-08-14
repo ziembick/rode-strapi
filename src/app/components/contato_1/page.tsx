@@ -2,8 +2,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import BookAppointment from "../BookApointment";
 import styles from "./contato.module.sass";
-import BtnAgende from "../btnAgende";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Contato = () => {
@@ -36,20 +34,12 @@ const Contato = () => {
       />
       <div ref={contatoRef} className={`${styles.contatoContainer} container`}>
         {isVisible && (
-          <motion.h1
+          <h1
             className={styles.title}
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 30,
-              delay: 0.2,
-            }}
+   
           >
             Contato
-          </motion.h1>
+          </h1>
         )}
         <div>
           <BookAppointment />

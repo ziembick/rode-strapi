@@ -1,17 +1,12 @@
 "use client";
 
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import React from "react";
 import styles from "../components/atuacao/atuacao.module.sass";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/pagination";
-import "swiper/swiper-bundle.css";
-import "swiper";
-import { Navigation, Pagination } from "swiper/modules";
-import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
+import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
+
 import BtnAgende from "../components/btnAgende";
 import HeaderContato from "../components/header_contato";
 
@@ -23,7 +18,6 @@ const AREAS_ATUACAO = [
     description:
       "A ansiedade é um dos grandes sintomas do nosso tempo. Ela surge como um aperto no peito, uma inquietação constante, uma sensação de que algo vai acontecer, mas sem sabermos exatamente o quê. Diferente do medo, que tem um objeto claro, a ansiedade aponta para um vazio: algo que escapa à nossa compreensão, mas insiste em se fazer sentir no corpo e na mente. Para Freud, a ansiedade está ligada ao encontro com o desconhecido e à perda de referências seguras. Lacan nos lembra que ela aparece quando o sujeito se vê diante do desejo do Outro, quando não sabe o que é esperado dele, ou quando o próprio desejo parece enigmático. Nesse ponto, a ansiedade não é apenas um sintoma a ser eliminado, mas um sinal de algo importante em jogo na vida psíquica. O tratamento psicanalítico para ansiedade oferece um espaço de escuta onde esse sofrimento pode ganhar palavras, em vez de se repetir apenas como crises no corpo e pensamentos recorrentes. Ao falar, o sujeito começa a localizar o que o angustia, compreende seus impasses e abre caminhos para lidar com o que até então parecia sem saída. Rode Ziembick atende adultos e adolescentes com ansiedade de forma presencial em São Paulo, nos consultórios da Vila Olímpia e Brooklin e online para qualquer parte do Brasil e do exterior. O atendimento é particular e sigiloso, com orientação lacaniana e freudiana e mais de 10 anos de clínica",
   },
-
   {
     image: "../depresso3.svg",
     title: "Depressão",
@@ -82,7 +76,29 @@ const schemaAreasAtuacao = {
 };
 
 export default function AtuacaoSolo() {
-  
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: false, dragFree: true, align: "start" },
+    [WheelGesturesPlugin()]
+  );
+
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  const onSelect = useCallback((api: NonNullable<typeof emblaApi>) => {
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect(emblaApi);
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
+
   return (
     <>
       <script
@@ -91,77 +107,27 @@ export default function AtuacaoSolo() {
       />
       <HeaderContato />
       <div id="atuac" className={styles.relativeContainer}>
-        <div className={styles.imagemDeTopo}>
+        {/* <div className={styles.imagemDeTopo}>
           <Image
             src="./bordinha.svg"
             alt="Image topo"
             layout="fill"
             objectFit="cover"
           />
-        </div>
+        </div> */}
         <div className={styles.atuacaoBackground}>
           <div className={`${styles.cont} container`}>
-            <motion.h1
-              className={styles.aga1}
-              initial={{ opacity: 0, x: -200 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 30,
-                delay: 0.2,
-              }}
-            >
-              Áreas de Atuação
-            </motion.h1>
-            <motion.p
-              className={styles.pe}
-              initial={{ opacity: 0, x: -200 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 30,
-                delay: 0.6,
-              }}
-            >
+            <h1 className={styles.aga1}>Áreas de Atuação</h1>
+            <p className={styles.pe}>
               Tratamentos e demandas mais frequentes que atendo atualmente
-            </motion.p>
+            </p>
+
             <div className={styles.cardSwiper}>
-              <Swiper
-                spaceBetween={20}
-                slidesPerView={1}
-                breakpoints={{
-                  320: { slidesPerView: 1 },
-                  480: { slidesPerView: 1.2 },
-                  640: { slidesPerView: 1.5 },
-                  768: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 },
-                  1280: { slidesPerView: 3.3 },
-                }}
-                navigation={true}
-                modules={[Pagination, Navigation]}
-              >
-                {AREAS_ATUACAO.map((atuacao, index) => (
-                  <SwiperSlide key={index}>
-                    {atuacao && (
-                      <motion.div
-                        className={styles.card}
-                        initial={{ opacity: 0, x: -100, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 0.5,
-                          delay: index * 0.2,
-                          type: "spring",
-                          stiffness: 100,
-                          damping: 30,
-                          ease: "easeIn",
-                          filter: { duration: 1, delay: index * 0.2 },
-                        }}
-                      >
+              <div className={styles.emblaViewport} ref={emblaRef}>
+                <div className={styles.emblaContainer}>
+                  {AREAS_ATUACAO.map((atuacao, index) => (
+                    <div className={styles.emblaSlide} key={index}>
+                      <div className={styles.card}>
                         <Image
                           src={atuacao.image}
                           alt={atuacao.title}
@@ -176,26 +142,37 @@ export default function AtuacaoSolo() {
                         <p className={styles.card_text}>
                           {atuacao.description}
                         </p>
-                      </motion.div>
-                    )}
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.emblaButtons}>
+                <button
+                  type="button"
+                  className={styles.emblaButton}
+                  onClick={scrollPrev}
+                  disabled={!canScrollPrev}
+                  aria-label="Anterior"
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  className={styles.emblaButton}
+                  onClick={scrollNext}
+                  disabled={!canScrollNext}
+                  aria-label="Próximo"
+                >
+                  ›
+                </button>
+              </div>
             </div>
-            <motion.div
-              className={styles.btnAgende}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 30,
-                delay: 0.8,
-              }}
-            >
+
+            <div className={styles.btnAgende}>
               <BtnAgende />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

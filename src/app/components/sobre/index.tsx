@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import BtnAgende from "../btnAgende";
 import Image from "next/image";
 import styles from "./sobre.module.sass";
-import { motion } from "framer-motion";
 import { FaHeart } from "react-icons/fa";
 
 export default function Sobre() {
@@ -27,44 +26,26 @@ export default function Sobre() {
   }, []);
   return (
     <div id="sobre" className={styles.relativeContainer}>
-      <div className={styles.imagemDeTopo}>
+      {/* <div className={styles.imagemDeTopo}>
         <Image
           src="./bordinha.svg"
           alt="Image topo"
           layout="fill"
           objectFit="cover"
         />
-      </div>
+      </div> */}
       <div className={styles.bgContainer}>
         <div className={`${styles.sobre} container`}>
           <div className={styles.textContainer}>
-            <motion.h1
+            <h1
               className={styles.mainTitle}
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 30,
-                delay: 0.2,
-              }}
+
             >
               Sobre mim
-            </motion.h1>
+            </h1>
 
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 30,
-                delay: 0.6,
-              }}
+            <div
+
             >
               <p className={styles.description}>
               Como psicanalista com mais de 10 anos de experiência clínica, formada pela Escola Paulista de Psicanálise, mestranda em Psicologia Social na USP e sustentada pelo tripé analítico — análise pessoal, supervisão e estudo teórico —, é uma satisfação recebê-la(o) aqui.
@@ -83,36 +64,16 @@ export default function Sobre() {
             <FaHeart size={13} className={styles.heart} />{" "}
                 <FaHeart size={13} className={styles.heart} />
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
+            <div
               className={styles.btnAgende}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              animate={isVisible ? { opacity: 1, y: 1 } : {}}
-              exit={{ opacity: 0, y: 100 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 30,
-                delay: 0.8,
-              }}
             >
               <BtnAgende />
-            </motion.div>
+            </div>
           </div>
-          <motion.div
+          <div
             className={styles.imageContainer}
-            initial={{ opacity: 0, y: 0, scale: 0.5 }}
-            animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
-            exit={{ opacity: 0, y: 100, scale: 0.5 }}
-            transition={{
-              duration: 0.5,
-              type: "spring",
-              stiffness: 100,
-              damping: 30,
-              delay: 0.6,
-            }}
           >
             <Image
               src="./sobreMim2.svg"
@@ -122,7 +83,7 @@ export default function Sobre() {
               className={styles.imagem}
               // layout="reponsive"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

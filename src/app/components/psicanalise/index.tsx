@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./psicanalise.module.sass";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 export default function Psicanalise() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,44 +24,26 @@ export default function Psicanalise() {
   }, []);
   return (
     <div id="psi" className={styles.relativeContainer}>
-      <div className={styles.imagemDeTopo}>
+      {/* <div className={styles.imagemDeTopo}>
         <Image
           src="./bordinha.svg"
           alt="Image topo"
           layout="fill"
           objectFit="cover"
         />
-      </div>
+      </div> */}
       <div className={`${styles.psicanalise} container`}>
         <div className={`${styles.boiadero}`}>
-          <motion.h1
+          <h1
             className={styles.title}
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 30,
-              delay: 0.2,
-            }}
+
           >
             O que é Psicanalise
-          </motion.h1>
+          </h1>
 
-          <motion.div
+          <div
             className={styles.textContainer}
-            initial={{ opacity: 0, x: -100 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            whileInView={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 30,
-              delay: 0.6,
-            }}
+ 
           >
             <p className={styles.texto}>
               A Psicanálise é o campo do conhecimento onde a premissa é o
@@ -98,7 +79,7 @@ export default function Psicanalise() {
               frases mais emblemáticas de Freud. Viver sem acessar a nossa
               dimensão inconsciente é viver no domínio do desconhecido. Agende sua sessão de psicanálise e mergulhe no oceano desconhecido de si mesmo.
             </p>
-          </motion.div>
+          </div>
           {/* <div className={styles.imageContainer}>
         <Image src="/mulher.png" alt="Psicanálise" width={330} height={635} className={styles.imageMulher}/>
       </div> */}

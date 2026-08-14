@@ -4,19 +4,14 @@ import Image from "next/image";
 import React from "react";
 import styles from "./btn.module.sass";
 import { FaWhatsapp } from "react-icons/fa";
-import { motion } from "framer-motion";
 import { sendGTMEvent } from '@next/third-parties/google'
 import { sendGAEvent } from '@next/third-parties/google'
 
 export default function BtnAgende() {
   return (
     <>
-      <motion.button
-        whileHover={{
-          scale: 1.03,
-          transition: { duration: 0.3 },
-        }}
-        whileTap={{ scale: 0.9 }}
+      <button
+
         className={styles.btn}
         onClick={() => {
           // Send the GTM event before opening the WhatsApp URL
@@ -29,7 +24,7 @@ export default function BtnAgende() {
       >
         Agende sua consulta
         <FaWhatsapp size={20} className={styles.btnWp} />
-      </motion.button>
+      </button>
     </>
   );
 }

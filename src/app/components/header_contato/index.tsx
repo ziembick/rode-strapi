@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "../header/header.module.sass";
 import { NavItem } from "../header/nav-item";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const Postagem = lazy(() => import("@/app/posts/page"));
 
@@ -39,10 +38,8 @@ const HeaderContato: React.FC = () => {
   const [showPosts, setShowPosts] = useState(false);
 
   return (
-    <motion.nav
-      initial={{ top: -100 }}
-      animate={{ top: 0 }}
-      transition={{ duration: 0.5 }}
+    <nav
+
       className={styles.navItems}
     >
       <div className={styles.container}>
@@ -100,7 +97,7 @@ const HeaderContato: React.FC = () => {
           <Postagem />
         </Suspense>
       )}
-    </motion.nav>
+    </nav>
   );
 };
 
