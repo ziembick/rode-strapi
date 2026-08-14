@@ -132,3 +132,57 @@
     align-items: center
     justify-content: center
     display: flex
+
+
+.skeleton
+  background: linear-gradient(90deg, rgba(232, 236, 247, 0.15) 25%, rgba(232, 236, 247, 0.35) 37%, rgba(232, 236, 247, 0.15) 63%)
+  background-size: 400% 100%
+  border-radius: 8px
+  animation: skeletonPulse 1.4s ease infinite
+
+@keyframes skeletonPulse
+  0%
+    background-position: 100% 50%
+  100%
+    background-position: 0% 50%
+
+.skeletonNome
+  width: 220px
+  height: 2.222rem
+  margin-bottom: 0.75rem
+
+.skeletonTitulo
+  width: 140px
+  height: 1.333rem
+  margin-bottom: 1.5rem
+
+.skeletonComentarioLine1
+  width: 90%
+  height: 2.222rem
+  margin-bottom: 0.5rem
+
+.skeletonComentarioLine2
+  width: 60%
+  height: 2.222rem
+  margin-bottom: 2.222rem
+
+.skeletonTextinho
+  width: 80%
+  height: 1.333rem
+  margin-bottom: 2.222rem
+
+.skeletonBtn
+  width: 180px
+  height: 3rem
+  border-radius: 999px
+  margin-bottom: 0.6rem
+
+.skeletonPtag
+  width: 220px
+  height: 1.5rem
+  margin-bottom: 0.75rem
+
+.skeletonImage
+  width: 100%
+  aspect-ratio: 7 / 6
+  border-radius: 20px

@@ -28,7 +28,7 @@ const Hero = () => {
 
   return (
     <div id="hero" className={styles.heroBackground}>
-       <Image
+      <Image
         src="./linhaHeroVerde2.svg"
         alt="Background"
         layout="fill"
@@ -37,59 +37,33 @@ const Hero = () => {
       />
       <div className={styles.container}>
         <div className={styles.textContainer}>
-          <h2
-            className={styles.nome}
-
-          >
-            Rode Ziembick
-          </h2>
-          <h3
-            className={styles.titulo}
-
-          >
-            Psicanalista
+          <h1 className={styles.nome}>Rode Ziembick</h1>
+          <h2 className={styles.titulo}>Psicanalista</h2>
+          <h3 className={`${styles.comentario}`}>
+            Psicanálise de orientação lacaniana e freudiana. Mais de 10 anos
+            de clínica em São Paulo
           </h3>
-          <h4
-            className={`${styles.comentario}`}
-          >
-            Psicanálise de orientação lacaniana e freudiana. Mais de 10 anos de clínica em São Paulo
-          </h4>
-          <p
-            className={styles.textinho2}
-
-          >
-            A psicanálise possibilita elaborar sofrimentos e descobrir novas formas de se posicionar diante da vida.
+          <p className={styles.textinho2}>
+            A psicanálise possibilita elaborar sofrimentos e descobrir novas
+            formas de se posicionar diante da vida.
           </p>
-          <div
-            className={styles.btnAgende}
-
-          >
+          <div className={styles.btnAgende}>
             <BtnAgende />
           </div>
-          <div
-            className={styles.laptop}
-
-          >
+          <div className={styles.laptop}>
             <p className={`${styles.ptag} pt-0`}>
               <FaLaptop size={25} className={styles.btnLap} />
               Atendimento
-              <strong className={styles.boldText}>
-                online
-              </strong>
+              <strong className={styles.boldText}>online</strong>
             </p>
 
             <p className={`${styles.ptag} pt-0`}>
               <LuSofa size={25} className={styles.btnLap} />
               Presencial em São Paulo na Vila Olímpia e Brooklin.
-              
             </p>
-
           </div>
         </div>
-        <div
-          className={styles.imageContainer}
-
-        >
+        <div className={styles.imageContainer}>
           <Image
             className={styles.rodeImage}
             src="./heroRode2.svg"
